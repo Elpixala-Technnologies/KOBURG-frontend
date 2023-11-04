@@ -1,0 +1,88 @@
+[
+    {
+        "name": "Sneakers SunBe",
+        "mainCategories": "Sneakers",
+        "categories": [
+            "Sneakers"
+        ],
+        "brand": "..",
+        "price": 1506,
+        "discount": 15,
+        "type": "Casual Shoes",
+        "status": "Available",
+        "details": "",
+        "amazonlink": "https://www.amazon.com/",
+        "flipcartlink": "https://www.flipkart.com/",
+        "mintralink": "https://www.myntra.com/",
+        "features": [
+            {
+                "name": "Base Sole",
+                "feature": [
+                    "EVA for lightweight cushioning and comfort Top",
+                    "The EVA sole provides excellent traction",
+                    "Reducing the risk of slipping on various surfaces",
+                    "The design offers stability and support, making these shoes suitable for physical activities",
+                    "Softer and far more flexible than rubber",
+                    "EVA has shock absorption technology "
+                ]
+            },
+            {
+                "name": "Material",
+                "feature": [
+                    "PU for durability and a stylish look",
+                    "PU material enhances comfort and durability",
+                    "Chemically resistant and weatherproof",
+                    "It has great traction and shock absorption"
+                ]
+            },
+            {
+                "name": "Design",
+                "feature": [
+                    "The design offers stability and support, making these shoes suitable for physical activities",
+                    "Softer and far more flexible than rubber",
+                    "EVA has shock absorption technology "
+                ]
+            }
+        ],
+        "colors": [
+            {
+                "color": "White Orange",
+                "isSizeApplicable": true,
+                "sizes": [
+                    {
+                        "size": "Small"
+                    },
+                    {
+                        "size": "Medium"
+                    },
+                    {
+                        "size": "Large"
+                    }
+                ],
+                "images": [
+                    "image1.jpg",
+                    "image2.jpg"
+                ]
+            },
+            {
+                "color": "White Blue",
+                "isSizeApplicable": true,
+                "sizes": [
+                    {
+                        "size": "Small"
+                    },
+                    {
+                        "size": "Medium"
+                    },
+                    {
+                        "size": "Large"
+                    }
+                ],
+                "images": [
+                    "image3.jpg",
+                    "image4.jpg"
+                ]
+            }
+        ]
+    }
+]
