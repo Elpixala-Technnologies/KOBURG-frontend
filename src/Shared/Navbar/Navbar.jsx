@@ -94,7 +94,7 @@ const Navbar = () => {
             <header className="relative bg-white">
                 <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="border-b border-gray-200">
-                        <div className="flex h-16 items-center">
+                        <div className="flex w-full h-16 justify-between items-center">
                             <button
                                 type="button"
                                 className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
@@ -123,7 +123,7 @@ const Navbar = () => {
                                     zIndex: "99999"
                                 }}
                             >
-                                <div className="flex h-full space-x-8">
+                                <div className="flex h-full items-center space-x-6">
 
                                     {navigation.pages.map((page) => (
                                         <Link
