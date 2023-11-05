@@ -1,44 +1,61 @@
-import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import Image from "next/image";
+import { sliderData } from "@/src/Utils/Mock/CommonData";
+import Link from "next/link";
 
-const Hero = () => {
-    const [activeVideo, setActiveVideo] = useState('https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4');
+const HeroSlider = () => {
+    const [isMobile, setIsMobile] = useState(false);
 
-    const videoBtns = [
-        { src: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4' },
-        { src: 'https://res.cloudinary.com/elpixala/video/upload/v1698962974/koburg/Vedio/iuk1v0ln8vjyadjrprlb.mp4' },
-        { src: 'https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4' },
-    ];
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768); // Define your mobile breakpoint
+        };
 
-    const handleVideoChange = (src) => {
-        setActiveVideo(src);
-    };
+        handleResize(); // Check the initial screen width
+        window.addEventListener("resize", handleResize); // Listen for window resize events
+
+        return () => {
+            window.removeEventListener("resize", handleResize); // Remove the event listener when the component unmounts
+        };
+    }, []);
 
     return (
-        <section className="home" id="home">
-            {/* <div className="content">
-                <h3 className="text-[1.2rem] md:text-3xl text-white uppercase text-shadow my-4">
-                    Explore More
-                </h3>
-                <p className="text-2xl text-white my-4">discover new collection with us</p>
-                <Link href="/shop" className="commonBtn mt-6">Shop Now</Link>
-            </div> */}
-
-            <div className="controls">
-                {videoBtns.map((btn, index) => (
-                    <span
-                        key={index}
-                        className={`vid-btn ${activeVideo === btn.src ? 'active' : ''}`}
-                        onClick={() => handleVideoChange(btn.src)}
-                    ></span>
-                ))}
-            </div>
-
-            <div className="video-container">
-                <video src={activeVideo} id="video-slider" loop autoPlay ></video>
-            </div>
-        </section>
+        <>
+            <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                loop={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper heroSlider"
+            >
+                {sliderData &&
+                    sliderData?.map((slide) => {
+                        return (
+                            <SwiperSlide key={slide?.id}>
+                                <Link href={'/shop'} className="slider-images">
+                                    <Image
+                                        src={isMobile ? slide?.mobileImage : slide?.desktopImage}
+                                        alt="Banner Image"
+                                        className="w-full h-full"
+                                        width={isMobile ? 768 : 1920}
+                                        height={isMobile ? 768 : 500}
+                                    />
+                                </Link>
+                            </SwiperSlide>
+                        );
+                    })}
+            </Swiper>
+        </>
     );
 };
 
-export default Hero;
+export default HeroSlider;

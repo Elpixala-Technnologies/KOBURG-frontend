@@ -1,5 +1,8 @@
+import { HomeBannerForDesktopOne } from "@/src/Assets"
+
 export const PopularCategoryData = [
   {
+
     "name": "Sneakers",
     "color": 'bg-blue-400',
     "shadow": 'shadow-md',
@@ -391,5 +394,116 @@ export const blogData = [
       imageUrl:
         'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
+  },
+]
+
+
+export const sliderData = [
+  {
+    id: 1,
+    desktopImage: HomeBannerForDesktopOne,
+    mobileImage: HomeBannerForDesktopOne
+  },
+  {
+    id: 2,
+    desktopImage: HomeBannerForDesktopOne,
+    mobileImage: HomeBannerForDesktopOne
+  },
+  {
+    id: 2,
+    desktopImage: HomeBannerForDesktopOne,
+    mobileImage: HomeBannerForDesktopOne
+  }
+]
+
+
+export const testimonialData = [
+  {
+
+    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    user: [
+      {
+        name: 'John Doe',
+        designation: 'CEO',
+        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
+      }
+    ]
+  },
+  {
+
+    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    user: [
+      {
+        name: 'John Doe',
+        designation: 'CEO',
+        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
+      }
+    ]
+  },
+  {
+
+    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    user: [
+      {
+        name: 'John Doe',
+        designation: 'CEO',
+        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
+      }
+    ]
+  },
+  {
+
+    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    user: [
+      {
+        name: 'John Doe',
+        designation: 'CEO',
+        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
+      }
+    ]
+  },
+  {
+
+    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    user: [
+      {
+        name: 'John Doe',
+        designation: 'CEO',
+        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
+      }
+    ]
+  },
+  {
+
+    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    user: [
+      {
+        name: 'John Doe',
+        designation: 'CEO',
+        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
+      }
+    ]
+  },
+  {
+
+    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    user: [
+      {
+        name: 'John Doe',
+        designation: 'CEO',
+        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
+      }
+    ]
+  },
+  {
+
+    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    user: [
+      {
+        name: 'John Doe',
+        designation: 'CEO',
+        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
+      }
+    ]
   },
 ]

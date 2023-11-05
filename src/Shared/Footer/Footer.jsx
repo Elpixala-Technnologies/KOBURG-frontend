@@ -14,7 +14,7 @@ const Footer = () => {
                             height={180}    
                             src={BlackBGLogo} alt="" />
                         </Link>
-                        <h4 className="text-white font-bold text-[18px] my-[36px]">
+                        <h4 className="text-white  text-[15px] my-[36px]">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti facilis ratione aut minima fuga fugit nisi ea quos magni iure! Doloremque facere dolore tempora cupiditate. Sed cupiditate adipisci dignissimos dolores.
                         </h4>
                         <div className="flex justify-center lg:justify-start items-center gap-4 ">

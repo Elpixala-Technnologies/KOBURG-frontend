@@ -9,6 +9,8 @@ import DelivaryIcons from "./Icons/delivary.png"
 import MapIcons from "./Icons/map.png"
 import PolicyIcons from "./Icons/policy.png"
 
+import HomeBannerForDesktopOne from "./Banner/homepage-main-banner.jpg" 
+
  
 
 
@@ -18,6 +20,7 @@ export {
     IndianLogo,
     BlackBGLogo,
     NavLogo,
+    HomeBannerForDesktopOne,
 
     DelivaryIcons,
     MapIcons,
