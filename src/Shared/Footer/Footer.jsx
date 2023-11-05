@@ -7,14 +7,15 @@ const Footer = () => {
         <div className="bg-[#000000] ">
             <div className="pt-20 pb-10 px-4 mx-auto max-w-full md:max-w-full lg:max-w-screen-xl xl:max-w-screen-xl 2xl:max-w-screen-2xl md:px-24 lg:px-20 2xl:px-8 relative">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 text-white text-center sm:text-start ">
-                    <div className="col-span-2 2xl:p-4 pr-">
+                    <div className="col-span-2 ">
                         <Link href="/" className="">
-                            <Image className="select-none pointer-events-none no-select unselectable" 
-                            width={180}
-                            height={180}    
+                            <Image 
+                            className="select-none pointer-events-none no-select unselectable" 
+                            width={150}
+                            height={150}    
                             src={BlackBGLogo} alt="" />
                         </Link>
-                        <h4 className="text-white  text-[15px] my-[36px]">
+                        <h4 className="text-white  text-[15px] mb-[36px]">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti facilis ratione aut minima fuga fugit nisi ea quos magni iure! Doloremque facere dolore tempora cupiditate. Sed cupiditate adipisci dignissimos dolores.
                         </h4>
                         <div className="flex justify-center lg:justify-start items-center gap-4 ">
@@ -38,7 +39,7 @@ const Footer = () => {
                     </div>
                     <div className="space-y-[30px]">
                         <div>
-                            <h2 className="text-[22px] font-bold text-[#4f46e5] mb-3">{"Quick link"}</h2>
+                            <h2 className="text-[19px] font-bold text-[#fff] mb-3">{"Quick link"}</h2>
                             <div className="flex flex-col gap-2 text-[18px]">
 
                                 <p>
@@ -60,7 +61,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-[22px] font-bold text-[#4f46e5] mb-3">{'Extras'}</h2>
+                            <h2 className="text-[19px] font-bold text-[#fff] mb-3">{'Extras'}</h2>
                             <div className="flex flex-col gap-2 text-[18px]">
                                 <p>
                                     <a href="#" target="_blank" rel="noopener noreferrer">
@@ -82,7 +83,7 @@ const Footer = () => {
                     </div>
                     <div className="col-span-2 space-y-[60px]">
                         <div>
-                            <h2 className="text-[22px] font-bold text-[#4f46e5] mb-3">Contact information</h2>
+                            <h2 className="text-[19px] font-bold text-[#fff] mb-3">Contact information</h2>
                             <div className="flex flex-col gap-2 text-[18px]">
                                 <p>
                                     <a href="#" target="_blank" rel="noopener noreferrer">
@@ -103,7 +104,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-[22px] font-bold text-[#4f46e5] mb-3">
+                            <h2 className="text-[18px] font-bold text-[#fff] mb-3">
                                 {'  Subscribe to our newsletter Enter your email Subscribe'}
                             </h2>
                             <form className="flex flex-col items-center w-full mb-4 md:flex-row ">
@@ -124,7 +125,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <p className="mt-20 lg:text-[18px] font-bold text-white">{"All Right researved by Koburg - 2023"}</p>
+                    <p className="mt-20 lg:text-[17px] font-bold text-white">{"All Right researved by Koburg - 2023"}</p>
                 </div>
 
             </div>

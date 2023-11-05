@@ -22,11 +22,11 @@ const LatestProduct = () => {
 
     return (
         <section className="my-4 mx-2">
-            <div className=" my-6 flex justify-between items-center">
+            <div className=" my-6 flex flex-col justify-between items-center">
                 <div className='title my-2'>
                     <h1>Latest Drops  <span>Sneaker</span></h1>
                 </div>
-                <div className="flex  items-center gap-10 top-0">
+                <div className="md:flex hidden items-center gap-10 top-0">
                     <button
                         className="prev-arrow cursor-pointer p-3 rounded-full"
                         onClick={handlePrev}

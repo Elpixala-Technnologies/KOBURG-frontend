@@ -7,6 +7,9 @@ import ChoseUs from '../ChoseUs/ChoseUs';
 import LatestProduct from "../LatestProduct/LatestProduct"
 import Testimonial from '../Testimonial/Testimonial';
 import Highlight from '../Highlight/Highlight';
+import Reviews from '../Reviews/Reviews'
+import BannerSection from '../BannerSection/BannerSection';
+import RecentBlog from '../RecentBlog/RecentBlog';
 
 const Home = () => {
     return (
@@ -21,7 +24,10 @@ const Home = () => {
                 <ChoseUs />
                 <LatestProduct />
                 {/* <Testimonial /> */}
-                <Highlight/>
+                <Highlight />
+                <Reviews />
+                <BannerSection />
+                <RecentBlog/>
             </div>
         </section>
     );

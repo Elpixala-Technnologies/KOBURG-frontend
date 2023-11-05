@@ -64,8 +64,8 @@ const Highlight = () => {
             </div>
 
             <section className='container mx-auto mt-10'>
-                <section className="border-4 border-black rounded">
-                    <div className="mx-auto p-4">
+                <section className="md:border-4 border p-2 border-black rounded">
+                    <div className="mx-auto md:p-4">
                         <div className=" xl:col-gap-16  grid grid-cols-1 gap-6  lg:grid-cols-5">
                             <div className="lg:col-span-3 lg:row-end-1">
                                 <div className="lg:flex gap-4 lg:items-start">
@@ -75,14 +75,14 @@ const Highlight = () => {
                                                 <img
                                                     src={selectedImage}
                                                     alt={name}
-                                                    className="w-[80%] h-[80%] cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
+                                                    className="md:w-[80%] md:h-[80%] cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
                                                 />
                                             ) : (
                                                 colors && colors[0] && (
                                                     <img
                                                         src={colors[0]?.images[0]}
                                                         alt={colors[0]?.color}
-                                                        className='w-[80%] h-[80%]'
+                                                        className='md:w-[80%] md:h-[80%]'
                                                     />
                                                 )
                                             )}
@@ -122,7 +122,7 @@ const Highlight = () => {
                                                 : `₹ ${Math.floor(price)}`
                                             }
                                         </span>
-                                        <span className=" text-gray-300 line-through mx-4">
+                                        <span className=" text-gray-400 line-through mx-4">
                                             ₹ {Math.floor(price)}
                                         </span>
                                         <span className='text-[#18568C] '>
