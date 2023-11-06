@@ -18,6 +18,11 @@ import BanneSectionFour from "./Home-banner/home-banner-four.webp"
 import BanneSectionFive from "./Home-banner/home-banner-five.webp"
 import BanneSectionSix from "./Home-banner/home-banner-six.webp"
 
+import ComfortableImage from "./Icons/comfortable.svg"
+import EasyToStyleImage from "./Icons/EasyToStyle.svg"
+import EverydayWearImage from "./Icons/EverydayWear.svg"
+import Sustainable from "./Icons/Sustainable.svg"
+ 
  
 
 
@@ -38,7 +43,12 @@ export {
     BanneSectionThree,
     BanneSectionFour,
     BanneSectionFive,
-    BanneSectionSix
+    BanneSectionSix,
+
+    ComfortableImage,
+    EasyToStyleImage,
+    EverydayWearImage,
+    Sustainable  
 
     
 }

@@ -7,6 +7,10 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import Image from "next/image";
 import { sliderData } from "@/src/Utils/Mock/CommonData";
 import Link from "next/link";
+import { FaDolly } from 'react-icons/fa';
+import { TbMapPinHeart, TbTrees } from 'react-icons/tb';
+import {CiDeliveryTruck} from 'react-icons/ci'
+
 
 const HeroSlider = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -54,6 +58,36 @@ const HeroSlider = () => {
                         );
                     })}
             </Swiper>
+
+            {/* <div className=' bg-[#E7F3EC] my-4'>
+                <div className='flex md:flex-row flex-col container gap-2 items-center justify-between p-4 bg-[#E7F3EC]'>
+                    <div className='border-[#fff] flex items-center gap-4'>
+                        <div className='text-[1.6rem] border p-2 rounded-full bg-[#C4E7D2] text-[#2A9563] '>
+                            <FaDolly />
+                        </div>
+                        <h1 className='font-semibold'>7 Days free exchange</h1>
+                    </div>
+                    <div className='border-[#fff] flex items-center gap-4'>
+                        <div className='text-[1.6rem] border p-2 rounded-full bg-[#C4E7D2] text-[#2A9563] '>
+                            <TbMapPinHeart />
+                        </div>
+                        <h1 className='font-semibold'>Proudly Made in India</h1>
+                    </div>
+                    <div className='border-[#fff] flex items-center gap-4'>
+                        <div className='text-[1.6rem] border p-2 rounded-full bg-[#C4E7D2] text-[#2A9563] '>
+                            <CiDeliveryTruck />
+                        </div>
+                        <h1 className='font-semibold'>Delivered in 4-5 days</h1>
+                    </div>
+                    <div className='border-[#fff] flex items-center gap-4'>
+                        <div className='text-[1.6rem] border p-2 rounded-full bg-[#C4E7D2] text-[#2A9563] '>
+                            <TbTrees />
+                        </div>
+                        <h1 className='font-semibold'>Eco friendly fashion
+                        </h1>
+                    </div>
+                </div>
+            </div> */}
         </>
     );
 };

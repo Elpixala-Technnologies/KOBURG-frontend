@@ -24,7 +24,7 @@ const PopularCategory = () => {
       </div>
 
       <div
-        className="grid grid-cols-2 gap-5 justify-center justify-items-center items-center xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-5"
+        className="flex flex-col md:flex-row gap-5 justify-between justify-items-center items-center"
       >
         {PopularCategoryData?.map((category, index) => {
           const {
@@ -34,7 +34,7 @@ const PopularCategory = () => {
 
           return (
             <div
-              className="bg-transparent p-2 text-center rounded-md duration-300 transform  hover:-translate-y-1.5"
+              className="bg-transparent text-center rounded-md duration-300 transform  hover:-translate-y-1.5"
               data-aos="fade-up"
               data-aos-duration="1000"
               key={name + index}
@@ -44,11 +44,11 @@ const PopularCategory = () => {
                   alt={name}
                   src={image}
                   className="inline-flex items-center justify-center hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100"
-                  width={150}
-                  height={150}
+                  width={300}
+                  height={300}
                 />
 
-                <div className="text-sm font-semibold tracking-wide cursor-pointer dark:text-black ">
+                <div className="text-[1.2rem] font-semibold tracking-wide cursor-pointer dark:text-black ">
                   {name}
                 </div>
               </Link>

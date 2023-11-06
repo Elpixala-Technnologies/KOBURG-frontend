@@ -1,86 +1,134 @@
 [
     {
-        "name": "Sneakers SunBe",
-        "mainCategories": "Sneakers",
+        "name": "Sidus",
         "categories": [
-            "Sneakers"
+            "Sport shoes"
         ],
-        "brand": "..",
-        "price": 1506,
-        "discount": 15,
-        "type": "Casual Shoes",
+        "brand": "Koburg",
+        "price": 799,
+        "discount": 10,
         "status": "Available",
-        "details": "",
-        "amazonlink": "https://www.amazon.com/",
-        "flipcartlink": "https://www.flipkart.com/",
-        "mintralink": "https://www.myntra.com/",
+        "Title": "Koburg Sidus Men's Sport Shoes | Memory foam Technology | Stylish sports shoes for men | Superior arch support",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, TPA"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "TPA"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
         "features": [
             {
-                "name": "Base Sole",
-                "feature": [
-                    "EVA for lightweight cushioning and comfort Top",
-                    "The EVA sole provides excellent traction",
-                    "Reducing the risk of slipping on various surfaces",
-                    "The design offers stability and support, making these shoes suitable for physical activities",
-                    "Softer and far more flexible than rubber",
-                    "EVA has shock absorption technology "
-                ]
+                "heading": "Premium Comfort",
+                "details": "Koburg sports shoes provide exceptional cushioning and support for long-lasting comfort."
             },
             {
-                "name": "Material",
-                "feature": [
-                    "PU for durability and a stylish look",
-                    "PU material enhances comfort and durability",
-                    "Chemically resistant and weatherproof",
-                    "It has great traction and shock absorption"
-                ]
+                "heading": "Durability",
+                "details": "These sports shoes are made with high-quality materials and fabricated for extended use."
             },
             {
-                "name": "Design",
-                "feature": [
-                    "The design offers stability and support, making these shoes suitable for physical activities",
-                    "Softer and far more flexible than rubber",
-                    "EVA has shock absorption technology "
-                ]
+                "heading": "Athletic Versatility",
+                "details": "These shoes are perfect for various sports and athletic activities."
+            },
+            {
+                "heading": "Enhanced Traction",
+                "details": "The slip-resistant outsole of these sports shoes offers reliable grip, ensuring stability even on slippery surfaces and during athletic performance."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0102"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
             }
         ],
         "colors": [
             {
-                "color": "White Orange",
-                "isSizeApplicable": true,
+                "color": "black green",
                 "sizes": [
-                    {
-                        "size": "Small"
-                    },
-                    {
-                        "size": "Medium"
-                    },
-                    {
-                        "size": "Large"
-                    }
+                    "8",
+                    "9",
+                    "10"
                 ],
                 "images": [
-                    "image1.jpg",
-                    "image2.jpg"
+                    "https://www.example.com/images/red-small.jpg",
+                    "https://www.example.com/images/red-medium.jpg"
                 ]
             },
             {
-                "color": "White Blue",
-                "isSizeApplicable": true,
+                "color": "blue yellow",
                 "sizes": [
-                    {
-                        "size": "Small"
-                    },
-                    {
-                        "size": "Medium"
-                    },
-                    {
-                        "size": "Large"
-                    }
+                    "10",
+                    "11",
+                    "12"
                 ],
                 "images": [
-                    "image3.jpg",
-                    "image4.jpg"
+                    "https://www.example.com/images/blue-small.jpg",
+                    "https://www.example.com/images/blue-medium.jpg"
+                ]
+            },
+            {
+                "color": "Green",
+                "sizes": [
+                    "10",
+                    "11",
+                    "12"
+                ],
+                "images": [
+                    "https://www.example.com/images/green-small.jpg",
+                    "https://www.example.com/images/green-medium.jpg"
+                ]
+            },
+            {
+                "color": "Yellow",
+                "sizes": [
+                    "10",
+                    "11",
+                    "12"
+                ],
+                "images": [
+                    "https://www.example.com/images/yellow-small.jpg",
+                    "https://www.example.com/images/yellow-medium.jpg"
                 ]
             }
         ]

@@ -13,10 +13,11 @@ const RecentBlog = () => {
                     <div className=" grid gap-14 grid-cols-1 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
                         {blogData && blogData?.slice(0, 3)?.map((post) => {
                             return (
-                                <div key={post.id}>
+                                <div key={post.id}
+                                >
                                     <div>
                                         <a href={post.id}>
-                                            <img className="h-72 w-full object-cover rounded" src={post.images[0]} alt="" />
+                                            <img className="h-72 w-full object-cover rounded transition duration-200 ease-out transform hover:scale-105" src={post.images[0]} alt="" />
                                         </a>
                                     </div>
                                     <p className="text-sm text-gray-500 mt-4">

@@ -17,17 +17,26 @@ const Home = () => {
             <Hero />
             <div className='container'>
                 <PopularCategory />
+            </div>
+            <div className='bg-[#f9f9f9dc] py-8'>
                 <BestSealler />
             </div>
             <NewOfferBanner />
-            <div className='container'>
-                <ChoseUs />
+            <ChoseUs />
+            <div className='bg-[#f9f9f9dc] py-8'>
                 <LatestProduct />
-                {/* <Testimonial /> */}
-                <Highlight />
+            </div>
+            <div className='container'>
+                {/* <Highlight /> */}
+            </div>
+            <div className='bg-[#f9f9f9dc] py-8'>
                 <Reviews />
+            </div>
+
+            <div className='container'>
+                {/* <Testimonial /> */}
                 <BannerSection />
-                <RecentBlog/>
+                <RecentBlog />
             </div>
         </section>
     );

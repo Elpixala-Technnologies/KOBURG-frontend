@@ -1,165 +1,197 @@
-import React, { useState } from 'react';
-
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useCallback, useRef, useState } from "react";
+import { reviewsData } from "@/src/Utils/Mock/CommonData";
+import Image from "next/image";
+import { BsPlayCircle } from "react-icons/bs";
 
 const Reviews = () => {
+  const sliderRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+
+  const handleOpenModal = (url) => {
+    setVideoUrl(url);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setVideoUrl("");
+    setIsModalOpen(false);
+  };
+
 
   return (
-    <div>
-      <section className="">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
-          <div className="mx-auto max-w-screen-sm">
-            <div className='title my-2'>
-              <h1>What Say Our<span>Customer</span></h1>
-            </div>
-            {/* <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+    <section className="container">
+      <div className="px-4 mx-auto text-center  lg:px-6">
+        <div className="mx-auto max-w-screen-sm">
+          <div className='title my-2'>
+            <h1>What Say Our <span>Customer</span></h1>
+          </div>
+          <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel sint commodi
+          </p>
+        </div>
 
-            </h2> */}
-            <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-              molestiae quas vel sint commodi
-            </p>
-          </div>
-          <div className="grid mb-8 lg:mb-12 lg:grid-cols-2">
-            <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
-              <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Speechless with how easy this was to integrate
+        {/* ======== slider ======== */}
+
+        <div>
+          <Swiper
+            ref={sliderRef}
+            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              360: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+            spaceBetween={50}
+            slidesPerView={3}
+            onSlideChange={() => { }}
+            onSwiper={(swiper) => { }}
+            style={{
+              marginTop: "2rem"
+            }}
+          >
+            <div className="grid grid-cols-1 mb-4 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {reviewsData &&
+                reviewsData?.map((reviews) => {
+                  const { profile, name, image, vedio, location, id, country } = reviews;
+                  return (
+                    <SwiperSlide className="cursor-grab rounded " key={id}>
+                      <div key={id + '15d'} className="group ">
+                        <div
+                          className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-md"
+                        >
+                          <div
+                            className="relative  flex h-full overflow-hidden rounded-[1rem]"
+                          >
+                            <img
+                              className="w-full p-2 rounded-md"
+                              src={image}
+                              alt={name}
+                            />
+
+                            <div className="absolute bottom-5 left-5">
+                              <div
+                                className="flex gap-2 items-center text-white p-2 rounded-full cursor-pointer hover:bg-gray-800 hover:border border-transparent hover:border-white transition-all duration-300 ease-in-out"
+                                onClick={() => handleOpenModal(vedio)}
+                              >
+                                <BsPlayCircle className="text-[1.5rem]" />
+                                <p className="text-semibold">Watch Story</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="mx-3 py-2 text-left">
+
+                            <div className='flex items-center gap-3'>
+                              <div className="mt-2 mb-2 flex gap-4 items-center">
+                                <Image
+                                  src={profile}
+                                  alt={name}
+                                  width={30}
+                                  height={30}
+                                  className="rounded-full object-cover object-center revew-profile"
+                                />
+                              </div>
+
+                              <div>
+                                <div className='flex gap-4 items-center'>
+                                  <p className='text-gray-300'>{location}</p>
+                                  <img
+                                    src={country}
+                                    alt={location}
+                                    className="countryIcon"
+                                  />
+                                </div>
+                                <h1 className="text-[1.1rem] tracking-tight text-slate-900">
+                                  {name}
+                                </h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+            </div>
+          </Swiper>
+        </div>
+      </div>
+
+      {/* == modal === */}
+
+      {isModalOpen && (
+        <div
+          id="default-modal"
+          tabIndex={-1}
+          aria-hidden="true"
+          className="fixed top-0 left-0 right-0 z-50 w-full h-screen p-4 overflow-x-hidden overflow-y-auto md:inset-0"
+        >
+          <div className="relative w-full max-w-2xl h-full mx-auto">
+            <div className="relative bg-white rounded-lg shadow">
+              <div className="flex items-start justify-between p-4 border-b rounded-t">
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Watch Story
                 </h3>
-                <p className="my-4">
-                  "I recently got my hands on Flowbite Pro, and holy crap, I'm
-                  speechless with how easy this was to integrate within my
-                  application. Most templates are a pain, code is scattered, and near
-                  impossible to theme.
-                </p>
-                <p className="my-4">
-                  Flowbite has code in one place and I'm not joking when I say it took
-                  me a matter of minutes to copy the code, customise it and integrate
-                  within a Laravel + Vue application.
-                </p>
-                <p className="my-4">
-                  If you care for your time, I hands down would go with this."
-                </p>
-              </blockquote>
-              <figcaption className="flex justify-center items-center space-x-3">
-                <img
-                  className="w-9 h-9 rounded-full"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
-                  alt="profile picture"
-                />
-                <div className="space-y-0.5 font-medium dark:text-white text-left">
-                  <div>Bonnie Green</div>
-                  <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Developer at Open AI
-                  </div>
-                </div>
-              </figcaption>
-            </figure>
-            <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700">
-              <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Solid foundation for any project
-                </h3>
-                <p className="my-4">
-                  "FlowBite provides a robust set of design tokens and components
-                  based on the popular Tailwind CSS framework. From the most used UI
-                  components like forms and navigation bars to the whole app screens
-                  designed both for desktop and mobile, this UI kit provides a solid
-                  foundation for any project.
-                </p>
-                <p className="my-4">
-                  Designing with Figma components that can be easily translated to the
-                  utility classes of Tailwind CSS is a huge timesaver!"
-                </p>
-              </blockquote>
-              <figcaption className="flex justify-center items-center space-x-3">
-                <img
-                  className="w-9 h-9 rounded-full"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
-                  alt="profile picture"
-                />
-                <div className="space-y-0.5 font-medium dark:text-white text-left">
-                  <div>Roberta Casas</div>
-                  <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Lead designer at Dropbox
-                  </div>
-                </div>
-              </figcaption>
-            </figure>
-            <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 lg:border-b-0 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
-              <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Mindblowing workflow and variants
-                </h3>
-                <p className="my-4">
-                  "As someone who mainly designs in the browser, I've been a casual
-                  user of Figma, but as soon as I saw and started playing with
-                  FlowBite my mind was 🤯.
-                </p>
-                <p className="my-4">
-                  Everything is so well structured and simple to use (I've learnt so
-                  much about Figma by just using the toolkit).
-                </p>
-                <p className="my-4">
-                  Aesthetically, the well designed components are beautiful and will
-                  undoubtedly level up your next application."
-                </p>
-              </blockquote>
-              <figcaption className="flex justify-center items-center space-x-3">
-                <img
-                  className="w-9 h-9 rounded-full"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                  alt="profile picture"
-                />
-                <div className="space-y-0.5 font-medium dark:text-white text-left">
-                  <div>Jese Leos</div>
-                  <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Software Engineer at Facebook
-                  </div>
-                </div>
-              </figcaption>
-            </figure>
-            <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700">
-              <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  Efficient Collaborating
-                </h3>
-                <p className="my-4">
-                  "This is a very complex and beautiful set of elements. Under the
-                  hood it comes with the best things from 2 different worlds: Figma
-                  and Tailwind.
-                </p>
-                <p className="my-4">
-                  You have many examples that can be used to create a fast prototype
-                  for your team."
-                </p>
-              </blockquote>
-              <figcaption className="flex justify-center items-center space-x-3">
-                <img
-                  className="w-9 h-9 rounded-full"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
-                  alt="profile picture"
-                />
-                <div className="space-y-0.5 font-medium dark:text-white text-left">
-                  <div>Joseph McFall</div>
-                  <div className="text-sm font-light text-gray-500 dark:text-gray-400">
-                    CTO at Google
-                  </div>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-          <div className="text-center">
-            <a
-              href="#"
-              className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-            >
-              Show more...
-            </a>
+                <button
+                  type="button"
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                  onClick={handleCloseModal}
+                >
+                  <svg
+                    className="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span className="sr-only">Close modal</span>
+                </button>
+              </div>
+              <div className="p-6 space-y-6">
+                {/* Embed the video here */}
+                <video controls autoPlay>
+                  <source src={videoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      )}
 
-    </div>
+    </section>
   );
 };
 
