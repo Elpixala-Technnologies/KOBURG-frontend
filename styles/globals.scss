@@ -1,5 +1,5 @@
 //font**
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,900;1,6..12,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,900;1,6..12,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 /**
   * Tailwind CSS
 */
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   background-color: #fff;
 }
 
@@ -55,7 +55,7 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+ 
 img {
   max-width: 100%;
   // height: auto;
@@ -79,7 +79,6 @@ $common_color: #4f46e5;
 $secondary_color: #f9f9f9dc;
 $subtitle_color: rgba(0, 0, 0, 0.8);
 
- 
 h1,
 h2,
 h3,
@@ -88,7 +87,7 @@ h5,
 h6 {
   color: black;
 }
- 
+
 .title {
   font-size: 1.8rem;
   padding-top: 0.5rem;
@@ -150,7 +149,7 @@ h6 {
   font-size: 15px;
 }
 
-.countryIcon{
+.countryIcon {
   width: 1.5rem !important;
 }
 
@@ -181,7 +180,7 @@ h6 {
 
 .swiper-slide {
   font-size: 18px;
-  margin-bottom:2rem;
+  margin-bottom: 2rem;
 
   /* Center slide text vertically */
   display: flex;
@@ -196,15 +195,30 @@ h6 {
   object-fit: cover;
 }
 
-.revew-profile{
+.revew-profile {
   width: 3.5rem !important;
   height: 3.5rem !important;
 }
- 
+
+.swiper-button-next {
+  background: rgba(0,0,0,0.6);
+  padding: 1.3rem !important;
+  width: 1rem !important;
+  border-radius: 0.5rem !important;
+  z-index: 999;
+}
+
+.swiper-button-prev {
+  background: rgba(0,0,0,0.6);
+  padding: 1.3rem !important;
+  width: 1rem !important;
+  border-radius: 0.5rem !important;
+  z-index: 999;
+}
 
 // ========
 .bottom-banner-section {
-  background-image: url("../src/Assets/OfferBanner/home-slider-02.png");
+  background-image: url("../src/Assets/OfferBanner/home-banner01.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -214,7 +228,7 @@ h6 {
 }
 
 .mobile-bottom-banner-section {
-  background-image: url("../src/Assets/OfferBanner/home-slider-02.png");
+  background-image: url("../src/Assets/OfferBanner/home-banner01.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -223,50 +237,103 @@ h6 {
   background-color: #000000a1;
 }
 
-
-.btn2 span:first-child{
+.btn2 span:first-child {
   transform: translateX(-101%);
-  transition: transform .3s ease-in
+  transition: transform 0.3s ease-in;
 }
-.btn2:hover span{
-  transform: translateX(0)
+.btn2:hover span {
+  transform: translateX(0);
 }
 
-.btn3{
+.btn3 {
   transform: scale(1);
-  transition: transform .2s ease-in
+  transition: transform 0.2s ease-in;
 }
 
-.btn3:hover{
+.btn3:hover {
   transform: scale(1.1);
 }
 
-.btn3 span{
+.btn3 span {
   transform: scale(1);
-  transition: transform .3s ease-in
+  transition: transform 0.3s ease-in;
 }
 
-.btn3:hover span{
+.btn3:hover span {
   transform: scale(1.1, 1.2);
 }
 
-.btn4 span{
+.btn4 span {
   transform: translateX(-101%);
-  transition: transform .2s ease-in
+  transition: transform 0.2s ease-in;
 }
 
-.btn4:hover span{
-  transform: translateX(0)
+.btn4:hover span {
+  transform: translateX(0);
 }
 
-// ----- 
-.mainNav{
-  display:flex;
+// -----
+.mainNav {
+  display: flex;
   justify-content: space-between !important;
 }
 
-.myntraLink{
+.myntraLink {
   width: 1.2rem !important;
   height: 1.2rem !important;
-
 }
+
+//=-==== vedio slider
+
+.otherVedioSlider{
+  margin-top: .6rem !important;
+  width: 300px !important;
+  height: 480px !important;
+}
+
+.vedioSliderCard {
+  width: 280px !important;
+  height: 490px !important;
+}
+
+.vedioContent {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0.6rem !important;
+  object-fit: cover;
+}
+
+.additional-card {
+  position: relative;
+}
+
+.additional-card .vedioContent {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 2rem !important;
+  top: 0;
+  left: 0;
+}
+
+.activeCardMain {
+  // margin:1rem;
+}
+
+/* Style the checkbox container */
+input[type='checkbox'] {
+  height: 25px !important; /* Size of the checkbox */
+  width: 25px !important; /* Size of the checkbox */
+  // background-color: #ccc !important; /* Unchecked background color */
+  border: 1px solid #999 !important;
+  border-radius: 4px !important;
+}
+
+/* Hide the default checkbox input */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+ 

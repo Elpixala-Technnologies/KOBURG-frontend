@@ -1,22 +1,42 @@
+// import React, { useCallback, useRef, useState } from "react";
+// import { reviewsData } from "@/src/Utils/Mock/CommonData";
+// import Image from "next/image";
+// import { BsPlayCircle } from "react-icons/bs";
+
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useCallback, useRef, useState } from "react";
 import { reviewsData } from "@/src/Utils/Mock/CommonData";
 import Image from "next/image";
 import { BsPlayCircle } from "react-icons/bs";
+import YouTube from 'react-youtube';
 
 const Reviews = () => {
+  // const sliderRef = useRef(null);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [videoUrl, setVideoUrl] = useState("");
+
+  // const handleOpenModal = (url) => {
+  //   setVideoUrl(url);
+  //   setIsModalOpen(true);
+  // };
+
+  // const handleCloseModal = () => {
+  //   setVideoUrl("");
+  //   setIsModalOpen(false);
+  // };
+
   const sliderRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [videoUrl, setVideoUrl] = useState("");
+  const [videoId, setVideoId] = useState(""); // Use video ID instead of URL
 
-  const handleOpenModal = (url) => {
-    setVideoUrl(url);
+  const handleOpenModal = (videoId) => {
+    setVideoId(videoId);
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
-    setVideoUrl("");
+    setVideoId("");
     setIsModalOpen(false);
   };
 
@@ -95,7 +115,7 @@ const Reviews = () => {
 
                             <div className="absolute bottom-5 left-5">
                               <div
-                                className="flex gap-2 items-center text-white p-2 rounded-full cursor-pointer hover:bg-gray-800 hover:border border-transparent hover:border-white transition-all duration-300 ease-in-out"
+                                className="flex gap-2 items-center text-white p-2 rounded-full cursor-pointer hover:bg-gray-500 hover:border border-transparent hover:border-white transition-all duration-300 ease-in-out px-4"
                                 onClick={() => handleOpenModal(vedio)}
                               >
                                 <BsPlayCircle className="text-[1.5rem]" />
@@ -142,49 +162,43 @@ const Reviews = () => {
       </div>
 
       {/* == modal === */}
-
       {isModalOpen && (
-        <div
-          id="default-modal"
-          tabIndex={-1}
-          aria-hidden="true"
-          className="fixed top-0 left-0 right-0 z-50 w-full h-screen p-4 overflow-x-hidden overflow-y-auto md:inset-0"
-        >
-          <div className="relative w-full max-w-2xl h-full mx-auto">
-            <div className="relative bg-white rounded-lg shadow">
-              <div className="flex items-start justify-between p-4 border-b rounded-t">
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Watch Story
-                </h3>
-                <button
-                  type="button"
-                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
-                  onClick={handleCloseModal}
+        <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50">
+          <div className="bg-white w-full max-w-screen-sm rounded-lg p-4">
+            <div className="flex items-start justify-between border-b  ">
+              {/* <h3 className="text-xl font-semibold text-gray-900">Watch Story</h3> */}
+              <button
+                type="button"
+                className="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                onClick={handleCloseModal}
+              >
+                <svg
+                  className="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
                 >
-                  <svg
-                    className="w-3 h-3"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 14"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                    />
-                  </svg>
-                  <span className="sr-only">Close modal</span>
-                </button>
-              </div>
-              <div className="p-6 space-y-6">
-                {/* Embed the video here */}
-                <video controls autoPlay>
-                  <source src={videoUrl} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+                <span className="sr-only">Close modal</span>
+              </button>
+            </div>
+            <div className=" ">
+              <div className="youtube-player">
+                <YouTube
+                  videoId={videoId}
+                  opts={{
+                    width: '100%',
+                    height: '360',
+                  }}
+                />
               </div>
             </div>
           </div>

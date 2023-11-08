@@ -9,7 +9,7 @@ import DelivaryIcons from "./Icons/delivary.png"
 import MapIcons from "./Icons/map.png"
 import PolicyIcons from "./Icons/policy.png"
 
-import HomeBannerForDesktopOne from "./Banner/homepage-main-banner.jpg" 
+import HomeBannerForDesktopOne from "./Banner/homepage-main-banner.jpg"
 
 import BanneSectionOne from "./Home-banner/home-banner-one.webp"
 import BanneSectionTwo from "./Home-banner/home-banner-tow.webp"
@@ -22,8 +22,20 @@ import ComfortableImage from "./Icons/comfortable.svg"
 import EasyToStyleImage from "./Icons/EasyToStyle.svg"
 import EverydayWearImage from "./Icons/EverydayWear.svg"
 import Sustainable from "./Icons/Sustainable.svg"
- 
- 
+
+import HomeOfferBannerOne from "./OfferBanner/home-banner01.png"
+import HomeOfferBannerTow from "./OfferBanner/home-banner02.png"
+
+import HomeSliderMobileBannerOne from "./Mobile-home-banner/home-sldier-01.png"
+import HomeSliderMobileBannerTwo from "./Mobile-home-banner/home-sldier-02.png"
+import HomeSliderMobileBannerThree from "./Mobile-home-banner/home-sldier-03.png"
+import HomeSliderMobileBannerFour from "./Mobile-home-banner/home-sldier-04.png"
+
+import HomeSldierDesktopBannerOne from './Banner/home-slider-01.png'
+import HomeSldierDesktopBannerTwo from './Banner/home-slider-02.png'
+import HomeSldierDesktopBannerThree from './Banner/home-slider-03.png'
+import HomeSldierDesktopBannerFour from './Banner/home-slider-04.png'
+
 
 
 export {
@@ -48,7 +60,20 @@ export {
     ComfortableImage,
     EasyToStyleImage,
     EverydayWearImage,
-    Sustainable  
+    Sustainable,
 
-    
+    HomeOfferBannerTow,
+    HomeOfferBannerOne,
+
+    HomeSliderMobileBannerOne,
+    HomeSliderMobileBannerTwo,
+    HomeSliderMobileBannerThree,
+    HomeSliderMobileBannerFour,
+
+
+    HomeSldierDesktopBannerOne,
+    HomeSldierDesktopBannerTwo,
+    HomeSldierDesktopBannerThree,
+    HomeSldierDesktopBannerFour
+
 }

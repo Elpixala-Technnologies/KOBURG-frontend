@@ -5,11 +5,11 @@ import Link from "next/link";
 import useProducts from "@/src/Hooks/useProducts";
 import { AiFillAmazonSquare } from 'react-icons/ai';
 import { SiFlipkart } from 'react-icons/si'
+import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
 
 
 const BestSeller = () => {
     const { productData } = useProducts();
-
     const sliderRef = useRef(null);
     const handlePrev = useCallback(() => {
         if (!sliderRef.current) return;
@@ -22,93 +22,21 @@ const BestSeller = () => {
     }, []);
 
 
-
     return (
-        // <section className='my-6 flex flex-col items-center justify-center container'>
-        // <div className='text-center title'>
-        //     <h1>Discover <span>Koburg</span> Top-Selling Product!</h1>
-        //     <p className='mb-4'>Unmatched Quality and Value for Your Everyday Needs</p>
-        // </div>
-        //     <div className="grid gap-8 mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 md:pt-5">
-        //         {productData &&
-        //             productData.slice(0, 4).map((product) => {
-        //                 const { brand, name, colors, _id, amazonlink, flipkartlink, myntralink, price, discount } = product;
-        //                 return (
-        //                     <div
-        //                         key={_id}
-        //                         className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem] transition duration-200 ease-out transform hover:scale-105"
-        //                     >
-        //                         <Link
-        //                             className="relative mx-3 mt-3 bg-[#b7dbff] flex h-65 overflow-hidden rounded-[1rem]"
-        //                             href={`/shop/${_id}`}
-        //                         >
-        //                             <img
-        //                                 className="opacity-75  object-cover w-full object-center"
-        //                                 src={colors[0]?.images[0]}
-        //                                 alt={name}
-        //                             />
-        //                         </Link>
-        //                         <div className="mx-3 py-2">
-        //                             <p className='text-gray-300'>{brand}</p>
-        //                             <Link href={`/shop/${_id}`} className="text-[1.22rem] tracking-tight text-slate-900">
-        //                                 {name}
-        //                             </Link>
-        //                             <div class="flex items-center space-x-1">
-        //                                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        //                                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        //                                 </svg>
-        //                                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        //                                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        //                                 </svg>
-        //                                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        //                                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        //                                 </svg>
-        //                                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        //                                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        //                                 </svg>
-        //                                 <svg class="w-4 h-4 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        //                                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        //                                 </svg>
-        //                             </div>
-        //                             <div className="mt-2 mb-2 flex justify-between items-center">
-        //                                 <p className="text-[1.2rem] font-bold  text-[#088178]">
-        //                                     Rs. {price}
-        //                                 </p>
-        //                                 <div className="flex items-center justify-end gap-4 ">
-        //                                     <Link href={myntralink || "/"}
-        //                                         className='border  bg-[#b3fffa2e] rounded-full p-2 text-[#2A9563] transition duration-300 ease-in-out hover:bg-[#088179bf] hover:text-white'
-        //                                     >
-        //                                         <img
-        //                                             className="opacity-75 w-[1.2rem] h-[1.2rem]"
-        //                                             src={"https://res.cloudinary.com/elpixala/image/upload/v1699120849/koburg/Icons/market-icon/wvzagtbsxyxam6nbgv41.svg"}
-        //                                             alt={name}
-        //                                         />
-
-        //                                     </Link>
-        //                                     <Link href={flipkartlink || "/"}
-        //                                         className='border  bg-[#b3fffa2e] rounded-full p-2 text-[#2A9563] transition duration-300 ease-in-out hover:bg-[#088179bf] hover:text-white'
-        //                                     >
-        //                                         <SiFlipkart className='text-[1.4rem]' />
-        //                                     </Link>
-        //                                     <Link
-        //                                         href={amazonlink || "/"}
-        //                                         className='border  bg-[#b3fffa2e] rounded-full p-2 text-[#2A9563] transition duration-300 ease-in-out hover:bg-[#088179bf] hover:text-white'
-        //                                     >
-        //                                         <AiFillAmazonSquare className='text-[1.4rem]' />
-        //                                     </Link>
-        //                                 </div>
-        //                             </div>
-        //                         </div>
-        //                     </div>
-        //                 );
-        //             })}
-        //     </div>
-        // </section>
-
         <section className='container'>
             <div className='text-center title'>
                 <h1>Discover <span>Koburg</span> Top-Selling Product!</h1>
                 <p className='mb-4'>Unmatched Quality and Value for Your Everyday Needs</p>
+            </div>
+            <div className=" flex justify-end items-center mb-5">
+                <div className="flex items-center gap-10 top-0">
+                    <button className="prev-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handlePrev}>
+                        <TbArrowBigLeft className="h-6 w-6 text-black" />
+                    </button>
+                    <button className="next-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handleNext}>
+                        <TbArrowBigRight className="h-6 w-6 text-black" />
+                    </button>
+                </div>
             </div>
             <div>
                 <Swiper
@@ -157,7 +85,7 @@ const BestSeller = () => {
                                                 className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem] transition duration-200 ease-out transform hover:scale-105"
                                             >
                                                 <Link
-                                                    className="relative mx-3 mt-3 bg-[#b7dbff] flex h-65 overflow-hidden rounded-[1rem]"
+                                                    className="relative mx-3 mt-3 bg-[#E3E6F3] flex h-65 overflow-hidden rounded-[1rem]"
                                                     href={`/shop/${_id}`}
                                                 >
                                                     <img
@@ -229,53 +157,7 @@ const BestSeller = () => {
                     </div>
                 </Swiper>
             </div>
-            <>
-                <div className="flex flex-row mx-auto justify-center md:justify-end">
-                    <button
-                        type="button"
-                        onClick={handlePrev}
-                        className="bg-gray-800 text-white rounded-l-md border-r border-gray-100 py-2 hover:bg-[#4f46e5] hover:text-white px-3"
-                    >
-                        <div className="flex flex-row align-middle">
-                            <svg
-                                className="w-5 mr-2"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                            <p className="ml-2">Prev</p>
-                        </div>
-                    </button>
-                    <button
-                        type="button"
-                        onClick={handleNext}
-                        className="bg-gray-800 text-white rounded-r-md py-2 border-l border-gray-200 hover:bg-[#4f46e5] hover:text-white px-3"
-                    >
-                        <div className="flex flex-row align-middle">
-                            <span className="mr-2">Next</span>
-                            <svg
-                                className="w-5 ml-2"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-
-            </>
+         
         </section>
     );
 };

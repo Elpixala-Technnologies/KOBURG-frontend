@@ -1,4 +1,38 @@
-import { HomeBannerForDesktopOne } from "@/src/Assets"
+import { 
+  HomeSliderMobileBannerOne,
+  HomeSliderMobileBannerTwo,
+  HomeSliderMobileBannerThree,
+  HomeSliderMobileBannerFour,
+
+
+  HomeSldierDesktopBannerOne,
+  HomeSldierDesktopBannerTwo,
+  HomeSldierDesktopBannerThree,
+  HomeSldierDesktopBannerFour } from "@/src/Assets"
+
+  export const sliderData = [
+    {
+      id: 1,
+      desktopImage: HomeSldierDesktopBannerOne,
+      mobileImage: HomeSliderMobileBannerOne,
+    },
+    {
+      id: 2,
+      desktopImage: HomeSldierDesktopBannerTwo,
+      mobileImage:HomeSliderMobileBannerTwo
+    },
+    {
+      id: 3,
+      desktopImage: HomeSldierDesktopBannerThree,
+      mobileImage: HomeSliderMobileBannerThree
+    },
+    {
+      id: 4,
+      desktopImage: HomeSldierDesktopBannerFour,
+      mobileImage: HomeSliderMobileBannerFour
+    }
+  ]
+  
 
 export const PopularCategoryData = [
   {
@@ -398,29 +432,12 @@ export const blogData = [
 ]
 
 
-export const sliderData = [
-  {
-    id: 1,
-    desktopImage: HomeBannerForDesktopOne,
-    mobileImage: HomeBannerForDesktopOne
-  },
-  {
-    id: 2,
-    desktopImage: HomeBannerForDesktopOne,
-    mobileImage: HomeBannerForDesktopOne
-  },
-  {
-    id: 2,
-    desktopImage: HomeBannerForDesktopOne,
-    mobileImage: HomeBannerForDesktopOne
-  }
-]
 
 
 export const testimonialData = [
   {
 
-    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -431,7 +448,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -442,7 +459,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -453,7 +470,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -464,7 +481,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -475,7 +492,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -486,7 +503,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -497,7 +514,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: 'https://res.cloudinary.com/elpixala/video/upload/v1699079112/koburg/Vedio/lgnnw8s6ctjch2d7awyt.mp4',
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -511,8 +528,8 @@ export const testimonialData = [
 
 export const reviewsData = [
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -520,8 +537,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -529,8 +546,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -538,8 +555,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -547,8 +564,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -556,8 +573,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -565,8 +582,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -574,8 +591,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -583,8 +600,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -592,8 +609,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -601,8 +618,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -610,8 +627,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -619,8 +636,8 @@ export const reviewsData = [
     profile: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviProfile.png&w=96&q=75",
   },
   {
-    id : 1,
-    location : "India",
+    id: 1,
+    location: "India",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",

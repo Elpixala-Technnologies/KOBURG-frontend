@@ -32,10 +32,14 @@ const Home = () => {
             <div className='bg-[#f9f9f9dc] py-8'>
                 <Reviews />
             </div>
+            <div className='container'>
+                <Testimonial />
+             </div>   
+             <div className='bg-[#f9f9f9dc] py-8'>
+                <BannerSection />
+            </div>
 
             <div className='container'>
-                {/* <Testimonial /> */}
-                <BannerSection />
                 <RecentBlog />
             </div>
         </section>

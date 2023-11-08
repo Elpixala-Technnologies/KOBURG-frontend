@@ -4,9 +4,16 @@ import React from 'react';
 const RecentBlog = () => {
     return (
         <section className='my-6'>
-            <div className='title my-2'>
+            <div className="mx-auto max-w-screen-sm">
+                <div className='title my-2'>
                 <h1>New <span>Blogs</span></h1>
+                </div>
+                <p className="mb-8 font-light text-center text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                    molestiae quas vel sint commodi
+                </p>
             </div>
+
 
             <div className="my-10 p-4">
                 <div>

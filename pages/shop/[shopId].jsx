@@ -1,21 +1,25 @@
 import RootLayout from '@/src/Layouts/RootLayout';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
 import Link from 'next/link'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { BsCart } from 'react-icons/bs'
-import { DelivaryIcons,
+import {
+    DelivaryIcons,
     MapIcons,
-    PolicyIcons,} from "@/src/Assets";
+    PolicyIcons,
+} from "@/src/Assets";
+import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
 import { getSingelProductUrl } from '@/src/Utils/Urls/ProductUrl';
+import RecomendedPorduct from '@/src/Components/Home/RecomendedPorduct/RecomendedPorduct';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 
 const ProductDetails = () => {
     const router = useRouter();
-    const { shopId } = router.query;
+    const { shopId } = router?.query;
     const [singelProductData, setSingelProductData] = useState(null);
     useEffect(() => {
         const getSingelProduct = async () => {
@@ -25,7 +29,7 @@ const ProductDetails = () => {
         }
         getSingelProduct();
     }, [])
-    const { name, colors, features, details, discount, price, mintralink, flipcartlink, amazonlink } =  singelProductData || {};
+    const { name, colors, features, description, additionalInfo, discount, price, myntralink, flipkartlink, amazonlink } = singelProductData || {};
 
     const [selectedSize, setSelectedSize] = useState(null);
 
@@ -35,8 +39,7 @@ const ProductDetails = () => {
 
     const [selectedColorImages, setSelectedColorImages] = useState([]);
 
-    const [selectedImage, setSelectedImage] = useState(null); // State variable to store the selected image URL
-
+    const [selectedImage, setSelectedImage] = useState(colors?.length > 0 && colors[0]?.images.length > 0 ? colors[0]?.images[0] : null);
 
     const handleColorClick = (index) => {
         const clickedColor = colors[index];
@@ -57,14 +60,13 @@ const ProductDetails = () => {
         }
     }, [colors]);
 
-    const handleSizeClick = (size) => {
-        setSelectedSize(size);
-    };
+ console.log(features, "features")
 
-      // Return early if singelProductData is still null
-      if (!singelProductData) {
+    // Return early if singelProductData is still null
+    if (!singelProductData) {
         return null; // or loading indicator
     }
+
 
 
     return (
@@ -73,7 +75,8 @@ const ProductDetails = () => {
                 <section className="py-8">
                     <div className="mx-auto px-4">
                         <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
-                            <div className="lg:col-span-3 lg:row-end-1">
+
+                            {/* <div className="lg:col-span-3 lg:row-end-1">
                                 <div className="lg:flex gap-4 lg:items-start">
                                     <div className="lg:order-2 lg:ml-5">
                                         <div className="max-w-xl overflow-hidden rounded-lg">
@@ -111,6 +114,37 @@ const ProductDetails = () => {
                                         </div>
                                     </div>
                                 </div>
+                            </div> */}
+
+                            <div className="lg:col-span-3 lg:row-end-1">
+                                <div className="lg:flex gap-4 lg:items-start">
+                                    <div className="lg:order-2 lg:ml-5">
+                                        <div className="max-w-xl overflow-hidden rounded-lg">
+                                            <Carousel
+                                                // selectedItem={selectedColorImages.indexOf(selectedImage)}
+                                                axis="vertical"
+                                                selectedItem={0}
+                                                verticalThumbs={true}
+                                                showStatus={false}
+
+                                            >
+                                                {selectedColorImages &&
+                                                    selectedColorImages?.map((image, index) => (
+                                                        <div key={index}>
+                                                            <img
+                                                                src={image}
+                                                                alt={colors[selectedColorData]?.color}
+                                                                width={100}
+                                                                height={100}
+                                                                className="cursor-pointer border p-4 rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
+                                                                onClick={() => setSelectedImage(image)}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                            </Carousel>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="lg:col-span-4 lg:row-span-2 lg:row-end-2">
@@ -134,7 +168,6 @@ const ProductDetails = () => {
                                     </p>
                                 </div>
 
-                                <h2 className="my-2">{details.slice(0, 150)}</h2>
 
                                 <div className='border p-2 rounded bg-[#E7F3EC]'>
                                     <h1 className='font-bold text-[1.2rem]'>Get this for as low as  <span className='text-[#29679e]'>Rs. {Math.round(price)}</span> </h1>
@@ -144,29 +177,33 @@ const ProductDetails = () => {
                                 </div>
 
                                 <div className="mt-4 flex flex-col items-center  space-y-4 border-t border-b py-4  w-full">
+                                    <Link href={flipkartlink || ''}
+                                        className='w-full'
+                                    >
+                                        <button className="font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-white px-3 text-black shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:shadow-white hover:before:left-0 hover:before:w-full">
+                                            <span className="relative z-10 flex items-center gap-2 justify-center">
+                                                <BsCart className='text-[1.2rem]' />  Buy From Flipkart
+                                            </span>
+                                        </button>
+                                    </Link>
+                                    <Link href={myntralink || ''} className='w-full'>
+                                        <button className="font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-black px-3 text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-500 hover:text-black hover:shadow-white hover:before:left-0 hover:before:w-full">
+                                            <span className="relative z-10 flex items-center gap-2 justify-center">
+                                                <BsCart className='text-[1.2rem]' /> Buy From Myntra
+                                            </span>
+                                        </button>
 
-                                    <Link
-                                        href={flipcartlink}
-                                        className="relative flex h-[50px] w-full items-center justify-center overflow-hidden bg-blue-600 font-medium text-white shadow-2xl transition-all duration-300 before:absolute before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-blue-600 hover:shadow-blue-600 hover:before:border-[25px]">
-                                        <span className="relative z-10 flex items-center gap-2 justify-center">
-                                            <BsCart className='text-[1.2rem]' />  Buy From Flipkart
-                                        </span>
                                     </Link>
                                     <Link
-                                       href={mintralink}
-                                        className="relative flex h-[50px] w-full items-center justify-center overflow-hidden bg-blue-600 font-medium text-white shadow-2xl transition-all duration-300 before:absolute before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-blue-600 hover:shadow-blue-600 hover:before:border-[25px]">
-                                        <span className="relative z-10 flex items-center gap-2 justify-center">
-                                            <BsCart className='text-[1.2rem]' />  Buy From Myntra
-                                        </span>
-                                    </Link>
-                                    <Link
-                                       href={amazonlink}
-                                        className="relative flex h-[50px] w-full items-center justify-center overflow-hidden bg-blue-600 font-medium text-white shadow-2xl transition-all duration-300 before:absolute before:inset-0 before:border-0 before:border-white before:duration-100 before:ease-linear hover:bg-white hover:text-blue-600 hover:shadow-blue-600 hover:before:border-[25px]">
-                                        <span className="relative z-10 flex items-center gap-2 justify-center">
-                                            <BsCart className='text-[1.2rem]' />  Buy From Amazon
-                                        </span>
+                                        href={amazonlink || ''} className='w-full'>
+                                        <button className="font-semibold hover:before:bg-blackborder-black relative h-[50px] w-full rounded overflow-hidden border border-black bg-white px-3 text-black shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:shadow-white hover:before:left-0 hover:before:w-full">
+                                            <span className="relative z-10 flex items-center gap-2 justify-center">
+                                                <BsCart className='text-[1.2rem]' /> Buy From Amazon
+                                            </span>
+                                        </button>
                                     </Link>
                                 </div>
+
 
                                 <div className="mt-5">
                                     <h4 className="text-lg font-semibold capitalize">Available Colors</h4>
@@ -174,45 +211,44 @@ const ProductDetails = () => {
                                         {selectedColorData?.color}
                                     </p>
                                     <div className="flex items-center gap-2 my-4">
-
                                         {colors && colors?.map((color, index) => {
-                                            const availableColor = color.color.toLowerCase();
                                             const isSelected = selectedColorIndex === index;
-
                                             return (
                                                 <div key={index} className="flex flex-col justify-center gap-2">
                                                     <div
-                                                        className={`bg-[#f1e8e8] p-1 rounded-full w-[2rem] h-[2rem] cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100 ${isSelected ? 'bg-opacity-100 ' : 'bg-opacity-50'
-                                                            }`}
-                                                        style={{
-                                                            backgroundColor: availableColor,
-                                                            border: isSelected ? '4px solid #ff5733' : '2px solid #3aa1b8',
-                                                        }}
+                                                        className={` p-1 rounded-full w-full h-full cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100 ${isSelected ? 'bg-opacity-100 ' : 'bg-opacity-50'}`}
                                                         title={color.color}
                                                         onClick={() => handleColorClick(index)}
-                                                    ></div>
+                                                    >
+                                                        <img
+                                                            src={color?.images[0]}
+                                                            alt={color.color}
+                                                            width={100}
+                                                            height={100}
+                                                            className="cursor-pointer border p-4 rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
+                                                        />
+                                                    </div>
                                                 </div>
                                             );
                                         })}
-
                                     </div>
                                 </div>
+
 
                                 <div>
                                     <h4 className="text-lg font-semibold capitalize">Available Sizes</h4>
                                     <div className="flex items-center gap-2 my-4">
                                         {
-                                            selectedColorData?.isSizeApplicable ? (
+                                            selectedColorData ? (
                                                 <div className='flex flex-wrap gap-4'>
                                                     {
-                                                        selectedColorData?.sizes.map((size, index) => {
+                                                        selectedColorData?.sizes?.map((size, index) => {
                                                             return (
                                                                 <div
                                                                     key={index + `size`}
-                                                                    onClick={() => handleSizeClick(size.size)}
                                                                     className={`cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ${selectedSize === size.size ? 'bg-[#ff5733] text-white' : 'bg-[#f1e8e8] text-black'} `}
                                                                 >
-                                                                    <p className='text-[0.9rem] text-center border-2 px-3 py-1 rounded'>
+                                                                    <p className='text-[1rem] text-center text-[#000] border-2 px-3 py-1 rounded'>
                                                                         {size?.size}
                                                                     </p>
                                                                 </div>
@@ -268,6 +304,28 @@ const ProductDetails = () => {
                                         <h1 className='text-center font-semibold'>
                                             Free delivery* within 4-5 days
                                         </h1>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h1 className="mt-8 text-3xl font-bold">
+                                        Features
+                                    </h1>
+                                    <div className='flex flex-col my-2 gap-4'>
+
+                                        {
+                                           features?.map((fct) => {
+
+                                                console.log(fct, 'features')
+                                                return (
+                                                    <div className='flex gap-2'>
+                                                        <h1 className='font-bold'> ✅ {fct?.heading} :</h1>
+                                                        <h2>{fct?.details}</h2>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+
                                     </div>
                                 </div>
 
@@ -328,27 +386,48 @@ const ProductDetails = () => {
                                 </div>
                                 <div className="mt-8 flow-root sm:mt-12">
                                     <h1 className="text-3xl font-bold">Details</h1>
-                                    <p className="mt-4">
-                                        {details}
-                                    </p>
-                                    <h1 className="mt-8 text-3xl font-bold">
-                                        Features
-                                    </h1>
-                                    <p className="mt-4">
+                                    <div className='flex flex-col my-2  gap-4'>
+
                                         {
-                                            features && features?.map((feature, index) => {
+                                            description && description?.map((dt) => {
                                                 return (
-                                                    <li key={index} className='relative after:w-[10px] mt-2 after:rounded-full after:top-0 after:bottom-0 after:my-auto after:h-[10px] after:bg-[#3d3c3c] after:absolute after:left-0 pl-4'>{feature}</li>
+                                                    <div className='flex  gap-2'>
+                                                        <h1 className='font-bold'> ✅ {dt?.heading} :</h1>
+                                                        <h2>{dt?.details}</h2>
+                                                    </div>
                                                 )
                                             })
                                         }
-                                    </p>
+                                    </div>
+
+                                    <h1 className="mt-8 text-3xl font-bold">
+                                        Additional Infomation
+                                    </h1>
+                                    <div className='flex flex-col my-2  gap-4'>
+
+                                        {
+                                            additionalInfo && additionalInfo?.map((adt) => {
+                                                return (
+                                                    <div className='flex  gap-2'>
+                                                        <h1 className='font-bold'> ✅ {adt?.heading} :</h1>
+                                                        <h2>{adt?.details}</h2>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
+                <section className='my-6'>
+                    <RecomendedPorduct />
+                </section>
             </section>
+
         </RootLayout>
     )
 };

@@ -13,6 +13,10 @@ import {
 const BannerSection = () => {
     return (
         <section className='container'>
+             <div className='text-center title'>
+                <h1>Different  <span>Shoes</span></h1>
+                <p className='mb-4'>Unmatched Quality and Value for Your Everyday Needs</p>
+            </div>
             <div className='mt-[20px] grid text-white grid-cols-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 gap-4'>
 
                 <div className='banner-content w-full relative group'>
@@ -44,7 +48,7 @@ const BannerSection = () => {
                 <div className='banner-content  text-[#000] flex flex-col gap-[2rem]'>
                     <div className='banner-content w-full relative group'>
                         <Image
-                            src={BanneSectionFour}
+                            src={BanneSectionThree}
                             alt={"HomeOfferBannerOne"}
                             width={300}
                             height={300}

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import useProducts from "@/src/Hooks/useProducts";
 import { AiFillAmazonSquare } from 'react-icons/ai';
+import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
 import { SiFlipkart } from 'react-icons/si'
 
 
@@ -24,12 +25,25 @@ const LatestProduct = () => {
 
     return (
         <section className="container">
-            <div className=" my-6 flex flex-col justify-center items-center">
+            <div className="mx-auto max-w-screen-sm">
                 <div className='title my-2'>
-                    <h1>Latest Drops  <span>Sneaker</span></h1>
+                <h1>Latest Drops  <span>Sneaker</span></h1>
+                </div>
+                <p className="mb-4 font-light text-center text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                    molestiae quas vel sint commodi
+                </p>
+            </div>
+            <div className=" flex justify-end items-center mb-5">
+                <div className="flex items-center gap-10 top-0">
+                    <button className="prev-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handlePrev}>
+                        <TbArrowBigLeft className="h-6 w-6 text-black" />
+                    </button>
+                    <button className="next-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handleNext}>
+                        <TbArrowBigRight className="h-6 w-6 text-black" />
+                    </button>
                 </div>
             </div>
-
             <div>
                 <Swiper
                     ref={sliderRef}
@@ -77,7 +91,7 @@ const LatestProduct = () => {
                                                 className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem] transition duration-200 ease-out transform hover:scale-105"
                                             >
                                                 <Link
-                                                    className="relative mx-3 mt-3 bg-[#b7dbff] flex h-65 overflow-hidden rounded-[1rem]"
+                                                    className="relative mx-3 mt-3 bg-[#E3E6F3] flex h-65 overflow-hidden rounded-[1rem]"
                                                     href={`/shop/${_id}`}
                                                 >
                                                     <img
@@ -149,56 +163,7 @@ const LatestProduct = () => {
                     </div>
                 </Swiper>
             </div>
-            <>
-                {/* component */}
-                {/* This is an example component */}
-                <div className="flex flex-row mx-auto justify-center md:justify-end">
-                    <button
-                        type="button"
-                        onClick={handlePrev}
-                        className="bg-gray-800 text-white rounded-l-md border-r border-gray-100 py-2 hover:bg-[#4f46e5] hover:text-white px-3"
-                    >
-                        <div className="flex flex-row align-middle">
-                            <svg
-                                className="w-5 mr-2"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                            <p className="ml-2">Prev</p>
-                        </div>
-                    </button>
-                    <button
-                        type="button"
-                        onClick={handleNext}
-                        className="bg-gray-800 text-white rounded-r-md py-2 border-l border-gray-200 hover:bg-[#4f46e5] hover:text-white px-3"
-                    >
-                        <div className="flex flex-row align-middle">
-                            <span className="mr-2">Next</span>
-                            <svg
-                                className="w-5 ml-2"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-
-            </>
-
+           
         </section>
     );
 };
