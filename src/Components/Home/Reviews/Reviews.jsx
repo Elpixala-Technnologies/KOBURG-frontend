@@ -115,7 +115,7 @@ const Reviews = () => {
 
                             <div className="absolute bottom-5 left-5">
                               <div
-                                className="flex gap-2 items-center text-white p-2 rounded-full cursor-pointer hover:bg-gray-500 hover:border border-transparent hover:border-white transition-all duration-300 ease-in-out px-4"
+                                className="flex gap-2 items-center text-white p-2 rounded-full cursor-pointer hover:bg-[#B4B3B2] hover:border border-transparent hover:border-white transition-all duration-300 ease-in-out px-4"
                                 onClick={() => handleOpenModal(vedio)}
                               >
                                 <BsPlayCircle className="text-[1.5rem]" />
@@ -164,7 +164,7 @@ const Reviews = () => {
       {/* == modal === */}
       {isModalOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50">
-          <div className="bg-white w-full max-w-screen-sm rounded-lg p-4">
+          <div className="w-[65%] h-[100%]  rounded-lg p-4">
             <div className="flex items-start justify-between border-b  ">
               {/* <h3 className="text-xl font-semibold text-gray-900">Watch Story</h3> */}
               <button
@@ -191,7 +191,7 @@ const Reviews = () => {
               </button>
             </div>
             <div className=" ">
-              <div className="youtube-player">
+              <div className="youtube-player border">
                 <YouTube
                   videoId={videoId}
                   opts={{

@@ -2,7 +2,7 @@ import RootLayout from '@/src/Layouts/RootLayout';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { BsCart } from 'react-icons/bs'
 import {
     DelivaryIcons,
@@ -14,6 +14,8 @@ import { getSingelProductUrl } from '@/src/Utils/Urls/ProductUrl';
 import RecomendedPorduct from '@/src/Components/Home/RecomendedPorduct/RecomendedPorduct';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 
 
@@ -60,7 +62,8 @@ const ProductDetails = () => {
         }
     }, [colors]);
 
- console.log(features, "features")
+
+    const sliderRef = useRef(null);
 
     // Return early if singelProductData is still null
     if (!singelProductData) {
@@ -76,45 +79,7 @@ const ProductDetails = () => {
                     <div className="mx-auto px-4">
                         <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
 
-                            {/* <div className="lg:col-span-3 lg:row-end-1">
-                                <div className="lg:flex gap-4 lg:items-start">
-                                    <div className="lg:order-2 lg:ml-5">
-                                        <div className="max-w-xl overflow-hidden rounded-lg">
-                                            {selectedImage ? (
-                                                <img
-                                                    src={selectedImage}
-                                                    alt={name}
-                                                    className="cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
-                                                />
-                                            ) : (
-                                                <img
-                                                    src={colors[0]?.images[0]}
-                                                    alt={colors[0]?.color}
-                                                    className="cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
-                                                />
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div className="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
-                                        <div className="flex flex-row items-start gap-4 lg:flex-col">
-                                            {selectedColorImages &&
-                                                selectedColorImages?.map((image, index) => {
-                                                    return (
-                                                        <div key={index} onClick={() => setSelectedImage(image)}>
-                                                            <img
-                                                                src={image}
-                                                                alt={colors[selectedColorData]?.color}
-                                                                width={100}
-                                                                height={100}
-                                                                className="cursor-pointer border p-4 rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
-                                                            />
-                                                        </div>
-                                                    );
-                                                })}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> */}
+                    
 
                             <div className="lg:col-span-3 lg:row-end-1">
                                 <div className="lg:flex gap-4 lg:items-start">
@@ -126,7 +91,7 @@ const ProductDetails = () => {
                                                 selectedItem={0}
                                                 verticalThumbs={true}
                                                 showStatus={false}
-
+                                            // remove dots
                                             >
                                                 {selectedColorImages &&
                                                     selectedColorImages?.map((image, index) => (
@@ -268,7 +233,7 @@ const ProductDetails = () => {
                                 </div>
 
 
-                                <div className='border text-center p-2 mt-4 flex flex-col md:flex-row items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
+                                <div className='border text-center p-2 mt-4 hidden md:flex flex-col md:flex-row items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
                                     <div className='flex flex-col items-center justify-center gap-2'>
                                         <Image
                                             src={PolicyIcons}
@@ -307,6 +272,82 @@ const ProductDetails = () => {
                                     </div>
                                 </div>
 
+                                <div className='block md:hidden'>
+                                    <Swiper
+                                        ref={sliderRef}
+                                        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                                        breakpoints={{
+                                            320: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 20,
+                                            },
+                                            640: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 30,
+                                            },
+                                            768: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 30,
+                                            },
+                                            1024: {
+                                                slidesPerView: 4,
+                                                spaceBetween: 30,
+                                            },
+                                        }}
+                                        spaceBetween={30}
+                                        slidesPerView={1}
+                                        onSlideChange={() => { }}
+                                        onSwiper={(swiper) => { }}
+                                    >
+                                        <div className="grid grid-cols-1 mb-4 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                            <SwiperSlide className="cursor-grab rounded " >
+                                                <div className='flex flex-col items-center justify-center gap-2'>
+                                                    <Image
+                                                        src={PolicyIcons}
+                                                        alt="policy"
+                                                        width={50}
+                                                        height={50}
+                                                        className='w-12 h-12 object-cover'
+                                                    />
+                                                    <h1 className='text-center font-semibold'>
+                                                        7 Days free exchange policy
+                                                    </h1>
+                                                </div>
+                                            </SwiperSlide>
+                                            <SwiperSlide className="cursor-grab rounded " >
+                                                <div className='flex flex-col items-center justify-center gap-2'>
+                                                    <Image
+                                                        src={MapIcons}
+                                                        alt="policy"
+                                                        width={50}
+                                                        height={50}
+                                                        className='w-12 h-12 object-cover'
+                                                    />
+                                                    <h1 className='text-center font-semibold'>
+                                                        Made in India with love
+                                                    </h1>
+                                                </div>
+                                            </SwiperSlide>
+                                            <SwiperSlide className="cursor-grab rounded " >
+                                                <div className='flex flex-col items-center justify-center gap-2'>
+                                                    <Image
+                                                        src={DelivaryIcons}
+                                                        alt="DelivaryIcons"
+                                                        width={50}
+                                                        height={50}
+                                                        className='w-12 h-12 object-cover'
+                                                    />
+                                                    <h1 className='text-center font-semibold'>
+                                                        Free delivery* within 4-5 days
+                                                    </h1>
+                                                </div>
+                                            </SwiperSlide>
+                                        </div>
+                                    </Swiper>
+                                </div>
+
+
+
                                 <div>
                                     <h1 className="mt-8 text-3xl font-bold">
                                         Features
@@ -314,13 +355,14 @@ const ProductDetails = () => {
                                     <div className='flex flex-col my-2 gap-4'>
 
                                         {
-                                           features?.map((fct) => {
+                                            features?.map((fct, index) => {
 
                                                 console.log(fct, 'features')
                                                 return (
-                                                    <div className='flex gap-2'>
-                                                        <h1 className='font-bold'> ✅ {fct?.heading} :</h1>
-                                                        <h2>{fct?.details}</h2>
+                                                    <div className='flex gap-2 flex-col'>
+                                                        <h1 className='font-bold'> {index + 1}. {fct?.heading} :</h1>
+                                                        <hr />
+                                                        <h2>✅ {fct?.details}</h2>
                                                     </div>
                                                 )
                                             })

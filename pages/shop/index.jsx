@@ -68,6 +68,58 @@ const ProductPage = () => {
     }
   };
 
+  const filters = {
+    category: false,
+    size: false,
+    color: false,
+    price: false,
+  };
+
+
+  // const [categoryfilterToggle, setCategoryFilterToggle] = useState(false);
+  // const [sizeFilterToggle, setSizeFilterToggle] = useState(false)
+  // const [colorFilterToggle, setColorFilterToggle] = useState(false)
+  // const [priceFilterToggle, setPriceFilterToggle] = useState(false)
+
+  // const handelCategoryFilter = ()=>{
+  //   setCategoryFilterToggle(!categoryfilterToggle)
+  //   setSizeFilterToggle(false)
+  //     setColorFilterToggle(false)
+  //     setPriceFilterToggle(false)
+  // }
+
+  // const handelSizeFilterToggle= ()=>{
+  //   setSizeFilterToggle(!sizeFilterToggle)
+  //   setCategoryFilterToggle(false)
+  //   setColorFilterToggle(false)
+  //   setPriceFilterToggle(false)
+  // }
+
+  // const handelColorFilterToggle = ()=>{
+  //   setColorFilterToggle(!colorFilterToggle)
+  //   setCategoryFilterToggle(false)
+  //   sizeFilterToggle(false)
+  //   setPriceFilterToggle(false)
+  // }
+
+  // const handelPriceFilterToggle = () =>{
+  //   setPriceFilterToggle(!priceFilterToggle)
+  //   setCategoryFilterToggle(false)
+  //     sizeFilterToggle(false)
+  //     setColorFilterToggle(false)
+  // }
+
+
+  const [activeFilter, setActiveFilter] = useState(null);
+
+  const handleToggleFilter = (filter) => {
+    if (activeFilter === filter) {
+      setActiveFilter(null); // Close the currently active filter
+    } else {
+      setActiveFilter(filter); // Open the selected filter and close any previously active filter
+    }
+  };
+
 
   return (
     <RootLayout>
@@ -218,11 +270,7 @@ const ProductPage = () => {
                   </Menu.Items>
                 </Transition>
               </Menu>
-
-              <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
-                <span className="sr-only">View grid</span>
-                <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-              </button>
+ 
               <button
                 type="button"
                 className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
@@ -240,183 +288,129 @@ const ProductPage = () => {
             </h2>
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-              {/* Filters */}
               <div className="hidden lg:block">
-                <Disclosure as="div" className="border-b border-gray-200 py-6">
-                  {({ open }) => (
-                    <>
-                      <h3 className="-my-3 flow-root">
-                        <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                          <span className="font-medium text-gray-900">Category</span>
-                          <span className="ml-6 flex items-center">
-                            {open ? (
-                              <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                            ) : (
-                              <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                            )}
-                          </span>
-                        </Disclosure.Button>
-                      </h3>
-                      <Disclosure.Panel className="pt-6">
-                        <div className="space-y-4">
-                          {categoryData && categoryData.length > 0 ? (
-                            categoryData.map((category) => {
-                              return (
-                                <li
-                                  key={category._id} // or key={category.slug} depending on your unique identifier
-                                  className={`cursor-pointer ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
-                                  onClick={() => toggleCategory(category.name)}
-                                >
-                                  <input
-                                    type="checkbox"
-                                    checked={selectedCategories.includes(category.name)}
-                                    readOnly
-                                    className="mr-2"
-                                  />
-                                  {category.name}
-                                </li>
-                              )
-                            })
-                          ) : (
-                            <div>Loading categories...</div>
-                          )}
-                        </div>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
 
+                <div className="border-b border-gray-200 py-6">
+                  <button onClick={() => handleToggleFilter('category')} className=" font-semibold">Category</button>
 
-                <Disclosure as="div" className="border-b border-gray-200 py-6">
-                  {({ open }) => (
-                    <>
-                      <h3 className="-my-3 flow-root">
-                        <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                          <span className="font-medium text-gray-900">Size</span>
-                          <span className="ml-6 flex items-center">
-                            {open ? (
-                              <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                            ) : (
-                              <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                            )}
-                          </span>
-                        </Disclosure.Button>
-                      </h3>
-                      <Disclosure.Panel className="pt-6">
-                        <div className="space-y-4">
-                          {sizeData && sizeData.length > 0 ? (
-                            sizeData.map((size) => {
-                              return (
-                                <li
-                                  key={size.id} // or key={category.slug} depending on your unique identifier
-                                  className={`cursor-pointer ${selectedCategories.includes(size.size) ? 'text-[#18568C]' : ''}`}
-                                  onClick={() => toggleCategory(size.size)}
-                                >
-                                  <input
-                                    type="checkbox"
-                                    checked={selectedCategories.includes(size.size)}
-                                    readOnly
-                                    className="mr-2"
-                                  />
-                                  {size.size}
-                                </li>
-                              )
-                            })
-                          ) : (
-                            <div>Loading Size...</div>
-                          )}
-                        </div>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
+                  {activeFilter === 'category' && <>
+                    <div className="space-y-4">
+                      {categoryData && categoryData.length > 0 ? (
+                        categoryData.map((category) => {
+                          return (
+                            <li
+                              key={category._id}
+                              className={`cursor-pointer mt-2 ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
+                              onClick={() => toggleCategory(category.name)}
+                            >
+                              <input
+                                type="checkbox"
+                                checked={selectedCategories.includes(category.name)}
+                                readOnly
+                                className="mr-2"
+                              />
+                              {category.name}
+                            </li>
+                          )
+                        })
+                      ) : (
+                        <div>Loading categories...</div>
+                      )}
+                    </div>
+                  </>}
 
-                <Disclosure as="div" className="border-b border-gray-200 py-6">
-                  {({ open }) => (
-                    <>
-                      <h3 className="-my-3 flow-root">
-                        <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                          <span className="font-medium text-gray-900">Color</span>
-                          <span className="ml-6 flex items-center">
-                            {open ? (
-                              <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                            ) : (
-                              <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                            )}
-                          </span>
-                        </Disclosure.Button>
-                      </h3>
-                      <Disclosure.Panel className="pt-6">
-                        <div className="space-y-4">
-                          {colorData && colorData.length > 0 ? (
-                            colorData.map((color) => {
-                              return (
-                                <li
-                                  key={color.id} // or key={category.slug} depending on your unique identifier
-                                  className={`cursor-pointer ${selectedCategories.includes(color.name) ? 'text-[#18568C]' : ''}`}
-                                  onClick={() => toggleCategory(color.name)}
-                                >
-                                  <input
-                                    type="checkbox"
-                                    checked={selectedCategories.includes(color.name)}
-                                    readOnly
-                                    className="mr-2 checkbox-container"
-                                  />
-                                  {color.name}
-                                </li>
-                              )
-                            })
-                          ) : (
-                            <div>Loading Color...</div>
-                          )}
-                        </div>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
-                <Disclosure as="div" className="border-b border-gray-200 py-6">
-                  {({ open }) => (
-                    <>
-                      <h3 className="-my-3 flow-root">
-                        <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                          <span className="font-medium text-gray-900">Price {"(Rs.)"}</span>
-                          <span className="ml-6 flex items-center">
-                            {open ? (
-                              <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                            ) : (
-                              <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                            )}
-                          </span>
-                        </Disclosure.Button>
-                      </h3>
-                      <Disclosure.Panel className="pt-6">
-                        <div className="space-y-4">
-                          {priceData && priceData.length > 0 ? (
-                            priceData.map((price) => {
-                              return (
-                                <li
-                                  key={price.id} // or key={category.slug} depending on your unique identifier
-                                  className={`cursor-pointer ${selectedCategories.includes(price.name) ? 'text-[#18568C]' : ''}`}
-                                  onClick={() => toggleCategory(price.name)}
-                                >
-                                  <input
-                                    type="checkbox"
-                                    checked={selectedCategories.includes(price.name)}
-                                    readOnly
-                                    className="mr-2"
-                                  />
-                                  {price.name}
-                                </li>
-                              )
-                            })
-                          ) : (
-                            <div>Loading Price...</div>
-                          )}
-                        </div>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
+                </div>
+
+                <div className="border-b border-gray-200 py-6">
+                  <button onClick={() => handleToggleFilter('size')} className="  font-semibold">Size  </button>
+                  {activeFilter === 'size' && <>
+                    <div className="space-y-4">
+                      {sizeData && sizeData.length > 0 ? (
+                        sizeData.map((size) => {
+                          return (
+                            <li
+                              key={size.id}
+                              className={`cursor-pointer mt-2 ${selectedCategories.includes(size.size) ? 'text-[#18568C]' : ''}`}
+                              onClick={() => toggleCategory(size.size)}
+                            >
+                              <input
+                                type="checkbox"
+                                checked={selectedCategories.includes(size.size)}
+                                readOnly
+                                className="mr-2"
+                              />
+                              {size.size}
+                            </li>
+                          )
+                        })
+                      ) : (
+                        <div>Loading Size...</div>
+                      )}
+                    </div>
+                  </>}
+                </div>
+
+                <div className="border-b border-gray-200 py-6">
+                  <button onClick={() => handleToggleFilter('color')} className=" font-semibold">Color</button>
+                  {activeFilter === 'color' && <>
+                    <div className="space-y-4">
+                      {colorData && colorData.length > 0 ? (
+                        colorData.map((color) => {
+                          return (
+                            <li
+                              key={color.id}
+                              className={`cursor-pointer mt-2 ${selectedCategories.includes(color.name) ? 'text-[#18568C]' : ''}`}
+                              onClick={() => toggleCategory(color.name)}
+                            >
+                              <input
+                                type="checkbox"
+                                checked={selectedCategories.includes(color.name)}
+                                readOnly
+                                className="mr-2 checkbox-container"
+                              />
+                              {color.name}
+                            </li>
+                          )
+                        })
+                      ) : (
+                        <div>Loading Color...</div>
+                      )}
+                    </div>
+
+                  </>}
+
+                </div>
+
+                <div className="border-b border-gray-200 py-6">
+                  <button onClick={() => handleToggleFilter('price')} className=" font-semibold">Price  </button>
+
+                  {activeFilter === 'price' && <>
+                    <div className="space-y-4">
+                      {priceData && priceData.length > 0 ? (
+                        priceData.map((price) => {
+                          return (
+                            <li
+                              key={price.id}
+                              className={`cursor-pointer mt-2 ${selectedCategories.includes(price.name) ? 'text-[#18568C]' : ''}`}
+                              onClick={() => toggleCategory(price.name)}
+                            >
+                              <input
+                                type="checkbox"
+                                checked={selectedCategories.includes(price.name)}
+                                readOnly
+                                className="mr-2"
+                              />
+                              {price.name}
+                            </li>
+                          )
+                        })
+                      ) : (
+                        <div>Loading Price...</div>
+                      )}
+                    </div>
+
+                  </>}
+                </div>
               </div>
 
               {/* Product grid */}
@@ -433,17 +427,14 @@ const ProductPage = () => {
                         return (
                           <div
                             key={_id}
-                            className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem] transition duration-200 ease-out transform hover:scale-105"
+                            className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem]"
                           >
                             <Link
-                              className="relative mx-3 mt-3 bg-[#E3E6F3] flex h-65 overflow-hidden rounded-[1rem]"
+                              className="relative  bg-[#e4eff0] p-2 border mx-3 mt-3 flex h-64 overflow-hidden rounded-[1rem]"
                               href={`/shop/${_id}`}
                             >
-                              <img
-                                className="opacity-75  object-cover w-full object-center"
-                                src={colors[0]?.images[0]}
-                                alt={name}
-                              />
+                              <img class="peer opacity-75 absolute top-0 right-0 h-full w-full object-cover" src={colors[0]?.images[0]} alt="product image" />
+                              <img class="peer absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0" src={colors[0]?.images[1]} alt="product image" />
                             </Link>
                             <div className="mx-3 py-2">
                               <p className='text-gray-300'>{brand}</p>

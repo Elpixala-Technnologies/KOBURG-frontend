@@ -48,20 +48,12 @@ const RecomendedPorduct = () => {
                             slidesPerView: 1,
                             spaceBetween: 20,
                         },
-                        360: {
-                            slidesPerView: 1,
-                            spaceBetween: 20,
-                        },
-                        480: {
-                            slidesPerView: 1,
-                            spaceBetween: 20,
-                        },
                         640: {
-                            slidesPerView: 1,
-                            spaceBetween: 20,
+                            slidesPerView: 2,
+                            spaceBetween: 30,
                         },
                         768: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                             spaceBetween: 30,
                         },
                         1024: {
@@ -69,8 +61,8 @@ const RecomendedPorduct = () => {
                             spaceBetween: 30,
                         },
                     }}
-                    spaceBetween={50}
-                    slidesPerView={3}
+                    spaceBetween={30}
+                    slidesPerView={4}
                     onSlideChange={() => { }}
                     onSwiper={(swiper) => { }}
                 >
@@ -80,20 +72,17 @@ const RecomendedPorduct = () => {
                                 const { brand, name, colors, _id, amazonlink, flipkartlink, myntralink, price, discount } = product;
                                 return (
                                     <SwiperSlide className="cursor-grab rounded " key={product._id}>
-                                        <div key={product?._id} href={`/shop/${product?._id}`} className="group transition duration-200 ease-out transform hover:scale-105">
+                                        <div key={product?._id} href={`/shop/${product?._id}`} className="group">
                                             <div
                                                 key={_id}
-                                                className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem] transition duration-200 ease-out transform hover:scale-105"
+                                                className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem]"
                                             >
-                                                <Link
-                                                    className="relative mx-3 mt-3 bg-[#E3E6F3] flex h-65 overflow-hidden rounded-[1rem]"
+                                                 <Link
+                                                    className="relative bg-[#e4eff0] p-4 border mx-3 mt-3 flex h-64 overflow-hidden rounded-[1rem]"
                                                     href={`/shop/${_id}`}
                                                 >
-                                                    <img
-                                                        className="opacity-75  object-cover w-full object-center"
-                                                        src={colors[0]?.images[0]}
-                                                        alt={name}
-                                                    />
+                                                    <img class="peer absolute top-0 right-0 h-full w-full object-cover" src={colors[0]?.images[0]} alt="product image" />
+                                                    <img class="peer absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0 opacity-75" src={colors[0]?.images[1]} alt="product image" />
                                                 </Link>
                                                 <div className="mx-3 py-2">
                                                     <p className='text-gray-300 text-left'>{brand}</p>
