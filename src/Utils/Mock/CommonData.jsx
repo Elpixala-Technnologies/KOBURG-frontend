@@ -529,7 +529,7 @@ export const testimonialData = [
 export const reviewsData = [
   {
     id: 1,
-    location: "India",
+    location: "Andhra Pradesh",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -538,7 +538,7 @@ export const reviewsData = [
   },
   {
     id: 1,
-    location: "India",
+    location: "Dispur",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -547,7 +547,7 @@ export const reviewsData = [
   },
   {
     id: 1,
-    location: "India",
+    location: "Patna",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -556,7 +556,7 @@ export const reviewsData = [
   },
   {
     id: 1,
-    location: "India",
+    location: "Chhattisgarh	",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -565,7 +565,7 @@ export const reviewsData = [
   },
   {
     id: 1,
-    location: "India",
+    location: "Haryana",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -574,7 +574,7 @@ export const reviewsData = [
   },
   {
     id: 1,
-    location: "India",
+    location: "Jharkhand",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -583,7 +583,7 @@ export const reviewsData = [
   },
   {
     id: 1,
-    location: "India",
+    location: "Manipur",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -592,7 +592,7 @@ export const reviewsData = [
   },
   {
     id: 1,
-    location: "India",
+    location: "Meghalaya",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",
@@ -601,7 +601,7 @@ export const reviewsData = [
   },
   {
     id: 1,
-    location: "India",
+    location: "Nagaland",
     country: "https://res.cloudinary.com/elpixala/image/upload/v1698970076/koburg/Icons/uamqwt9m45v7lkkqsusj.png",
     vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     image: "https://leverageedu.com/_next/image/?url=https%3A%2F%2Fle-public.s3.amazonaws.com%2FpallaviThumbnail.png&w=1920&q=75",

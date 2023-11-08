@@ -19,6 +19,10 @@ const Home = () => {
                 <PopularCategory />
             </div>
             <div className='bg-[#f9f9f9dc] py-8'>
+                <div className='text-center title container'>
+                    <h1>Discover <span>Koburg</span> Top-Selling Product!</h1>
+                    <p className='mb-4'>Unmatched Quality and Value for Your Everyday Needs</p>
+                </div>
                 <BestSealler />
             </div>
             <NewOfferBanner />
@@ -34,8 +38,8 @@ const Home = () => {
             </div>
             <div className='container'>
                 <Testimonial />
-             </div>   
-             <div className='bg-[#f9f9f9dc] py-8'>
+            </div>
+            <div className='bg-[#f9f9f9dc] py-8'>
                 <BannerSection />
             </div>
 

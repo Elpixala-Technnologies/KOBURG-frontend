@@ -4,12 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import useProducts from "@/src/Hooks/useProducts";
 import { AiFillAmazonSquare } from 'react-icons/ai';
-import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
 import { SiFlipkart } from 'react-icons/si'
-
+import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
+ 
 const RecomendedPorduct = () => {
     const { productData } = useProducts();
-
     const sliderRef = useRef(null);
     const handlePrev = useCallback(() => {
         if (!sliderRef.current) return;
@@ -22,13 +21,14 @@ const RecomendedPorduct = () => {
     }, []);
 
 
+
     return (
         <section className="container">
             <div className="mx-auto max-w-screen-sm">
                 <div className='title my-2'>
-                <h1>Recomended  <span>Sneakers</span></h1>
+                    <h1>Recomended  <span>Sneakers</span></h1>
                 </div>
-        </div>
+            </div>
             <div className=" flex justify-end items-center mb-5">
                 <div className="flex items-center gap-10 top-0">
                     <button className="prev-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handlePrev}>
@@ -48,12 +48,20 @@ const RecomendedPorduct = () => {
                             slidesPerView: 1,
                             spaceBetween: 20,
                         },
+                        360: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        480: {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
                         640: {
-                            slidesPerView: 2,
-                            spaceBetween: 30,
+                            slidesPerView: 1,
+                            spaceBetween: 20,
                         },
                         768: {
-                            slidesPerView: 3,
+                            slidesPerView: 2,
                             spaceBetween: 30,
                         },
                         1024: {
@@ -61,8 +69,8 @@ const RecomendedPorduct = () => {
                             spaceBetween: 30,
                         },
                     }}
-                    spaceBetween={30}
-                    slidesPerView={4}
+                    spaceBetween={50}
+                    slidesPerView={3}
                     onSlideChange={() => { }}
                     onSwiper={(swiper) => { }}
                 >
@@ -77,12 +85,12 @@ const RecomendedPorduct = () => {
                                                 key={_id}
                                                 className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem]"
                                             >
-                                                 <Link
-                                                    className="relative bg-[#e4eff0] p-4 border mx-3 mt-3 flex h-64 overflow-hidden rounded-[1rem]"
+                                                <Link
+                                                    className="relative mx-3 mt-3 flex h-64  bg-[#e4eff0] p-2 border overflow-hidden rounded-[1rem]"
                                                     href={`/shop/${_id}`}
                                                 >
-                                                    <img class="peer absolute top-0 right-0 h-full w-full object-cover" src={colors[0]?.images[0]} alt="product image" />
-                                                    <img class="peer absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0 opacity-75" src={colors[0]?.images[1]} alt="product image" />
+                                                    <img class="peer opacity-75 absolute top-0 right-0 h-full w-full object-cover" src={colors[0]?.images[0]} alt="product image" />
+                                                    <img class="peer   absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0" src={colors[0]?.images[1]} alt="product image" />
                                                 </Link>
                                                 <div className="mx-3 py-2">
                                                     <p className='text-gray-300 text-left'>{brand}</p>
@@ -147,7 +155,7 @@ const RecomendedPorduct = () => {
                     </div>
                 </Swiper>
             </div>
-           
+
         </section>
     );
 };

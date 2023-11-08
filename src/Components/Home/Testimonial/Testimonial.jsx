@@ -1,4 +1,4 @@
- 
+
 // import React, { useCallback, useRef, useState } from "react";
 // import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 // import { Swiper, SwiperSlide } from "swiper/react";
@@ -158,6 +158,12 @@ import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
 import { testimonialData } from "@/src/Utils/Mock/CommonData";
+// import { BsPauseCircle } from "react-icons/bs";
+// import { AiOutlinePlayCircle } from "react-icons/ai";
+import { BsPauseCircle, BsPlayCircle } from 'react-icons/bs';
+import { Transition } from '@headlessui/react';
+
+
 
 const Testimonial = () => {
     const sliderRef = useRef(null);
@@ -181,6 +187,18 @@ const Testimonial = () => {
         setActiveIndex(swiper.realIndex);
     };
 
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const handlePlayPauseClick = () => {
+        const video = videoRef.current;
+        if (isPlaying) {
+            video.pause();
+        } else {
+            video.play();
+        }
+        setIsPlaying(!isPlaying);
+    };
     return (
         <section className="my-6">
 
@@ -275,8 +293,8 @@ const Testimonial = () => {
                                                             <div className="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg" />
                                                             <div className="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg" />
                                                             <div className="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg" />
-                                                            <div className="rounded-[2rem] overflow-hidden w-[100%] h-[100%] bg-transparent dark:bg-gray-800">
-                                                                <video
+                                                            <div className=" relative overflow-hidden w-[100%] h-[100%] bg-transparent dark:bg-gray-800">
+                                                                {/* <video
                                                                     controls
                                                                     width="100%"
                                                                     height="100%"
@@ -287,7 +305,49 @@ const Testimonial = () => {
                                                                         src={testimonial?.vedio}
                                                                         type="video/mp4"
                                                                     />
+                                                                </video> */}
+                                                                <video
+                                                                    ref={videoRef}
+                                                                    width="100%"
+                                                                    height="100%"
+                                                                    style={{ objectFit: "cover" }}
+                                                                    className="vedioContent "
+                                                                >
+                                                                    <source src={testimonial?.vedio} type="video/mp4" />
                                                                 </video>
+                                                                {/* <button
+                                                                    onClick={handlePlayPauseClick}
+                                                                    className="play-pause-button absolute top-[50%] left-[40%]"
+                                                                >
+                                                                    {isPlaying ? <BsPauseCircle className="text-[4rem]" /> : <AiOutlinePlayCircle className="text-[4rem]" />}
+                                                                </button> */}
+                                                                  <button
+                onClick={handlePlayPauseClick}
+                className="play-pause-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white shadow-lg"
+            >
+                <Transition
+                    show={!isPlaying}
+                    enter="transition-opacity duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="transition-opacity duration-300"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <BsPlayCircle className="text-4xl" />
+                </Transition>
+                <Transition
+                    show={isPlaying}
+                    enter="transition-opacity duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="transition-opacity duration-300"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <BsPauseCircle className="text-4xl" />
+                </Transition>
+            </button>
                                                             </div>
                                                         </div>
 

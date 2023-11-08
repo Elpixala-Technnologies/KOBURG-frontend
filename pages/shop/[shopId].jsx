@@ -2,21 +2,18 @@ import RootLayout from '@/src/Layouts/RootLayout';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { BsCart } from 'react-icons/bs'
 import {
     DelivaryIcons,
     MapIcons,
     PolicyIcons,
 } from "@/src/Assets";
-import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
 import { getSingelProductUrl } from '@/src/Utils/Urls/ProductUrl';
-import RecomendedPorduct from '@/src/Components/Home/RecomendedPorduct/RecomendedPorduct';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 
 
 const ProductDetails = () => {
@@ -31,6 +28,8 @@ const ProductDetails = () => {
         }
         getSingelProduct();
     }, [])
+
+    
     const { name, colors, features, description, additionalInfo, discount, price, myntralink, flipkartlink, amazonlink } = singelProductData || {};
 
     const [selectedSize, setSelectedSize] = useState(null);
@@ -65,12 +64,9 @@ const ProductDetails = () => {
 
     const sliderRef = useRef(null);
 
-    // Return early if singelProductData is still null
     if (!singelProductData) {
         return null; // or loading indicator
     }
-
-
 
     return (
         <RootLayout>
@@ -79,7 +75,7 @@ const ProductDetails = () => {
                     <div className="mx-auto px-4">
                         <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
 
-                    
+
 
                             <div className="lg:col-span-3 lg:row-end-1">
                                 <div className="lg:flex gap-4 lg:items-start">
@@ -464,11 +460,8 @@ const ProductDetails = () => {
                         </div>
                     </div>
                 </section>
-
-                <section className='my-6'>
-                    <RecomendedPorduct />
-                </section>
             </section>
+
 
         </RootLayout>
     )

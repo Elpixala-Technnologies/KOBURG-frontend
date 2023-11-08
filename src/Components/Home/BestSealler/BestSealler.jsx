@@ -6,9 +6,7 @@ import useProducts from "@/src/Hooks/useProducts";
 import { AiFillAmazonSquare } from 'react-icons/ai';
 import { SiFlipkart } from 'react-icons/si'
 import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
-import ImageWithHoverEffect from "../../ImageHover/ImageHover";
-
-
+ 
 const BestSeller = () => {
     const { productData } = useProducts();
     const sliderRef = useRef(null);
@@ -25,10 +23,7 @@ const BestSeller = () => {
 
     return (
         <section className='container'>
-            <div className='text-center title'>
-                <h1>Discover <span>Koburg</span> Top-Selling Product!</h1>
-                <p className='mb-4'>Unmatched Quality and Value for Your Everyday Needs</p>
-            </div>
+        
             <div className=" flex justify-end items-center mb-5">
                 <div className="flex items-center gap-10 top-0">
                     <button className="prev-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handlePrev}>
@@ -90,7 +85,7 @@ const BestSeller = () => {
                                                     href={`/shop/${_id}`}
                                                 >
                                                     <img class="peer opacity-75 absolute top-0 right-0 h-full w-full object-cover" src={colors[0]?.images[0]} alt="product image" />
-                                                    <img class="peer opacity-75 absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0" src={colors[0]?.images[1]} alt="product image" />
+                                                    <img class="peer   absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0" src={colors[0]?.images[1]} alt="product image" />
                                                 </Link>
                                                 <div className="mx-3 py-2">
                                                     <p className='text-gray-300 text-left'>{brand}</p>
