@@ -236,7 +236,7 @@ const ProductDetails = () => {
                                 </div>
 
                                 <div className='md:block hidden'>
-                                    <div className='border text-center p-2 mt-4 flex-col md:flex-row items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
+                                    <div className='border text-center p-4 mt-4 flex flex-col md:flex-row items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
                                         <div className='flex flex-col items-center justify-center gap-2'>
                                             <Image
                                                 src={PolicyIcons}

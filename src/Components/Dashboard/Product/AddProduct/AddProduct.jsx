@@ -314,7 +314,7 @@ const AddProduct = () => {
         discount: inputValue.discountPercentage,
         type: inputValue.type,
         status: inputValue.status,
-        details: description,
+        description: description,
         features: features,
         additionalInfo: additionalInfo,
         colors: color,
@@ -407,7 +407,7 @@ const AddProduct = () => {
           </div>
 
           <FormControl fullWidth>
-            <InputLabel>Categories</InputLabel>
+            {/* <InputLabel>Categories</InputLabel> */}
             <Select
               multiple
               value={selectedCategories}
@@ -655,6 +655,38 @@ const AddProduct = () => {
           </div>
 
 
+          <div
+            className="border-2 border-gray-300 rounded-md p-2"
+          >
+            <input
+              type="text"
+              placeholder="Amazon Link"
+              className="w-full border-2 border-gray-300 rounded-md p-2"
+              {...register("amazonlink")}
+            />
+          </div>
+          <div
+            className="border-2 border-gray-300 rounded-md p-2"
+          >
+            <input
+              type="text"
+              placeholder="Flipcart Link"
+              className="w-full border-2 border-gray-300 rounded-md p-2"
+              {...register("flipcartlink")}
+            />
+          </div>
+          <div
+            className="border-2 border-gray-300 rounded-md p-2"
+          >
+            <input
+              type="text"
+              placeholder="Myntra Link"
+              className="w-full border-2 border-gray-300 rounded-md p-2"
+              {...register("myntralink")}
+            />
+          </div>
+
+
           {/* ========color ========= */}
 
           <div>
@@ -668,14 +700,16 @@ const AddProduct = () => {
                     <label className="label">
                       <span className="label-text">Color: </span>
                     </label>
-                    <input
-                      type="text"
-                      name="color"
-                      value={item.color}
-                      onChange={(event) => onChange(event, colorIndex)}
-                      placeholder="Color"
-                      className="border-2 w-full border-gray-300 rounded-md p-2"
-                    />
+                    <div className="border-2 w-full border-gray-300 rounded-md p-2 w-full">
+                      <input
+                        type="text"
+                        name="color"
+                        value={item.color}
+                        onChange={(event) => onChange(event, colorIndex)}
+                        placeholder="Color"
+                        className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                      />
+                    </div>
                   </div>
 
                   {/*  for size */}
@@ -686,15 +720,17 @@ const AddProduct = () => {
                     <div className="flex flex-col gap-4">
                       {item.sizes && item.sizes.map((size, sizeIndex) => {
                         return (
-                          <div key={sizeIndex} className="flex gap-4">
-                            <input
-                              type="text"
-                              name="size"
-                              value={size.size}
-                              onChange={(event) => onChange(event, colorIndex, sizeIndex)}
-                              placeholder="Size"
-                              className="border-2 w-full border-gray-300 rounded-md p-2"
-                            />
+                          <div key={sizeIndex} className="flex gap-4 ">
+                            <div className="border-2 w-full border-gray-300 rounded-md p-2 w-full">
+                              <input
+                                type="text"
+                                name="size"
+                                value={size.size}
+                                onChange={(event) => onChange(event, colorIndex, sizeIndex)}
+                                placeholder="Size"
+                                className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                              />
+                            </div>
                             <button
                               className="commonBtn flex items-center gap-2"
                               onClick={() => removeSize(colorIndex, sizeIndex)}
@@ -756,7 +792,6 @@ const AddProduct = () => {
                     <div>
                       {/* ------ show seleted image------- */}
 
-
                       <div className="flex gap-4 my-4">
                         {item.images &&
                           item.images.map((image, index) => (
@@ -807,7 +842,7 @@ const AddProduct = () => {
               marginTop: "20px",
             }}
             onClick={handleSubmit(onSubmit)}
-            className="common-btn"
+            className="commonBtn"
           >
             {loading ? "Loading..." : "Add Product"}
           </button>

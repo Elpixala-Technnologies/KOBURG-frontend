@@ -1,11 +1,16 @@
 import useProducts from '@/src/Hooks/useProducts';
 import DashboardLayout from '@/src/Layouts/DashboardLayout';
 import { getSingelProductUrl, updateProductsUrl } from '@/src/Utils/Urls/ProductUrl';
-import { Button, Cascader, Select } from 'antd';
+import { Button, Cascader, } from 'antd';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import LinearProgress from '@mui/material/LinearProgress';
+import { FaTrashAlt } from "react-icons/fa";
+
+import { Select, MenuItem, Checkbox, ListItemText, FormControl, InputLabel } from '@mui/material';
+
 
 const UpdatePorductPage = () => {
     const upload_preset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
@@ -16,12 +21,14 @@ const UpdatePorductPage = () => {
     const router = useRouter();
     const { productId } = router.query;
     const [singleProductData, setSingleProductData] = useState({});
-    const [couponSelected, setCouponSelected] = useState([]);
     const { handleSubmit, register, setValue,
         getValues, } = useForm();
     const { couponData, categoryData, refetchProducts } = useProducts();
     const [loading, setLoading] = useState(false);
     const [prevValues, setPrevValues] = useState({});
+
+    const [selectedCategories, setSelectedCategories] = useState([]);
+
 
 
     useEffect(() => {
@@ -30,11 +37,12 @@ const UpdatePorductPage = () => {
                 try {
                     const reqProduct = await fetch(getSingelProductUrl(productId));
                     const resProduct = await reqProduct.json();
-                    console.log(resProduct, "resProduct");
-
-                    // Store the previous values when the product data is fetched
-                    setPrevValues(resProduct?.data || {});
-                    setSingleProductData(resProduct?.data || {});
+                    if (resProduct?.data) {
+                        setPrevValues(resProduct?.data || {});
+                        setSingleProductData(resProduct?.data);
+                        const defaultSelectedCategories = fetchedProductData?.categories?.map(cat => cat?.value);
+                        setSelectedCategories(defaultSelectedCategories);
+                    }
                 } catch (error) {
                     console.error('Error fetching product:', error);
                 }
@@ -45,78 +53,81 @@ const UpdatePorductPage = () => {
 
     const {
         name,
-        mainCategories,
         categories,
         brand,
         price,
         discount,
         type,
         status,
-        details,
-        features,
         colors,
-        coupon,
-        minimumQuantity,
-        extraDiscount,
+        amazonlink,
+        flipcartlink,
+        myntralink,
+
     } = singleProductData;
 
     useEffect(() => {
         setValue("productName", name);
         setValue("productCategories", categories);
-        setValue("mainCategories", mainCategories);
         setValue("productBrand", brand);
         setValue("productPrice", price);
         setValue("productDiscount", discount);
         setValue("productType", type);
         setValue("productStatus", status);
-        setValue("productDetails", details);
-        setValue("productFeatures", features?.join(', '));
-        setValue("coupon", coupon);
+        setValue("productDetails", singleProductData.description);
+        setValue("productFeatures", singleProductData.features);
+        setValue("productAdditionalInfo", singleProductData.additionalInfo);
         setValue("productColors", colors);
-        setValue("minimumQuantity", minimumQuantity);
-        setValue("extraDiscount", extraDiscount);
+        setValue("amazonLink", amazonlink);
+        setValue("flipcartlink", flipcartlink);
+        setValue("myntralink", myntralink);
     }, [
-        name, categories, mainCategories, brand, price, discount, type, status, details, features, colors, coupon
+        name,
+        categories,
+        brand,
+        price,
+        discount,
+        type,
+        status,
+        singleProductData.description,
+        singleProductData.features,
+        singleProductData.additionalInfo,
+        colors,
+        amazonlink,
+        flipcartlink,
+        myntralink,
     ]);
 
-    const couponOptions = couponData?.map((couponResponse) => {
-        const { _id, coupon } = couponResponse;
-        return {
-            label: coupon,
-            value: _id,
-        };
-    });
-    const handleCouponChange = (value) => {
-        setCouponSelected(value);
-    };
+    // =========image upload=========
+    const [uploadProgress, setUploadProgress] = useState({});
 
-    // ===== color =====
-
-
-    const uploadImageToCloudinary = async (file) => {
+    const uploadImageToCloudinary = async (file, onUploadProgress) => {
         const formData = new FormData();
-        formData.append('file', file);
-        formData.append('public_id', `${cloud_folder}/Product/${file?.name}`);
-        formData.append('upload_preset', upload_preset);
-        formData.append('cloud_name', cloud_name);
+        formData.append("file", file);
+        formData.append("public_id", `${cloud_folder}/Product/${file?.name}`);
+        formData.append("upload_preset", upload_preset);
+        formData.append("cloud_name", cloud_name);
 
-        try {
-            const response = await fetch(cloud_api, {
-                method: 'POST',
-                body: formData,
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to upload image');
-            }
-
-            const imageData = await response.json();
-            const imageUrl = imageData.secure_url;
-            return imageUrl;
-        } catch (error) {
-            console.error('Error uploading image:', error);
-            return null;
-        }
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", cloud_api, true);
+            xhr.upload.onprogress = (event) => {
+                if (event.lengthComputable) {
+                    const progress = (event.loaded / event.total) * 100;
+                    onUploadProgress(progress);
+                }
+            };
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    resolve(response.secure_url);
+                } else {
+                    reject("Upload failed");
+                }
+            };
+            xhr.onerror = () => reject("Error during upload");
+            xhr.send(formData);
+        });
     };
 
     const handleImageUpload = async (event, colorIndex) => {
@@ -128,27 +139,29 @@ const UpdatePorductPage = () => {
 
                 for (let i = 0; i < files.length; i++) {
                     const file = files[i];
-                    const imageUrl = await uploadImageToCloudinary(file);
+                    // Define onUploadProgress function
+                    const onUploadProgress = (progress) => {
+                        console.log(`Upload progress for ${file.name}: ${progress}%`);
+                        // You can also update your progress state here, if needed
+                    };
+                    // Call uploadImageToCloudinary with the onUploadProgress function
+                    const imageUrl = await uploadImageToCloudinary(file, onUploadProgress);
 
                     if (imageUrl) {
                         uploadedImages.push(imageUrl);
                     } else {
-                        console.error(`Failed to upload image ${file.name}`);
+                        // Handle the case where the image URL is null
+                        console.error('Failed to upload image:', file.name);
                     }
                 }
 
                 if (uploadedImages.length > 0) {
-                    // Get the current form values
-                    const formValues = getValues();
+                    // Get the current colors array from state
+                    const updatedColors = [...singleProductData.colors];
+                    updatedColors[colorIndex].images = [...updatedColors[colorIndex].images, ...uploadedImages];
 
-                    // Update the images for the specific color
-                    formValues.productColors[colorIndex].images = [
-                        ...formValues.productColors[colorIndex].images,
-                        ...uploadedImages,
-                    ];
-
-                    // Update the entire "productColors" field in the form
-                    setValue("productColors", formValues.productColors);
+                    // Update the state with the new colors array
+                    setSingleProductData({ ...singleProductData, colors: updatedColors });
                 }
             } catch (error) {
                 console.error('Error uploading images:', error);
@@ -156,87 +169,71 @@ const UpdatePorductPage = () => {
         }
     };
 
+    const handleDeleteImage = (colorIndex, imageIndex) => {
+        // Make a deep copy of the colors array
+        const updatedColors = singleProductData.colors.map((c, index) =>
+            index === colorIndex ? { ...c, images: [...c.images] } : c
+        );
 
-    // ===== color =====
+        // Remove the image at the specified index
+        updatedColors[colorIndex].images.splice(imageIndex, 1);
 
-
-    // ========== category========
-
-    const [selectedMainCategory, setSelectedMainCategory] = useState('');
-    const [selectedSubcategory, setSelectedSubcategory] = useState('');
-    const [selectedProductCategories, setSelectedProductCategories] = useState([]);
-
-    const handleMainCategoryChange = (value) => {
-        setSelectedMainCategory(value);
-        setSelectedSubcategory('');
+        // Update your singleProductData state with the modified colors array
+        setSingleProductData({ ...singleProductData, colors: updatedColors });
     };
 
-    const handleSubCategoryChange = (value) => {
-        setSelectedSubcategory(value);
-    };
+    const handleImageChange = async (event, colorIndex) => {
+        const updatedColors = [...singleProductData.colors];
+        const selectedFiles = Array.from(event.target.files);
 
+        for (const file of selectedFiles) {
+            // Set initial upload progress
+            setUploadProgress(prevProgress => ({ ...prevProgress, [file.name]: 0 }));
 
-    useEffect(() => {
-        if (selectedMainCategory) {
-            setSelectedSubcategory('');
-            setSelectedProductCategories([]);
-        }
-    }, [selectedMainCategory]);
+            try {
+                // Define the onUploadProgress function
+                const onUploadProgress = (progress) => {
+                    setUploadProgress(prevProgress => ({ ...prevProgress, [file.name]: progress }));
+                };
 
-    const mainCategoryData = categoryData?.find((category) => category.name === selectedMainCategory);
-    const subcategories = mainCategoryData ? mainCategoryData.children : [];
+                // Call uploadImageToCloudinary with onUploadProgress function
+                const imageUrl = await uploadImageToCloudinary(file, onUploadProgress);
 
-    const createIndentedSubcategoryOptions = (subcategories, parentIndent = '') => {
-        return subcategories?.flatMap((subcategory) => {
-            const subcategoryWithIndentation = {
-                value: subcategory.name,
-                label: parentIndent + subcategory.name,
-            };
-
-            if (subcategory.children && subcategory.children.length > 0) {
-                return [
-                    subcategoryWithIndentation,
-                    ...createIndentedSubcategoryOptions(subcategory.children, parentIndent + '  '),
-                ];
+                if (imageUrl) {
+                    updatedColors[colorIndex].images.push(imageUrl);
+                    // Remove the file's progress from state to hide the progress bar
+                    setUploadProgress(prevProgress => {
+                        const newProgress = { ...prevProgress };
+                        delete newProgress[file.name];
+                        return newProgress;
+                    });
+                }
+            } catch (error) {
+                console.error("Error uploading image:", error);
             }
-
-            return subcategoryWithIndentation;
-        });
-    };
-
-    const indentedSubcategoryOptions = createIndentedSubcategoryOptions(subcategories);
-
-    const createCascaderOptions = (categories) => {
-        return categories?.map((category) => {
-            const children = category.children && category.children.length > 0
-                ? createCascaderOptions(category.children)
-                : null;
-
-            return {
-                label: category.name,
-                value: category.name,
-                children,
-            };
-        });
-    };
-
-    const cascaderOptions = createCascaderOptions(categoryData);
-
-    const handleProductCategoriesChange = (value, selectedOptions) => {
-        if (value && value.length === 2) {
-            setSelectedMainCategory(value[0]);
-            setSelectedSubcategory(value[1]);
-        } else {
-            setSelectedMainCategory('');
-            setSelectedSubcategory('');
         }
+        // Update singleProductData state with the modified colors array
+        setSingleProductData({ ...singleProductData, colors: updatedColors });
     };
+
+
+    const prepareCategoryOptions = (categories = [], parentName = null, level = 0) => {
+        return categories?.filter(category => category?.parent === parentName)
+            .flatMap(category => ([
+                { value: category.name, label: category.name, level },
+                ...prepareCategoryOptions(categories, category.name, level + 1)
+            ]));
+    };
+
+    const handleCategoryChange = (event) => {
+        setSelectedCategories(event.target.value);
+    };
+
+    const categoryOptions = categoryData ? prepareCategoryOptions(categoryData) : [];;
+
 
 
     // ========== category========
-
-
-
     const onSubmit = async (inputValue) => {
         try {
             setLoading(true);
@@ -249,9 +246,6 @@ const UpdatePorductPage = () => {
             if (!inputValue.productCategories) {
                 inputValue.productCategories = prevValues.categories;
             }
-            if (!inputValue.mainCategories) {
-                inputValue.mainCategories = prevValues.mainCategories;
-            }
 
             // Split the features string into an array
             if (typeof inputValue.productFeatures === 'string') {
@@ -263,30 +257,29 @@ const UpdatePorductPage = () => {
             // Construct product update data
             const productUpdateData = {
                 name: inputValue.productName,
-                categories: selectedProductCategories,
-                mainCategories: selectedMainCategory,
+                categories: selectedCategories,
                 brand: inputValue.productBrand,
                 price: inputValue.productPrice,
                 discount: inputValue.productDiscount,
                 type: inputValue.productType,
                 status: inputValue.productStatus,
-                details: inputValue.productDetails,
-                extraDiscount: inputValue.extraDiscount,
-                minimumQuantity: inputValue.minimumQuantity,
-                features: featuresArray,
+                description: inputValue.productDetails,
+                features: inputValue.productFeatures,
+                additionalInfo: inputValue.productAdditionalInfo,
+                amazonlink: inputValue.amazonlink,
+                flipcartlink: inputValue.flipcartlink,
+                myntralink: inputValue.myntralink,
                 colors: inputValue.productColors.map((item, colorIndex) => {
-                    const { color, sizes, quantity, images } = item;
+                    const { color, sizes, images } = item;
                     return {
                         color,
                         isSizeApplicable: sizes?.length > 0,
                         sizes: sizes?.map((sizeItem) => {
-                            const { size, quantity } = sizeItem;
+                            const { size, } = sizeItem;
                             return {
                                 size,
-                                quantity,
                             };
                         }),
-                        quantity,
                         images: images?.length > 0
                             ? images.map((image) => {
                                 if (typeof image === 'string') {
@@ -298,11 +291,10 @@ const UpdatePorductPage = () => {
                             : singleProductData.colors[colorIndex]?.images || [],
                     };
                 }),
-                coupon: couponSelected,
+                
             };
 
             // Log the update data
-            console.log('productUpdateData', productUpdateData);
 
             // Send a PATCH request to update the product
             const res = await fetch(updateProductsUrl(productId), {
@@ -314,7 +306,8 @@ const UpdatePorductPage = () => {
             });
 
             const dataRes = await res.json();
-            console.log(dataRes, "dataRes");
+
+           
 
             if (!res.ok) {
                 // Handle error message
@@ -353,6 +346,7 @@ const UpdatePorductPage = () => {
                     timer: 3500,
                 });
                 refetchProducts();
+                router.push('/dashboard/product/manage-product');
             }
         } catch (error) {
             console.error('Error updating product:', error);
@@ -374,143 +368,95 @@ const UpdatePorductPage = () => {
                         <div
                             className="add-Porduct-form w-full md:w-full mx-auto flex flex-col gap-4 "
                         >
-                            <input
-                                placeholder="Porduct Name"
-                                name="name"
-                                type="text"
-                                className=" border-[2px] border-[#000] text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg shadow-md pl-10 pr-2.5 py-3"
-                                defaultValue={name}
-                                {...register("productName")}
-                            />
-                            <input
-                                placeholder="Minimum Quantity"
-                                name="minimumQuantity"
-                                type="text"
-                                className=" border-[2px] border-[#000] text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg shadow-md pl-10 pr-2.5 py-3"
-                                defaultValue={minimumQuantity}
-                                {...register("minimumQuantity")}
-                            />
-                            <input
-                                placeholder="Extra Discount"
-                                name="extraDiscount"
-                                type="text"
-                                className=" border-[2px] border-[#000] text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg shadow-md pl-10 pr-2.5 py-3"
-                                defaultValue={extraDiscount}
-                                {...register("extraDiscount")}
-                            />
+                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                <input
+                                    placeholder="Porduct Name"
+                                    name="name"
+                                    type="text"
+                                    className="w-full rounded"
+                                    defaultValue={name}
+                                    {...register("productName")}
+                                />
+                            </div>
 
-                            {/* <select
-                                name="main-category"
-                                id="main-category"
-                                className="border-2 border-gray-300 rounded-md p-2"
-                                defaultValue={mainCategories}
-                                {...register("mainCategories")}
-                            >
-                                <option value="main-category">
-                                    {mainCategories}
-                                </option>
-                                {categoryData && categoryData?.map((category) => (
-                                    <option
-                                        key={category._id}
-                                        value={category?.name}
-                                        className="border-2 border-gray-300 rounded-md p-4 my-2"
-                                    >
-                                        {category.name}
-                                    </option>
-                                ))}
-                            </select>
-
-                            <select
-                                name="category"
-                                id="category"
-                                className="border-2 border-gray-300 rounded-md p-2"
-                                defaultValue={categories}
-                                {...register("productCategories")}
-                            >
-                                <option value="category">
-                                    {categories}
-                                </option>
-                                {allCategoryData && allCategoryData?.map((category) => (
-                                    <option
-                                        key={category._id}
-                                        value={category?.name}
-                                        className="border-2 border-gray-300 rounded-md p-4 my-2"
-                                    >
-                                        {category?.name}
-                                    </option>
-                                ))}
-                            </select> */}
-
-                            <select
-                                name="main-category"
-                                id="main-category"
-                                className="border-2 border-gray-300 rounded-md p-2"
-                                value={selectedMainCategory}
-                                onChange={(e) => handleMainCategoryChange(e.target.value)}
-                            >
-                                <option value="">
-                                    {
-                                        mainCategories
-                                    }
-                                </option>
-                                {categoryData?.map((category) => (
-                                    <option key={category._id} value={category.name}>
-                                        {category.name}
-                                    </option>
-                                ))}
-                            </select>
-
-                            <div className="category-select">
+                            <FormControl fullWidth>
                                 <Select
-                                    mode="multiple"
-                                    size="large"
-                                    placeholder="Select SubCategory"
-                                    value={selectedSubcategory}
-                                    defaultValue={categories}
-                                    onChange={handleSubCategoryChange}
-                                    style={{
-                                        width: '100%',
-                                    }}
-                                    options={indentedSubcategoryOptions}
+                                    multiple
+                                    value={selectedCategories}
+                                    onChange={handleCategoryChange}
+                                    renderValue={(selected) => selected.join(', ')}
+                                >
+                                    {categoryOptions.map((category) => (
+                                        <MenuItem key={category.value} value={category.value}
+                                            style={{ marginLeft: `${category.level * 20}px` }}>
+                                            <Checkbox checked={selectedCategories.includes(category.value)} />
+                                            <ListItemText primary={category.label} />
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
+
+                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                <input type="text"
+                                    placeholder="Brand"
+                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                    defaultValue={brand}
+                                    {...register("productBrand")}
                                 />
                             </div>
 
-                            <div className="category-select">
-                                <Cascader
-                                    options={cascaderOptions}
-                                    value={[selectedMainCategory, selectedSubcategory]}
-                                    onChange={(value, selectedOptions) => handleProductCategoriesChange(value, selectedOptions)}
-                                    placeholder="Select Categories"
+                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                <input type="text"
+                                    placeholder="Amazon Link"
+                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                    defaultValue={amazonlink}
+                                    {...register("amazonlink")}
                                 />
-
                             </div>
 
-                            <input type="text"
-                                placeholder="Brand"
-                                className='border-2 border-gray-300 rounded-md p-2'
-                                defaultValue={brand}
-                                {...register("productBrand")}
-                            />
-                            <input type="text"
-                                placeholder="Product Type"
-                                className='border-2 border-gray-300 rounded-md p-2'
-                                defaultValue={type}
-                                {...register("productType")}
-                            />
+                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                <input type="text"
+                                    placeholder="Flipcart Link"
+                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                    defaultValue={flipcartlink}
+                                    {...register("flipcartlink")}
+                                />
+                            </div>
 
-                            <input type="number"
-                                placeholder="Price"
-                                className='border-2 border-gray-300 rounded-md p-2'
-                                defaultValue={price}
-                                {...register("productPrice")}
-                            />
+                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                <input type="text"
+                                    placeholder="Myntra Link"
+                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                    defaultValue={myntralink}
+                                    {...register("myntralink")}
+                                />
+                            </div>
+                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                <input type="text"
+                                    placeholder="Product Type"
+                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                    defaultValue={type}
+                                    {...register("productType")}
+                                />
+                            </div>
 
-                            <input type="number"
-                                placeholder="Discount Percentage"
-                                className='border-2 border-gray-300 rounded-md p-2'
-                                defaultValue={discount}
-                                {...register("productDiscount")}
-                            />
+                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                <input type="number"
+                                    placeholder="Price"
+                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                    defaultValue={price}
+                                    {...register("productPrice")}
+                                />
+                            </div>
+
+                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                <input type="number"
+                                    placeholder="Discount Percentage"
+                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                    defaultValue={discount}
+                                    {...register("productDiscount")}
+                                />
+                            </div>
 
                             <select name="status" id="status"
                                 className='border-2 border-gray-300 rounded-md p-2'
@@ -535,40 +481,129 @@ const UpdatePorductPage = () => {
                                     className='border-2 border-gray-300 rounded-md p-4 my-2'>Popular</option>
                             </select>
 
-                            <Select
-                                mode="tags"
-                                style={{
-                                    width: '100%',
-                                }}
-                                placeholder="Coupon"
-                                defaultValue={coupon}
-                                onChange={handleCouponChange}
-                                options={couponOptions}
-                            />
 
-                            <textarea id="txtid" name="txtname" rows="4" cols="50" maxlength="200"
-                                placeholder="Description"
-                                defaultValue={details}
-                                {...register("productDetails")}
-                                className="border-[2px] border-[#000] text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg shadow-md pl-10 pr-2.5 py-3"
-                            >
-                            </textarea>
+                            <div className='flex flex-col gap-4'>
+                                <h1 className='my-2'>description</h1>
+                                {
+                                    singleProductData?.description?.map((description, index) => {
+                                        return (
+                                            <section
+                                                key={index}
+                                                className=""
+                                            >
+                                                <div className="form-control w-full">
+                                                    <div className='border p-2'>
+                                                        <input
+                                                            type="text"
+                                                            defultValue={description?.heading}
+                                                            {...register(`productDetails.${index}.heading`)}
+                                                            placeholder="heading"
+                                                            className="border-2 w-full border-gray-300 rounded-md p-2"
+                                                        />
+                                                    </div>
+                                                </div>
 
-                            <textarea name="txtname" rows="4" cols="50" maxlength="200"
-                                placeholder="Features"
-                                defaultValue={features}
-                                {...register("productFeatures", {
-                                    setValueAs: (value) => {
-                                        // Split the value into an array
-                                        const featuresArray = value.split(',');
-                                        // Set the value as the array
-                                        return featuresArray;
-                                    }
-                                })}
-                                className="border-[2px] border-[#090606] text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg shadow-md pl-10 pr-2.5 py-3"
-                            >
-                            </textarea>
+                                                <div className="form-control w-full my-2">
+                                                    <div className='border p-2'>
+                                                        <input
+                                                            type="text"
+                                                            name="details"
+                                                            defultValue={description?.details}
+                                                            {...register(`productDetails.${index}.details`)}
+                                                            placeholder="details"
+                                                            className="border-2 w-full border-gray-300 rounded-md p-2"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        )
+                                    })
+                                }
+                            </div>
 
+                            <div className='flex flex-col gap-4'>
+                                <h1 className='my-2'>features</h1>
+                                {
+                                    singleProductData?.features?.map((features, index) => {
+                                        return (
+                                            <section
+                                                key={index}
+                                                className=""
+                                            >
+                                                <div className="form-control w-full">
+                                                    <div className='border p-2'>
+                                                        <input
+                                                            type="text"
+                                                            name="heading"
+                                                            defultValue={features?.heading}
+                                                            {...register(`productFeatures.${index}.heading`)}
+                                                            placeholder="heading"
+                                                            className="border-2 w-full border-gray-300 rounded-md p-2 w-full" 
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="form-control w-full my-2">
+                                                    <div className='border p-2'>
+                                                        <input
+                                                            type="text"
+                                                            name="details"
+                                                            defultValue={features?.details}
+                                                            {...register(`productFeatures.${index}.details`)}
+                                                            placeholder="details"
+                                                            className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                            </section>
+                                        )
+                                    })
+                                }
+
+                            </div>
+
+                            <div className='flex flex-col gap-4'>
+                                <h1 className='my-2'>Additional Info</h1>
+                                {
+                                    singleProductData?.additionalInfo?.map((info, index) => {
+                                        return (
+                                            <section
+                                                key={index}
+                                                className=""
+                                            >
+                                                <div className="form-control w-full">
+                                                    <div className='border p-2'>
+                                                        <input
+                                                            type="text"
+                                                            name="heading"
+                                                            defultValue={info?.heading}
+                                                            {...register(`productAdditionalInfo.${index}.heading`)}
+                                                            placeholder="heading"
+                                                            className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="form-control w-full my-2">
+                                                    <div className='border p-2'>
+                                                        <input
+                                                            type="text"
+                                                            name="details"
+                                                            defultValue={info?.details}
+                                                            {...register(`productAdditionalInfo.${index}.details`)}
+                                                            placeholder="details"
+                                                            className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                            </section>
+                                        )
+                                    })
+                                }
+
+                            </div>
                             {/* ========= color update ========= */}
                             <div>
                                 {
@@ -580,19 +615,21 @@ const UpdatePorductPage = () => {
                                                     <label className="label">
                                                         <span className="label-text">Color: </span>
                                                     </label>
-                                                    <input
-                                                        type="text"
-                                                        name="color"
-                                                        defaultValue={color}
-                                                        {...register(`productColors.${colorIndex}.color`)}
-                                                        placeholder="Color"
-                                                        className="border-2 border-gray-300 rounded-md p-2"
-                                                    />
+                                                    <div className='border-2 border-gray-300 rounded-md  w-full'>
+                                                        <input
+                                                            type="text"
+                                                            name="color"
+                                                            defaultValue={color}
+                                                            {...register(`productColors.${colorIndex}.color`)}
+                                                            placeholder="Color"
+                                                            className="border-2 border-gray-300 rounded-md p-2 w-full"
+                                                        />
+                                                    </div>
                                                 </div>
 
                                                 {
-                                                    isSizeApplicable ? sizes?.map((sizeItem, sizeIndex) => {
-                                                        const { size, quantity } = sizeItem;
+                                                    sizes?.map((sizeItem, sizeIndex) => {
+                                                        const { size } = sizeItem;
                                                         return (
                                                             <div key={sizeIndex} className="flex justify-between items-center gap-4">
                                                                 <div className="form-control flex gap-4">
@@ -601,47 +638,21 @@ const UpdatePorductPage = () => {
                                                                         <label htmlFor="sizeof">
                                                                             Size :
                                                                         </label>
-                                                                        <input
-                                                                            type="text"
-                                                                            name="size"
-                                                                            defaultValue={size}
-                                                                            {...register(`productColors.${colorIndex}.sizes.${sizeIndex}.size`)}
-                                                                            placeholder="Size"
-                                                                            className="border-2 my-2 border-gray-300 rounded-md p-2"
-                                                                        />
-                                                                    </div>
-                                                                    <div className='flex items-center gap-2'>
-                                                                        <label htmlFor="quantity">
-                                                                            Quantity :
-                                                                        </label>
-
-                                                                        <input
-                                                                            type="number"
-                                                                            name="quantity"
-                                                                            defaultValue={quantity}
-                                                                            {...register(`productColors.${colorIndex}.sizes.${sizeIndex}.quantity`)}
-                                                                            placeholder="Quantity"
-                                                                            className="border-2 my-2 border-gray-300 rounded-md p-2"
-                                                                        />
+                                                                        <div className='border-2 border-gray-300 rounded-md w-full'>
+                                                                            <input
+                                                                                type="text"
+                                                                                name="size"
+                                                                                defaultValue={size}
+                                                                                {...register(`productColors.${colorIndex}.sizes.${sizeIndex}.size`)}
+                                                                                placeholder="Size"
+                                                                                className="border-2  border-gray-300 rounded-md p-2 w-full"
+                                                                            />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         )
-                                                    }) : (
-                                                        <div className="form-control">
-                                                            <label className="label">
-                                                                <span className="label-text">Quantity: </span>
-                                                            </label>
-                                                            <input
-                                                                type="number"
-                                                                name="quantity"
-                                                                defaultValue={quantity}
-                                                                {...register(`productColors.${colorIndex}.quantity`)}
-                                                                placeholder="Quantity"
-                                                                className="border-2 border-gray-300 rounded-md p-2"
-                                                            />
-                                                        </div>
-                                                    )
+                                                    })
                                                 }
 
                                                 {/* ==== Image ===== */}
@@ -678,25 +689,39 @@ const UpdatePorductPage = () => {
                                                                             `productColors.${colorIndex}.images`
                                                                         }
                                                                         multiple
-                                                                        className="px-4 pb-4"
+                                                                        className="w-full"
                                                                     />
                                                                 </label>
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                    <div>
-                                                        {/* ------ show seleted image------- */}
-
-                                                        <div className="flex gap-4 flex-wrap my-4">
-                                                            {images &&
-                                                                images?.map((image, index) => (
-                                                                    <div key={index}>
-                                                                        <img src={image} alt="" className="w-40 h-40 object-cover " />
-                                                                    </div>
-                                                                ))}
-                                                        </div>
-
+                                                    <div className="flex gap-4 my-4">
+                                                        {item.images &&
+                                                            item.images.map((image, index) => (
+                                                                <div key={index} className="relative w-1/2">
+                                                                    <img
+                                                                        src={image}
+                                                                        alt=""
+                                                                        className="w-full h-full object-cover"
+                                                                    />
+                                                                    <button className="absolute top-0 right-0 m-2 p-2 bg-red-500 text-white rounded-full"
+                                                                        onClick={() => handleDeleteImage(colorIndex, index)}
+                                                                    >
+                                                                        {/* Replace with your preferred delete icon */}
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            ))
+                                                        }
+                                                        {Object.keys(uploadProgress).map((fileName) => (
+                                                            <div key={fileName} className="w-full my-2">
+                                                                <p className="text-sm text-gray-600 mb-1">{fileName}</p>
+                                                                <LinearProgress variant="determinate" value={uploadProgress[fileName]} />
+                                                            </div>
+                                                        ))}
                                                     </div>
                                                 </div>
                                                 {/* ==== Image ===== */}
@@ -723,6 +748,6 @@ const UpdatePorductPage = () => {
             </section>
         </DashboardLayout >
     );
-};
+}
 
 export default UpdatePorductPage;

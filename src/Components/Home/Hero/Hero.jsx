@@ -10,10 +10,14 @@ import Link from "next/link";
 import { FaDolly } from 'react-icons/fa';
 import { TbMapPinHeart, TbTrees } from 'react-icons/tb';
 import {CiDeliveryTruck} from 'react-icons/ci'
+import useHomeSlider from "@/src/Hooks/useHomeSlider";
+
 
 
 const HeroSlider = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const {homeSliderData} = useHomeSlider()
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -41,8 +45,8 @@ const HeroSlider = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper heroSlider"
             >
-                {sliderData &&
-                    sliderData?.map((slide) => {
+                {homeSliderData &&
+                    homeSliderData?.map((slide) => {
                         return (
                             <SwiperSlide key={slide?.id}>
                                 <Link href={'/shop'} className="slider-images">
