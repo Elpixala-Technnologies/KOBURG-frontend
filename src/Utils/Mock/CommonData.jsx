@@ -1,38 +1,33 @@
-import { 
+import {
   HomeSliderMobileBannerOne,
   HomeSliderMobileBannerTwo,
   HomeSliderMobileBannerThree,
-  HomeSliderMobileBannerFour,
 
 
   HomeSldierDesktopBannerOne,
   HomeSldierDesktopBannerTwo,
   HomeSldierDesktopBannerThree,
-  HomeSldierDesktopBannerFour } from "@/src/Assets"
+} from "@/src/Assets"
 
-  export const sliderData = [
-    {
-      id: 1,
-      desktopImage: HomeSldierDesktopBannerOne,
-      mobileImage: HomeSliderMobileBannerOne,
-    },
-    {
-      id: 2,
-      desktopImage: HomeSldierDesktopBannerTwo,
-      mobileImage:HomeSliderMobileBannerTwo
-    },
-    {
-      id: 3,
-      desktopImage: HomeSldierDesktopBannerThree,
-      mobileImage: HomeSliderMobileBannerThree
-    },
-    {
-      id: 4,
-      desktopImage: HomeSldierDesktopBannerFour,
-      mobileImage: HomeSliderMobileBannerFour
-    }
-  ]
-  
+export const sliderData = [
+  {
+    id: 1,
+    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1700196099/koburg/Kuborg%20Banners/Top%20Banner/zdeytibegsxg6yc5o7wh.png",
+    mobileImage:"https://res.cloudinary.com/elpixala/image/upload/v1700196080/koburg/Kuborg%20Banners/Top%20Banner/q2arvyjprnk34gjx9zk6.png",
+  },
+  {
+    id: 2,
+    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1700196086/koburg/Kuborg%20Banners/Top%20Banner/tetmcxezgwpttquwcdbb.png",
+    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1700196071/koburg/Kuborg%20Banners/Top%20Banner/yupv2kxqd66go9zkfluj.png"
+  },
+  {
+    id: 3,
+    desktopImage: "https://res.cloudinary.com/elpixala/image/upload/v1700212338/koburg/Kuborg%20Banners/jd7mwgnx6rj4winp1kmj.png",
+    mobileImage: "https://res.cloudinary.com/elpixala/image/upload/v1700196063/koburg/Kuborg%20Banners/Top%20Banner/bhblnrdgp7j4n4x5atng.png"
+  },
+   
+]
+
 
 export const PopularCategoryData = [
   {
@@ -41,7 +36,7 @@ export const PopularCategoryData = [
     "color": 'bg-blue-400',
     "shadow": 'shadow-md',
     "ifExists": true,
-    "image": "https://res.cloudinary.com/elpixala/image/upload/v1699084170/koburg/Category/q7xzldjxn3rfcrova715.png",
+    "image": "https://res.cloudinary.com/elpixala/image/upload/v1699560895/koburg/Category/wjpzr8xgbo9eixw1z9vc.jpg",
     "slug": "sneakers is a type of shoe that is made with a rubber sole and a canvas top. Sneakers are also called athletic shoes, tennis shoes, gym shoes, sport shoes, runners, takkies, or trainers."
   },
   {
@@ -49,7 +44,7 @@ export const PopularCategoryData = [
     "color": 'bg-red-400',
     "shadow": 'shadow-md',
     "ifExists": true,
-    "image": "https://res.cloudinary.com/elpixala/image/upload/v1699084544/koburg/Category/pdjopv2sbi9ekbcbkt0r.png",
+    "image": "https://res.cloudinary.com/elpixala/image/upload/v1699560895/koburg/Category/gqya8xhiy0xvhdiue4v9.jpg",
     "slug": "Sports shoes are shoes that are usually used for sports or other forms of physical exercise. "
   },
   {
@@ -57,29 +52,29 @@ export const PopularCategoryData = [
     "color": 'bg-blue-400',
     "shadow": 'shadow-md',
     "ifExists": true,
-    "image": "https://res.cloudinary.com/elpixala/image/upload/v1699084096/koburg/Category/uewiow5vlihp9kxpdp04.png",
+    "image": "https://res.cloudinary.com/elpixala/image/upload/v1699560895/koburg/Category/zzwyhqwdjdmyj0phsxtp.jpg",
     "slug": "Flip-flops are a type of sandal, typically worn as a form of casual wear. They consist of a flat sole held loosely on the foot by a Y-shaped strap known as a toe thong that passes between the first and second toes and around both sides of the foot or can be a hard base with a strap across all the toes."
   }
 ]
 
 export const sizeData = [
   {
-    size: "S",
+    size: "6",
   },
   {
-    size: "M",
+    size: "7",
   },
   {
-    size: "L",
+    size: "8",
   },
   {
-    size: "XL",
+    size: "9",
   },
   {
-    size: "XXL",
+    size: "10",
   },
   {
-    size: "XXXL",
+    size: "11",
   },
 ]
 
@@ -117,24 +112,7 @@ export const colorData = [
   {
     name: "Brown",
   },
-  {
-    name: "Silver",
-  },
-  {
-    name: "Gold",
-  },
-  {
-    name: "Maroon",
-  },
-  {
-    name: "Navy",
-  },
-  {
-    name: "Olive",
-  },
-  {
-    name: "Teal",
-  }
+ 
 ]
 
 export const priceData = [

@@ -21,7 +21,7 @@ const BannerSection = () => {
 
                 <div className='banner-content w-full relative group'>
                     <Image
-                        src={BanneSectionSix}
+                        src={"https://res.cloudinary.com/elpixala/image/upload/v1700196106/koburg/Kuborg%20Banners/Differnt%20Shoes%20Banner/mrrdqecsiajvubulced5.png"}
                         alt={"HomeOfferBannerOne"}
                         width={500}
                         height={530}
@@ -41,9 +41,6 @@ const BannerSection = () => {
                         </div>
                     </div>
                 </div>
-
-
-
 
                 <div className='banner-content  text-[#000] flex flex-col gap-[2rem]'>
                     <div className='banner-content w-full relative group'>
@@ -74,7 +71,7 @@ const BannerSection = () => {
                             Designed to complement your everyday life
                         </h1>
                         <p className='text-center'>
-                            At Neeman's, we craft products that seamlessly fit your everyday life and fashion choices. Our products are created responsibly to elevate your lifestyle, empowering you to conquer each day with comfort and ease
+                            At Koburg, we craft products that seamlessly fit your everyday life and fashion choices. Our products are created responsibly to elevate your lifestyle, empowering you to conquer each day with comfort and ease
                         </p>
                     </div>
                     <div className='banner-content w-full relative group'>
@@ -104,7 +101,7 @@ const BannerSection = () => {
 
                 <div className='banner-content w-full relative group'>
                     <Image
-                        src={BanneSectionOne}
+                        src={"https://res.cloudinary.com/elpixala/image/upload/v1700212526/koburg/Kuborg%20Banners/Differnt%20Shoes%20Banner/d5rpcvdsxe1k7g7uwudy.png"}
                         alt={"HomeOfferBannerOne"}
                         width={530}
                         height={510}

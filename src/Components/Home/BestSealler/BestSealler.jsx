@@ -6,7 +6,7 @@ import useProducts from "@/src/Hooks/useProducts";
 import { AiFillAmazonSquare } from 'react-icons/ai';
 import { SiFlipkart } from 'react-icons/si'
 import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
- 
+
 const BestSeller = () => {
     const { productData } = useProducts();
     const sliderRef = useRef(null);
@@ -23,8 +23,11 @@ const BestSeller = () => {
 
     return (
         <section className='container'>
-        
-            <div className=" flex justify-end items-center mb-5">
+            <div className='text-center  title md:mb-[-4rem] '>
+                <h1>Discover <span>Koburg</span> Top-Selling Product!</h1>
+                <p className=''>Unmatched Quality and Value for Your Everyday Needs</p>
+            </div>
+            <div className=" flex justify-end items-center my-4">
                 <div className="flex items-center gap-10 top-0">
                     <button className="prev-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handlePrev}>
                         <TbArrowBigLeft className="h-6 w-6 text-black" />
@@ -34,7 +37,7 @@ const BestSeller = () => {
                     </button>
                 </div>
             </div>
-            <div>
+            <div className="mt-[2rem]">
                 <Swiper
                     ref={sliderRef}
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -81,12 +84,23 @@ const BestSeller = () => {
                                                 className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem]"
                                             >
                                                 <Link
-                                                    className="relative mx-3 mt-3 flex h-64 bg-[#e4eff0] p-2 border overflow-hidden rounded-[1rem]"
+                                                    className=" mx-3 mt-3 flex  "
                                                     href={`/shop/${_id}`}
                                                 >
-                                                    <img class="peer opacity-75 absolute top-0 right-0 h-full w-full object-cover" src={colors[0]?.images[0]} alt="product image" />
-                                                    <img class="peer   absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0" src={colors[0]?.images[1]} alt="product image" />
+                                                    <div className="h-full duration-300 w-full overflow-hidden relative h-menu border rounded-[1rem]">
+                                                        <img
+                                                            src={colors[0]?.images[0]}
+                                                            alt=""
+                                                            className="hover-img h-full w-full duration-200"
+                                                        />
+                                                        <img
+                                                            src={colors[0]?.images[1]}
+                                                            alt=""
+                                                            className="absolute translate-y-[-100%] top-0 left-0 right-0 bottom-0 h-hover h-full w-full duration-300"
+                                                        />
+                                                    </div>
                                                 </Link>
+
                                                 <div className="mx-3 py-2">
                                                     <p className='text-gray-300 text-left'>{brand}</p>
                                                     <Link href={`/shop/${_id}`} className="text-[1.22rem] tracking-tight   text-slate-900 "

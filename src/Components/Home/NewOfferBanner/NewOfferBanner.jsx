@@ -18,7 +18,7 @@ const NewOfferBanner = () => {
         <section className="w-[100%] mx-auto  mt-8" data-aos="fade-up"> {/* Add data-aos attribute */}
             <Link href="/shop" className=" ">
                 <Image
-                    src={HomeOfferBannerOne}
+                    src={"https://res.cloudinary.com/elpixala/image/upload/v1700196070/koburg/Kuborg%20Banners/oyutzajjyx1d6ehrelae.png"}
                     alt='Product'
                     width={250}
                     height={1920}

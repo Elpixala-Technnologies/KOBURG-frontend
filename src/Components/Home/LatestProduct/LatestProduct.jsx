@@ -25,16 +25,15 @@ const LatestProduct = () => {
 
     return (
         <section className="container">
-            <div className="mx-auto max-w-screen-sm">
+            <div className="mx-auto max-w-screen-sm   md:mb-[-4rem]">
                 <div className='title my-2'>
-                <h1>Latest Drops  <span>Sneaker</span></h1>
+                    <h1>Latest Drops  <span>Sneaker</span></h1>
                 </div>
-                <p className="mb-4 font-light text-center text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                    molestiae quas vel sint commodi
+                <p className="font-light text-center text-gray-500 sm:text-xl dark:text-gray-400">
+                    Hear from Our Satisfied Customers  Real Stories, Genuine Feedback
                 </p>
             </div>
-            <div className=" flex justify-end items-center mb-5">
+            <div className=" flex justify-end items-center my-5">
                 <div className="flex items-center gap-10 top-0">
                     <button className="prev-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handlePrev}>
                         <TbArrowBigLeft className="h-6 w-6 text-black" />
@@ -44,7 +43,7 @@ const LatestProduct = () => {
                     </button>
                 </div>
             </div>
-            <div>
+            <div className="mt-[2rem]">
                 <Swiper
                     ref={sliderRef}
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -90,13 +89,24 @@ const LatestProduct = () => {
                                                 key={_id}
                                                 className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem] "
                                             >
-                                                  <Link
-                                                    className="relative  bg-[#e4eff0] p-2 border mx-3 mt-3 flex h-64 overflow-hidden rounded-[1rem]"
+                                                <Link
+                                                    className=" mx-3 mt-3 flex  "
                                                     href={`/shop/${_id}`}
                                                 >
-                                                    <img class="peer opacity-75 absolute top-0 right-0 h-full w-full object-cover" src={colors[0]?.images[0]} alt="product image" />
-                                                    <img class="peer  absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0" src={colors[0]?.images[1]} alt="product image" />
+                                                    <div className="h-full duration-300 w-full overflow-hidden relative h-menu border rounded-[1rem]">
+                                                        <img
+                                                            src={colors[0]?.images[0]}
+                                                            alt=""
+                                                            className="hover-img h-full w-full duration-200"
+                                                        />
+                                                        <img
+                                                            src={colors[0]?.images[1]}
+                                                            alt=""
+                                                            className="absolute translate-y-[-100%] top-0 left-0 right-0 bottom-0 h-hover h-full w-full duration-300"
+                                                        />
+                                                    </div>
                                                 </Link>
+
                                                 <div className="mx-3 py-2">
                                                     <p className='text-gray-300 text-left'>{brand}</p>
                                                     <Link href={`/shop/${_id}`} className="text-[1.22rem] tracking-tight   text-slate-900 "
@@ -160,7 +170,7 @@ const LatestProduct = () => {
                     </div>
                 </Swiper>
             </div>
-           
+
         </section>
     );
 };

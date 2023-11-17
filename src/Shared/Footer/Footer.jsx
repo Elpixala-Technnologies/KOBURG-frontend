@@ -19,18 +19,18 @@ const Footer = () => {
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti facilis ratione aut minima fuga fugit nisi ea quos magni iure! Doloremque facere dolore tempora cupiditate. Sed cupiditate adipisci dignissimos dolores.
                         </h4>
                         <div className="flex justify-center lg:justify-start items-center gap-4 ">
-                            <a target="_blank" href="www.facebook.com" className="rounded-full border-red-600 border border-dashed p-0.5">
+                            <Link target="_blank" href="https://m.facebook.com/marketing.virajent/" className="rounded-full border-red-600 border border-dashed p-0.5">
                                 <img className="w-12" src='https://www.svgrepo.com/show/452196/facebook-1.svg' alt="" />
-                            </a>
-                            <a target="_blank" href="www.facebook.com" className="rounded-full border border-dashed p-0.5">
+                            </Link>
+                            <a target="_blank" href="https://www.instagram.com/thekoburg/" className="rounded-full border border-dashed p-0.5">
                                 <img className="w-12" src={'https://www.svgrepo.com/show/452231/instagram.svg'} alt="" />
                             </a>
 
                             <a target="_blank" href="www.facebook.com" className="rounded-full border border-dashed p-0.5">
                                 <img className="w-12" src='https://www.svgrepo.com/show/354560/whatsapp.svg' alt="" />
                             </a>
-                            <a target="_blank" href="www.facebook.com" className="rounded-full border border-dashed p-0.5">
-                                <img className="w-12" src='https://www.svgrepo.com/show/452138/youtube.svg' alt="" />
+                            <a target="_blank" href="https://www.amazon.in/stores/KOBURG/page/34F5A39A-A350-4123-8F79-2A56B434ABFD?ref_=ast_bln" className="rounded-full border border-dashed p-0.5">
+                                <img className="w-12" src='https://res.cloudinary.com/elpixala/image/upload/v1699560517/koburg/Icons/sun0blpkla9ppkb7fbmq.png' alt="" />
                             </a>
                         </div>
                     </div>

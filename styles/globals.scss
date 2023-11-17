@@ -201,7 +201,7 @@ h6 {
 }
 
 .swiper-button-next {
-  background: rgba(0,0,0,0.6);
+  // background: rgba(0,0,0,0.6);
   padding: 1.3rem !important;
   width: 1rem !important;
   border-radius: 0.5rem !important;
@@ -209,7 +209,7 @@ h6 {
 }
 
 .swiper-button-prev {
-  background: rgba(0,0,0,0.6);
+  // background: rgba(0,0,0,0.6);
   padding: 1.3rem !important;
   width: 1rem !important;
   border-radius: 0.5rem !important;
@@ -299,7 +299,7 @@ h6 {
 .vedioContent {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 0.6rem !important;
+  border-radius: 1rem !important;
   object-fit: cover;
 }
 
@@ -312,7 +312,7 @@ h6 {
   height: 100%;
   object-fit: cover;
   position: absolute;
-  border-radius: 1rem !important;
+  border-radius: 1.5rem !important;
   top: 0;
   left: 0;
 }
@@ -320,7 +320,7 @@ h6 {
 .activeCardMain {
   // margin:1rem;
 }
-
+ 
 /* Style the checkbox container */
 input[type='checkbox'] {
   height: 25px !important; /* Size of the checkbox */
@@ -345,4 +345,74 @@ input[type='checkbox'] {
 
 .play-pause-button{
   z-index:9999 !important;
+}
+
+.choseUsContent{
+  width: 300px !important;
+  margin: auto;
+
+  & img{
+      width:4rem;
+  }
+}
+
+.popularCategoryImage{
+  width:200px;
+  height:280px !important;
+
+}
+
+.productDetilPolicy{
+  width:5rem !important;
+}
+
+.h-menu:hover .h-hover{
+  transform: translateX(0%);
+}
+
+.h-bar:hover .h-div{
+  opacity: 100%;
+}
+ 
+
+
+
+.one:hover span:last-child {
+  width: 100%;
+}
+
+.two:hover span {
+  width: 50%;
+}
+
+.three:hover span {
+  height: 100%;
+}
+
+// =======
+
+.control-arrow .control-prev{
+  border-radius: 1rem !important;
+}
+
+.mySwiperCategory{
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+
+.modalContainer {
+  max-width: 65%;
+  max-height: 80%;
+}
+
+// =
+
+.control-arrow{
+  background-color: transparent !important;
+  border-radius: 1rem !important;
+  padding: 1rem !important;
 }

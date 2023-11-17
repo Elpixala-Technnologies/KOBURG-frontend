@@ -18,11 +18,13 @@ export const getProductBySubCategoryUrl = (subcategory) => basedUrl + `/products
 
 export const createCategoryUrl = basedUrl + '/products/create-categories'
 
-export const createSubCategoryUrl = basedUrl + `/products/create-subcategories`
+export const createSubCategoryUrl = basedUrl + `/products/create-sub-categories`
 
 export const getAllCategoryUrl = basedUrl + '/products/get-all-categories'
 
-export const getAllCategorySubCategoryUrl = basedUrl + '/products/get-all-categories-with-subcategories'
+export const getMainCategoryUrl = basedUrl + '/products/get-main-categoriess'
+
+export const getAllCategorySubCategoryUrl = basedUrl + '/products/get-all-categories'
 
 export const getSingelCategoryUrl = (id) => basedUrl + `/products/get-singel-categories/${id}`
 

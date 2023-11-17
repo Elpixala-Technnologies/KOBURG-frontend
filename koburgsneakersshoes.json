@@ -383,7 +383,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-     
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -540,7 +539,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-       
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -697,7 +695,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-       
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -851,7 +848,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-        
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -1037,7 +1033,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-       
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -1195,7 +1190,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-    
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -1386,7 +1380,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-       
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -1537,7 +1530,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-     
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -1658,7 +1650,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-       
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -1780,7 +1771,6 @@
         "amazonlink": "https://www.amazon.com/sample-product",
         "flipkartlink": "https://www.flipkart.com/sample-product",
         "myntralink": "https://www.myntra.com/sample-product",
-      
         "additionalInfo": [
             {
                 "heading": "Item model number",
@@ -1899,6 +1889,1735 @@
                     "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699261553/e7ommxfujtkmwdmlyn6e.png",
                     "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699261554/mbduz3kfhlu9acxkrrjv.png",
                     "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699261563/piyprau8ady9ivv5zzbx.png"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Urbansole",
+        "categories": [
+            "Flip flop"
+        ],
+        "brand": "Koburg",
+        "price": 799,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Urbansole Men's Flip Flops - Comfortable & Durable Footwear",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Polyurethane, Ethylene Vinyl Acetate (EVA)."
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Slip-on"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate"
+            },
+            {
+                "heading": "Style",
+                "details": "Flip flop"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Premium Comfort",
+                "details": "Experience ultimate comfort with Koburg Urbansole flip flops, designed for men who seek relaxed style."
+            },
+            {
+                "heading": "Durable material",
+                "details": "Koburg Men's Flip Flops are crafted with high-quality materials for long-lasting wear, even in urban environments."
+            },
+            {
+                "heading": "Slip-On Ease",
+                "details": "You can easily put on these flip flops on and off, making them ideal for quick outings or leisurely strolls."
+            },
+            {
+                "heading": "Versatile Style",
+                "details": "The simple and timeless design suits various casual occasions, from beach trips to summer outings."
+            },
+            {
+                "heading": "Arch Support",
+                "details": "These flip-flops have arch support for comfortable all-day wear, ensuring your feet stay relaxed."
+            },
+            {
+                "heading": "Reliable Traction",
+                "details": "The outsole provides reliable traction to prevent slips and falls, even on wet surfaces."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KF0301"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Flip flop"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "black",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595944/kamg61ye4lbfgjin6ejm.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595944/ovrcail52kk1zxkg36lg.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595944/sxatzj4bbohkj8ux3fmi.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595944/icms0or7jbuffyb8nbyy.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595944/nyl8qzcdui0ho6vbagqk.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595945/uvv9yg2b7oxri8qv096h.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595945/ln02xkosfkuhoctamkne.jpg"
+                ]
+            },
+            {
+                "color": "gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595998/y0qo5mijibfvq3bwrpvo.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595998/gnkv7txxulg6qnoq8cid.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595998/y5rq9osnd09eskdvy8tf.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595998/olxb94ihnfyepyj68bfb.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595998/emxigs5rxjouecs44sf6.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595997/p41itmz4krzf4xgyan0w.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699595997/bvywj0sk4u8c8a5aayos.jpg"
+                ]
+            },
+            {
+                "color": "Navy blue",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699596904/iowzy6p9bvuai2rz8jqy.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699596902/js7mszsklqjjis0ziakr.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699596901/o7pfxe9psb3mndwnpy2y.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699596901/xuryqhrlorcviylfzwt8.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699596901/rbhzqxnatp2ddw6fxg4p.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699596901/kjgkgztdkixyhks6z47n.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699596900/dunltipwqdbhhvdfa7up.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fertum",
+        "categories": [
+            "Flip flop"
+        ],
+        "brand": "Koburg",
+        "price": 799,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Fertum Men's Flip Flops - Stylish Summer Sandals",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Polyurethane, Ethylene Vinyl Acetate (EVA)."
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Slip-on"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate"
+            },
+            {
+                "heading": "Style",
+                "details": "Flip flop"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Supreme Comfort",
+                "details": "Koburg Fertum flip flops offer exceptional comfort and support, perfect for men on the move."
+            },
+            {
+                "heading": "Solid Design",
+                "details": "It is built to withstand everyday use, these flip flops are crafted from top-quality materials."
+            },
+            {
+                "heading": "Easy Wear",
+                "details": "Slip them on effortlessly for casual outings, beach days, or just relaxing at home."
+            },
+            {
+                "heading": "Timeless Style",
+                "details": "The classic design of our koburg flip-flops complements a variety of casual outfits and activities."
+            },
+            {
+                "heading": "Enhanced Comfort",
+                "details": "You will Experience comfort like never before, due to added arch support for your feet."
+            },
+            {
+                "heading": "Slip-Resistant Sole",
+                "details": "The outsole ensures secure footing on various surfaces, providing safety from falling down."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KF0302"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Flip flop"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Black Brown",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597678/gkftqtzv2escneogz88v.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597678/uxp7rxbz22kpfo4crnyd.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597678/z19qytagptn9o7qfddrc.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597678/zgkgffyolhkeytfpmjmw.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597679/zj8mcr7xdvbazjgdmj25.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597681/w7dy5swrle0e9gpmtvuf.jpg"
+                ]
+            },
+            {
+                "color": "Grey Brown",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597704/eshzk56icpbtjvpmcwio.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597706/zaxdxuyojhsfi7bni4nd.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597706/zbuxp6ffupqkelxj1eyk.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597706/gd51wyzp8wfejpnssiee.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597708/svmitne8ciksfo89ndfb.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597709/k0adcvx6zyyzc2jeg6yz.jpg"
+                ]
+            },
+            {
+                "color": "Navy blue",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597720/m5teu036rxnrffpvzbba.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597720/qjko0wyaxf630cudyuhv.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597721/waulwz5jragazbgvbmvh.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597722/y3ub7bdlwr5h63su8zoq.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597724/cufcukqqp6r7caoehiwh.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597724/xyziowbprkvvinjhqqin.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699597725/xjpch90shg8ar8p99ijk.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Styce",
+        "categories": [
+            "Flip flop"
+        ],
+        "brand": "Koburg",
+        "price": 799,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Styce Men's Flip Flops - Versatile & Comfortable Footwear",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Polyurethane, Ethylene Vinyl Acetate (EVA)."
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Slip-on"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate"
+            },
+            {
+                "heading": "Style",
+                "details": "Flip flop"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Style Meets Comfort",
+                "details": "Koburg Styce flip flops combine style and comfort for the modern man."
+            },
+            {
+                "heading": "Built to Last-longer",
+                "details": "These flip flops are crafted with durability in mind, ready for daily wear."
+            },
+            {
+                "heading": "Effortless Slip-On",
+                "details": "You can easily slide into these flip flops, perfect for quick errands or relaxed strolls."
+            },
+            {
+                "heading": "Versatile Appeal",
+                "details": "Its versatile style suits multiple casual occasions, from beach outings to leisurely walks."
+            },
+            {
+                "heading": "Exceptional Support",
+                "details": "These flip-flops have superior comfort with built-in arch support for all-day wear."
+            },
+            {
+                "heading": "Secure Traction",
+                "details": "The slip-resistant outsole of these flip-flops offers reliable grip, ensuring stability even on slippery surfaces."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KF0303"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Flip flop"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Black",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598480/yhe2txyi98orbqanbcdd.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598481/z5a9ukeevyywhtblzxhf.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598481/yt6geo8esxstgo657uyr.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598482/qggkdslprvdhshzjkytx.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598484/vtzhb8gzojhi6xm0eryk.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598485/thwxznoaxenpzi4fuk57.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598486/malvfocynusfx1xrs4ke.jpg"
+                ]
+            },
+            {
+                "color": "Brown",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598506/b3sw6dcd3z6iqn7s4bpf.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598506/u69jwxojftxpmaoybipn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598507/mw6lglegoyeia8ovqpgm.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598509/enhdvolvu1kgrabitned.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598510/ewytgzp0fp6gwdasrdcm.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598512/hcjfe76ny3sda7mvj4yl.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699598513/dvfvcyyecgsu7dkegzun.jpg"
+                ]
+            },
+            {
+                "color": "Gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/v1699598526/ggjuorbzjkjcvnaekm31.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/v1699598526/fayrbg8kmwnm4bo1h2ve.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/v1699598528/nzmvtvv9fimccyisunxx.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/v1699598530/fp456s184ajbdbdq7vwf.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/v1699598530/xbf5x4gfgomnwa9za7h0.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/v1699598532/hoxlwpisxnlzq8lsuull.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/v1699598533/psvgkqhcobkkyw79dkj7.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "ZenSole Flips",
+        "categories": [
+            "Flip flop"
+        ],
+        "brand": "Koburg",
+        "price": 799,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg ZenSole Flips Men's Flip Flops - Tranquil & Durable flip flops",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Polyurethane, Ethylene Vinyl Acetate (EVA)."
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Slip-on"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate"
+            },
+            {
+                "heading": "Style",
+                "details": "Flip flop"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Zen-Like Comfort",
+                "details": "You will experience composure for your feet with Koburg ZenSole Flips flip flops, designed for men who appreciate tranquillity and style."
+            },
+            {
+                "heading": "Durability Assured",
+                "details": "These flip flops are built to last, crafted from high-quality materials that stand up to everyday use."
+            },
+            {
+                "heading": "Easy On and Off",
+                "details": "Slip into these flip flops effortlessly, ideal for spontaneous outings or laid-back relaxation."
+            },
+            {
+                "heading": "Non-Slip Outsole",
+                "details": "The outsole provides secure traction, and makes you stable even on slippery surfaces."
+            },
+            {
+                "heading": "Universal Style",
+                "details": "Its timeless design adapts to various casual occasions, from beach trips to everyday comfort."
+            },
+            {
+                "heading": "Enhanced Arch Support",
+                "details": "You will find elevated comfort with built-in arch support, ensuring your feet stay relaxed."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KF0304"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Flip flop"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Light gray dark gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599417/loihqsx5hegkjkymxzrn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599414/tbsegsar1yzceoib31lt.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599394/tnsmg2jgpmyksx7wbah9.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599368/xkjeh5dx98attjlmrieu.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599351/bgl3zhxnu73cre6jp8n6.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599349/ym3vje0k4ony4muduozq.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599348/thch2pnepg2asuk048xy.jpg"
+                ]
+            },
+            {
+                "color": "Black gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599293/yyookvsmiu5t8fmqiwo1.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599292/oyjvy7vwlucipzprfsha.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599276/oiz6sbit7w1s6rmu6rxh.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599274/vv6fpqyhcxe3vbi74cdz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599272/htwc6jmtas4g6rsgbqyi.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599268/fdbtm3buqm32aylzj68x.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599264/qwhtfqm5y5osyvvgaeqx.jpg"
+                ]
+            },
+            {
+                "color": "Beige brown",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599205/cmerb4xtrshwlvsbnvds.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599204/zcc56no6aewprl9o9orn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599202/ammufqjwahx2emof9tvz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599197/jb0rnajbporoof7gy4ga.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599182/vcu9m8aqrks9kcr6l40k.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599177/kayab2gx7jrcyp5dk45o.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699599176/ffiaanhcuqver4ahuex1.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sidus",
+        "categories": [
+            "Sport shoes"
+        ],
+        "brand": "Koburg",
+        "price": 1199,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Sidus Men's Sport Shoes | Memory foam Technology | Stylish sports shoes for men | Superior arch support",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, TPA"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "TPA"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Premium Comfort",
+                "details": "Koburg sports shoes provide exceptional cushioning and support for long-lasting comfort."
+            },
+            {
+                "heading": "Durability",
+                "details": "These sports shoes are made with high-quality materials and fabricated for extended use."
+            },
+            {
+                "heading": "Athletic Versatility",
+                "details": "These shoes are perfect for various sports and athletic activities."
+            },
+            {
+                "heading": "Enhanced Traction",
+                "details": "The slip-resistant outsole of these sports shoes offers reliable grip, ensuring stability even on slippery surfaces and during athletic performance."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0102"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Black Green",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600620/gpkuwcq7g0gvxkz4nrsh.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600621/ajkhu8jfz3et6rqdwqah.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600625/rfpqwn0oqntdsmuzljfj.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600626/ygbundwyelorwvvfjwcm.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600629/pnyjuvyh328pczbgsjwa.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600631/hrnxdhmws7xdtuw1qc9a.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600635/smldwbguypyycdpzrm7q.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600636/l9aenvczvm5dbvfewqcd.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600639/ac1lfku8l7r1rr1gozvi.jpg"
+                ]
+            },
+            {
+                "color": "Blue yellow",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600644/aewglbmxotmehwgq1r54.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600645/japxreewkpsavnh1xctn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600649/cjfxoblq2q3otrtj0spz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600652/s2eui6raimpgzorkq7wj.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600644/aewglbmxotmehwgq1r54.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600657/vq1fvu5fw8ehycupngxz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600660/opmmf58abzdrrkhy4bwh.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600664/he1gqkcmhsdmh77yxypv.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600666/hhncfhnojurgygrlwjex.jpg"
+                ]
+            },
+            {
+                "color": "Dark Gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600668/ar7cv8nja7vetyrwfbf9.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600670/zd0am46wl9rb1quwksop.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600674/gnrbsbvyh57baj877qgf.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600675/hasuvo5owrhux005fdar.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600678/hpsmnmh6koplsxb56wcu.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600681/niljtqzwyyx65fkvgcpw.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600690/qn3wwgmoc1cv3nwm4h0c.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600691/dukryd3nacoj6uothwh4.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699600700/xktenpjduxesyfnxv2qn.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Ravel",
+        "categories": [
+            "Sport shoes"
+        ],
+        "brand": "Koburg",
+        "price": 1199,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Ravel Men's Sports Shoes | Memory Foam Technology | Superior Arch Support",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Exceptional Comfort",
+                "details": "The memory foam technology makes Koburg sports shoes super comfortable for everyday wear and light sports."
+            },
+            {
+                "heading": "Built to Last",
+                "details": "Its durable materials are designed to withstand daily use and last longer."
+            },
+            {
+                "heading": "Versatile Design",
+                "details": "It has versatile design which make it ideal for both everyday outings and light athletic activities."
+            },
+            {
+                "heading": "Reliable Traction",
+                "details": "These sports shoes offer reliable grip, ensuring stability even on slippery surfaces."
+            },
+            {
+                "heading": "Modern Appeal",
+                "details": "These sport shoes have a perfect blend of modern style, comfort and memory foam technology."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0103"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Black gold",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602069/ypm16mdqmgtczewbz1xw.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602070/ifushqimxmy0roupy72q.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602076/cz2129ecezubysgikclf.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602080/lhldd9zl7hlivsac9bit.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602084/qckbpvppmyk59ukymduo.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602088/k3ckghz1ga02ivaunqgu.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602093/x5b5o9fafzonbxzsqmck.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602098/bubxxttdigybkf7580ld.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602103/dy5dzengzvhaw4typ5qg.jpg"
+                ]
+            },
+            {
+                "color": "Dark Gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602109/g4bgszumertbgpycgnan.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602113/v6uezpfkkj5726twn3gq.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602118/a2vmpi4ynsqptigybkz3.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602122/ox2bhgg6w29uvc7mnkx6.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602126/jmresbmgk6qjrysgxias.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602130/mftgdngf87noptfw6gsh.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602136/rqpymxfzbjuomnjlx8uk.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602140/navf7ynykuiiv9ixmkdp.jpg"
+                ]
+            },
+            {
+                "color": "light Dark Gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602172/swxjz3baas9s0ia3zsid.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602177/sbgmlcelwpm4umfr1onf.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602182/pjrdnie1n1oifhhtxhpw.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602187/rznrv4scbv4kuepuqgcq.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602192/cfqfg4kzq5zecsbiymxz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602197/w83pcraylzaiaodu3dcp.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602258/crcqmjldlin7jw0nforf.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602279/kkyzkyx8etkaq2myypjl.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699602305/wngiv2fsfi1ayskrysdx.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Nexus",
+        "categories": [
+            "Sport shoes"
+        ],
+        "brand": "Koburg",
+        "price": 1199,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Nexus Men's Sport Shoes | Memory Foam Insole | Advance Arch Support | Stylish shoes for men",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Versatile Comfort",
+                "details": "These shoes offer comfort for daily wear and a range of day to day activities, making them a versatile choice."
+            },
+            {
+                "heading": "Long-Lasting Build",
+                "details": "It is Crafted with sturdy materials, these shoes are designed to last, making them endure over time."
+            },
+            {
+                "heading": "Everyday Style",
+                "details": "These shoes are ideal for everyday outings and a variety of activities."
+            },
+            {
+                "heading": "Secure Traction",
+                "details": "It provides reliable grip that enhances stability during various activities, providing added security."
+            },
+            {
+                "heading": "Modern Elegance",
+                "details": "These shoes strike the perfect balance between style and functionality, bringing modern elegance to your footwear."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0104"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Black",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603449/httxx1k7bjf8dgvldhof.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603454/yb4c6di4jtp5jbwn1thu.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603458/alup9penzjaheguu4xbp.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603464/tgdwi9chva6pnzmb9bwl.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603468/kxvinggdon1uokmmuxxt.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603475/lyimjkmwx3dzkb0oaywp.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603480/epcep4mgvvzfkmp46zzd.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603485/cqul0wplrxe0q9zs7201.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603489/ef6kt2glrkoqdevxgytd.jpg"
+                ]
+            },
+            {
+                "color": "Marron white",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603495/ksflrowsuslygqotufr5.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603500/dqwhdhqlwpdclgmctcj1.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603506/xktbyuaiy3uxkryjyrty.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603513/zdq51lkbtyioavqvmrd2.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603516/v5gvqtqdfzdmdp0yzyiv.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603522/bo8sejxiawnbylla8cu8.jpg"
+                ]
+            },
+            {
+                "color": "royal blue",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603527/lvg60ojrgnuubo8x5eai.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603545/osztvrbcerlxa4suqjhe.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603555/yb0uwwpznejb6dsyvfuj.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603560/yvfpaeaeiorkw6ovedhq.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603564/dxcjy9umx6cinbcxjff6.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603570/yez94rdnjghxonihxavm.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603576/mc8vqoucbkzawtlxptcz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699603582/yc5jw7jakrhewpqwznjv.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Jauvie",
+        "categories": [
+            "Sport shoes"
+        ],
+        "brand": "Koburg",
+        "price": 1199,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Jauvie Men's Sport Shoes | Memory Foam Insole | Durable sports shoes for men | Optimal Arch Support",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Superior Comfort",
+                "details": "Experience exceptional cushioning and support specifically tailored for athletic wear, ensuring your comfort during rigorous activities."
+            },
+            {
+                "heading": "Built to Endure",
+                "details": "These shoes are meticulously constructed with high-quality materials, engineered to withstand the demands of sports activities, promising longevity."
+            },
+            {
+                "heading": "Athletic Versatility",
+                "details": "Versatile and suitable for a wide range of sports and athletic pursuits, these shoes adapt to your active lifestyle."
+            },
+            {
+                "heading": "Reliable Traction",
+                "details": "These shoes provide a secure grip that enhances stability during sports and assures you of a steady and confident performance."
+            },
+            {
+                "heading": "Contemporary Athletic Style",
+                "details": "The shoes' sports performance is complemented by a modern, fashionable design, therefore these shoes provides you a contemporary edge while participating in athletic activities."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0105"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Black red",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604534/uzmqzysd8jxaj7elzu0d.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604538/tjx2siyode3jqekdufxg.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604544/vfc2mkayxqdv2hboe5ul.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604549/muqilg5w9qvhgtstkfiq.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604557/fjadz6gtzvhwqvienwnp.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604563/nx18rxfsoockja4deboz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604567/zudkcmbovwg2goh8klxj.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604573/e7wpqs4mkfflgvn75gff.jpg"
+                ]
+            },
+            {
+                "color": "Dark gray green",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604588/pqqzjvjitft94raf4hpa.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604592/bgkunwde4diqzwdttq3x.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604597/bhmd2mkbsa4zqh2yizax.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604603/rynhc7njxzlpcqyk0txn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604609/dtwjzeyzngyscerfdafn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604617/xoayevzbtymdwjsdzp77.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604623/dbtvsrjvxpkauwdhpc9i.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604629/tmi3lsxhdis7lofjuexd.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604636/lrqi9bu7rkdzkrlg5wb3.jpg"
+                ]
+            },
+            {
+                "color": "Navy orange",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604663/n1lujdktusp9xw4hwy4e.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604691/vhhuuzhc7k4g8zhsjd3h.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604712/woxghzqcvbzicuc688rj.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604716/ruzursgg6xetywi2hyi1.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604722/tecqa1qsthgozeflcmvl.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604727/scrbublqzajdramenwn4.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604735/fmgeyfydswolfvcsry1s.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604741/y4zyqjdfio6q8iwh947r.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699604759/urybs2efalvi1btvvodl.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Jive",
+        "categories": [
+            "Sport shoes"
+        ],
+        "brand": "Koburg",
+        "price": 1199,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Jive Men's Sport Shoes | Advance Arch Support| Memory foam insole | Athletic sports shoes",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Style and Comfort",
+                "details": "These shoes offer a comfortable cushioning while incorporating a stylish design, blending fashion and function seamlessly."
+            },
+            {
+                "heading": "Durable Build",
+                "details": "These shoes are Crafted from high-quality materials, these shoes are designed to withstand the rigours of sports, ensuring durability."
+            },
+            {
+                "heading": "Athletic Versatility",
+                "details": "It is suitable for a variety of sports and physical activities, making them adaptable to your athletic pursuits."
+            },
+            {
+                "heading": "Reliable Traction",
+                "details": "These shoes provide secure footing, adding extra stability to your sports endeavours, due to these shoes' advanced grip."
+            },
+            {
+                "heading": "Modern Athletic Appeal",
+                "details": "The shoes' sports performance is complemented by a modern, fashionable design, therefore these shoes provides you a contemporary edge while participating in athletic activities."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0106"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Black gold",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605193/a7vpzqlxzwuenmq66gz8.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605198/mpgfqeyuzdsb9gg67det.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605204/q0h7nun5q0ctwzetimpw.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605211/sqzwnii29tpvfu91jww6.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605216/udr2gd2wa4hb1d7fyvpn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605255/k6w6atdgr88kucms5jqd.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605259/akvslkyzuxu5hlw2wrxy.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605266/xv9xndwdvozfssiehqyp.jpg"
+                ]
+            },
+            {
+                "color": "Marron gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605274/ixgcpvpoo4vyzaky4thn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605279/yf0m1copfjqpb5fvujhj.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605287/xjspundlehvs1dfopdbt.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605302/ahna0ho8lejpptoasve7.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605307/wprlksg8eeky22uc5nto.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605330/d86axyfcz1ojbgmj4xyc.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605335/uuifywmdya4gpkn7nkcw.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699605343/zgkygltrtvzzihp0nuif.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Whril",
+        "categories": [
+            "Sport shoes"
+        ],
+        "brand": "Koburg",
+        "price": 1199,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Whril Men's Sport Shoes | Memory Foam Insole | Advanced Arch Support",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Memory foam Insole",
+                "details": "These shoes provide comfortable cushioning suitable for everyday wear and light sports, due to its memory foam technology."
+            },
+            {
+                "heading": "Durability Assured",
+                "details": "It is crafted with robust materials, these shoes guarantee durability, making them suitable for various activities and built to last."
+            },
+            {
+                "heading": "Versatile Design",
+                "details": "These shoes are ideal for indoor activities and light athletic pursuits, these shoes are adaptable and fit seamlessly into your daily activities."
+            },
+            {
+                "heading": "Reliable Traction",
+                "details": "These shoes offer a secure grip that enhances stability during sports and other physical pursuits, providing added reassurance."
+            },
+            {
+                "heading": "Modern Style",
+                "details": "A combination of comfort and sports functionality, these shoes effortlessly blend style and versatility for your everyday adventures."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0107"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "Black yellow",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606160/szky09oqjybyipgbssa7.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606166/aqac2jd7tglwitzuyr14.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606171/xxzoyutknztnboxph5jz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606180/ulbna39vwymi4kaa28ao.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606186/xd5rjzichvstvvordgr0.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606191/srezhmvmpnirqcwxb97s.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606198/p6bn3y4kgdkisoypif68.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606204/n6ankwty3gx97ufdulae.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606210/ixxqrcqvcludqyiixj2o.jpg"
+                ]
+            },
+            {
+                "color": "Dark gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606218/bcya4sjzsblwpbt1zd9i.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606227/yxtpuennyu0gckfsdngq.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606232/aizwjaiy9j31qkvm7vly.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606239/x7jdb5vt81i8uf0lk3te.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606248/xjyjktkzgiuxdokzv0nc.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606254/m2alxhuutjhvdhcmjrsm.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606260/eubfhidnpzbza5wm5afx.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606349/kisainzxoofmyq1pzu8q.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606373/xnpsbdrckptxcff8whuy.jpg"
+                ]
+            },
+            {
+                "color": "navy white",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606390/pdkgtu858jtzlmzshs5r.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606402/skw7qao7sy2vqlpcmotr.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606415/dldy0mrq9rnra5iqwtaj.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606435/hracphwfdzqfyjvqpvor.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606446/mhrzb0rvbtfark4qhbiu.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606459/ux1xfxbx6bpco7axdlvi.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606479/xjss36bug0oovlsqk5no.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699606494/njoh08xuj1pxe9px1mj2.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Grit",
+        "categories": [
+            "Sport shoes"
+        ],
+        "brand": "Koburg",
+        "price": 1199,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Grit Men's Sport Shoes | Memory Foam Insole | stylish sports shoes for men | Optimal Arch Support",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Comfortable Everyday Wear",
+                "details": "Enjoy everyday comfort with these shoes, providing cushioning for daily use and light sports, ensuring your feet are at ease."
+            },
+            {
+                "heading": "Durable Material",
+                "details": "These shoes are meticulously crafted with sturdy materials to withstand extended use, providing longevity and reliability."
+            },
+            {
+                "heading": "Versatile Design",
+                "details": "These pairs are ideal for a wide range of light athletic activities, these shoes are versatile and adapt seamlessly to your varying pursuits."
+            },
+            {
+                "heading": "Secure Traction",
+                "details": "These shoes offer a secure grip, ensuring added stability and confidence during sports and other physical activities."
+            },
+            {
+                "heading": "Modern Style",
+                "details": "These shoes effortlessly blend comfort with sports activities, offering a contemporary and versatile style for your daily adventures."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0108"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "black green",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607229/b0up4awnh1skwytz89jr.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607233/jmzjllkf2woumuf3e8fs.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607240/aub3a6kepilopmhqlnle.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607249/spfuv9pnlhunycky2xl7.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607256/aggatowdbsj8gdujlxxd.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607261/qhfnqpbhxqbz7ffnlg32.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607269/d8enlhedxyuz2xuou8hw.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607277/zy6kqw3ptozmrdnmvl5p.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607316/wa4xozdagullaxv1kq0c.jpg"
+                ]
+            },
+            {
+                "color": "dark gray",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607323/ojhhxynjshbjhl4awtxe.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607330/jbnfrko2eiol3wqh45rz.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607359/pfflsrajwu8tcdkojaun.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607373/ahbcmvvlyqs1sde1hjxm.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607382/oqpbvvserih7pj1dx60d.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607397/wyoo8zgdeehspbs671xq.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607406/dnekzkq40rrrllbjnvuv.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607421/o2i0odkrqtnaeo6pgchl.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607432/bllilwnzt3cdoinxk7ob.jpg"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "zephy",
+        "categories": [
+            "Sport shoes"
+        ],
+        "brand": "Koburg",
+        "price": 1199,
+        "discount": 20,
+        "status": "Available",
+        "Title": "Koburg Zephy Men's Sport Shoes | Memory Foam technology | Durable sports shoes for men | Advanced Arch Support",
+        "details": [
+            {
+                "heading": "Material Type",
+                "details": "Flyknit, Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Lace Type",
+                "details": "Lace-Up"
+            },
+            {
+                "heading": "Heel Type",
+                "details": "Flat"
+            },
+            {
+                "heading": "Sole Material",
+                "details": "Ethylene Vinyl Acetate (EVA)"
+            },
+            {
+                "heading": "Style",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Country of Origin",
+                "details": "India"
+            }
+        ],
+        "amazonlink": "https://www.amazon.com/sample-product",
+        "flipkartlink": "https://www.flipkart.com/sample-product",
+        "myntralink": "https://www.myntra.com/sample-product",
+        "features": [
+            {
+                "heading": "Everyday Comfort",
+                "details": "These shoes offer comfortable cushioning, making them suitable for daily wear and light sports, ensuring your feet stay at ease."
+            },
+            {
+                "heading": "Sturdy and Durable",
+                "details": "These are made with high-quality materials, these shoes are designed to endure various activities, guaranteeing their long-lasting quality and reliability."
+            },
+            {
+                "heading": "Versatile Design",
+                "details": "Koburg shoes are ideal for everyday outings and light athletic pursuits, these shoes are adaptable, effortlessly complementing your diverse activities."
+            },
+            {
+                "heading": "Reliable Traction",
+                "details": "Enjoy secure footing, koburg shoes provide added stability during sports and other physical pursuits, due to these shoe’s dependable grip."
+            },
+            {
+                "heading": "Modern Style",
+                "details": "A harmonious blend of comfort and style, these shoes are designed for everyday wear, seamlessly combining fashion with function."
+            }
+        ],
+        "additionalInfo": [
+            {
+                "heading": "Item model number",
+                "details": "KX0109"
+            },
+            {
+                "heading": "Department",
+                "details": "Mens"
+            },
+            {
+                "heading": "Generic Name",
+                "details": "Sport shoes"
+            },
+            {
+                "heading": "Net Quantity",
+                "details": "1"
+            },
+            {
+                "heading": "Manufacturer",
+                "details": "Viraj Enterprises"
+            },
+            {
+                "heading": "Packer",
+                "details": "Viraj enterprises"
+            }
+        ],
+        "colors": [
+            {
+                "color": "black",
+                "sizes": [
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "images": [
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607438/j1kitwy1w1nptjwi6pyn.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607446/ldxixsypq63ori8ukz1h.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607452/pql11iovce48k0bnkvrl.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607470/pbynclrztazk8vikvub5.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607477/wfgsuemz2tx6os2hibtv.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607488/w82hqxjt5inwvfzf8rbt.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607504/dlxy1pofc6ryhflwi0lg.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607517/egxpivmad2rgcki52tdh.jpg",
+                    "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699607528/yl5ogyubnvh7b0klcfkf.jpg"
                 ]
             }
         ]

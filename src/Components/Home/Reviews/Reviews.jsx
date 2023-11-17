@@ -1,7 +1,3 @@
-// import React, { useCallback, useRef, useState } from "react";
-// import { reviewsData } from "@/src/Utils/Mock/CommonData";
-// import Image from "next/image";
-// import { BsPlayCircle } from "react-icons/bs";
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,21 +6,10 @@ import { reviewsData } from "@/src/Utils/Mock/CommonData";
 import Image from "next/image";
 import { BsPlayCircle } from "react-icons/bs";
 import YouTube from 'react-youtube';
+import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
 
 const Reviews = () => {
-  // const sliderRef = useRef(null);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [videoUrl, setVideoUrl] = useState("");
 
-  // const handleOpenModal = (url) => {
-  //   setVideoUrl(url);
-  //   setIsModalOpen(true);
-  // };
-
-  // const handleCloseModal = () => {
-  //   setVideoUrl("");
-  //   setIsModalOpen(false);
-  // };
 
   const sliderRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,22 +26,46 @@ const Reviews = () => {
   };
 
 
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
+
+  const modalContainer = isModalOpen ? "block" : "hidden";
+
+
+
   return (
     <section className="container">
       <div className="px-4 mx-auto text-center  lg:px-6">
-        <div className="mx-auto max-w-screen-sm">
-          <div className='title my-2'>
+        <div className="mx-auto max-w-screen-sm  md:mb-[-4rem]">
+          <div className='title'>
             <h1>What Say Our <span>Customer</span></h1>
           </div>
-          <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+          <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
             molestiae quas vel sint commodi
           </p>
         </div>
+        <div className=" flex justify-end items-center my-5">
+          <div className="flex items-center gap-10 top-0">
+            <button className="prev-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handlePrev}>
+              <TbArrowBigLeft className="h-6 w-6 text-black" />
+            </button>
+            <button className="next-arrow cursor-pointer p-3 rounded-full border bg-slate-50" onClick={handleNext}>
+              <TbArrowBigRight className="h-6 w-6 text-black" />
+            </button>
+          </div>
+        </div>
 
         {/* ======== slider ======== */}
 
-        <div>
+        <div className="mt-[2rem]">
           <Swiper
             ref={sliderRef}
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -115,12 +124,13 @@ const Reviews = () => {
 
                             <div className="absolute bottom-5 left-5">
                               <div
-                                className="flex gap-2 items-center text-white p-2 rounded-full cursor-pointer hover:bg-[#B4B3B2] hover:border border-transparent hover:border-white transition-all duration-300 ease-in-out px-4"
+                                className="flex gap-2 items-center text-white p-2 rounded-full cursor-pointer bg-transparent border border-transparent hover:bg-[#B4B3B2] transition-all duration-300 ease-in-out px-4 group"
                                 onClick={() => handleOpenModal(vedio)}
                               >
-                                <BsPlayCircle className="text-[1.5rem]" />
+                                <BsPlayCircle className="text-[1.5rem] group-hover:text-green-500 animate-pulse" />
                                 <p className="text-semibold">Watch Story</p>
                               </div>
+
                             </div>
                           </div>
                           <div className="mx-3 py-2 text-left">
@@ -163,40 +173,68 @@ const Reviews = () => {
 
       {/* == modal === */}
       {isModalOpen && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50">
-          <div className="w-[65%] h-[100%]  rounded-lg p-4">
-            <div className="flex items-start justify-between border-b  ">
-              {/* <h3 className="text-xl font-semibold text-gray-900">Watch Story</h3> */}
+        // <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-50">
+        //   <div className="w-[65%] h-[100%]  rounded-lg p-4">
+        //     <div className="flex items-start justify-between border-b  ">
+        //       <button
+        //         type="button"
+        //         className="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+        //         onClick={handleCloseModal}
+        //       >
+        //         <svg
+        //           className="w-3 h-3"
+        //           aria-hidden="true"
+        //           xmlns="http://www.w3.org/2000/svg"
+        //           fill="none"
+        //           viewBox="0 0 14 14"
+        //         >
+        //           <path
+        //             stroke="currentColor"
+        //             strokeLinecap="round"
+        //             strokeLinejoin="round"
+        //             strokeWidth={2}
+        //             d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+        //           />
+        //         </svg>
+        //         <span className="sr-only">Close modal</span>
+        //       </button>
+        //     </div>
+        //     <div className=" ">
+        //       <div className="youtube-player border">
+        //         <YouTube
+        //           videoId={videoId}
+        //           opts={{
+        //             width: '100%',
+        //             height: '360',
+        //           }}
+        //         />
+        //       </div>
+        //     </div>
+        //   </div>
+        // </div>
+
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className={`rounded-lg overflow-hidden ${modalContainer} w-[70%] h-[80vh]`}>
+            <div className="relative bg-white">
+              {/* Close button */}
               <button
                 type="button"
-                className="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                className="absolute top-0 left-0 p-2 text-gray-400 hover:text-gray-900 bg-white rounded-full"
                 onClick={handleCloseModal}
               >
-                <svg
-                  className="w-3 h-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                  />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
-                <span className="sr-only">Close modal</span>
               </button>
-            </div>
-            <div className=" ">
-              <div className="youtube-player border">
+              {/* YouTube player */}
+              <div className="">
                 <YouTube
                   videoId={videoId}
                   opts={{
                     width: '100%',
-                    height: '360',
+                    playerVars: {
+                      autoplay: 1,
+                    },
                   }}
                 />
               </div>

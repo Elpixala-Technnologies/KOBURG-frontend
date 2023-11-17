@@ -9,13 +9,15 @@ import DelivaryIcons from "./Icons/delivary.png"
 import MapIcons from "./Icons/map.png"
 import PolicyIcons from "./Icons/policy.png"
 
+import RupeIcon from "./Icons/rupe.jpg"
+
 import HomeBannerForDesktopOne from "./Banner/homepage-main-banner.jpg"
 
 import BanneSectionOne from "./Home-banner/home-banner-one.webp"
-import BanneSectionTwo from "./Home-banner/home-banner-tow.webp"
-import BanneSectionThree from "./Home-banner/home-banner-three.webp"
-import BanneSectionFour from "./Home-banner/home-banner-four.webp"
-import BanneSectionFive from "./Home-banner/home-banner-five.webp"
+import BanneSectionTwo from "./Home-banner/HomeBannerTow.png"
+import BanneSectionThree from "./Home-banner/HomeBannerThree.png"
+import BanneSectionFour from "./Home-banner/HomeBannerFour.png"
+import BanneSectionFive from "./Home-banner/HomeBannerFive.png"
 import BanneSectionSix from "./Home-banner/home-banner-six.webp"
 
 import ComfortableImage from "./Icons/comfortable.svg"
@@ -29,16 +31,19 @@ import HomeOfferBannerTow from "./OfferBanner/home-banner02.png"
 import HomeSliderMobileBannerOne from "./Mobile-home-banner/home-sldier-01.png"
 import HomeSliderMobileBannerTwo from "./Mobile-home-banner/home-sldier-02.png"
 import HomeSliderMobileBannerThree from "./Mobile-home-banner/home-sldier-03.png"
-import HomeSliderMobileBannerFour from "./Mobile-home-banner/home-sldier-04.png"
-
+ 
 import HomeSldierDesktopBannerOne from './Banner/home-slider-01.png'
 import HomeSldierDesktopBannerTwo from './Banner/home-slider-02.png'
 import HomeSldierDesktopBannerThree from './Banner/home-slider-03.png'
-import HomeSldierDesktopBannerFour from './Banner/home-slider-04.png'
+ 
+import NotFoundIcon from "./Images/NotFoundImag.png";
+import AuthIcons from "./Images/usersignUp.jpeg";
 
 
 
 export {
+    NotFoundIcon,
+    AuthIcons,
     mainLogo,
     darkLogo,
     IndianLogo,
@@ -68,12 +73,10 @@ export {
     HomeSliderMobileBannerOne,
     HomeSliderMobileBannerTwo,
     HomeSliderMobileBannerThree,
-    HomeSliderMobileBannerFour,
-
 
     HomeSldierDesktopBannerOne,
     HomeSldierDesktopBannerTwo,
     HomeSldierDesktopBannerThree,
-    HomeSldierDesktopBannerFour
+    RupeIcon,
 
 }

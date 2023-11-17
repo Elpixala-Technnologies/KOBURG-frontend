@@ -15,118 +15,66 @@ const navigation = {
       name: 'Sneakers',
       featured: [
         {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: 'https://res.cloudinary.com/elpixala/image/upload/v1699046645/koburg/Products/Sneakers/KC0401-SunBe/White%20Blue/MarketPlace%20Photos/nvw35hnxstgnapszptob.jpg',
+          name: 'SunBe',
+          href: '/shop',
+          imageSrc: 'https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699252407/BookShop/n5lpvdcgce2iodgj8pai.jpg',
+          imageSrcHover: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699252406/BookShop/y0iyxlkctvrjpvnonraf.jpg",
           imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
+          price: 699
         },
         {
-          name: 'Trendin',
-          href: '#',
-          imageSrc: 'https://res.cloudinary.com/elpixala/image/upload/v1699046645/koburg/Products/Sneakers/KC0401-SunBe/White%20Blue/MarketPlace%20Photos/nvw35hnxstgnapszptob.jpg',
+          name: 'Lappy',
+          href: '/shop',
+          imageSrc: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699253928/qqjpi10qaxclvpmgizw2.jpg",
+          imageSrcHover: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699253930/qqfgpauifmz2havynain.jpg",
           imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+          price: 699
+        },
+        {
+          name: 'Velo',
+          href: '/shop',
+          imageSrc: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699255324/ehxzpppe3eiripz4g7kx.jpg",
+          imageSrcHover: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699255323/xxcvuqblwn0o4ojvorxo.jpg",
+          imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+          price: 699
         },
       ],
       sections: [
         {
-          id: 'clothing',
-          name: 'Clothing',
+          id: 'Trending',
+          name: 'Trending',
           items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Dresses', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Denim', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
+
+            { name: 'Agilite', href: '/category/Agilite' },
+            { name: 'Solenox', href: '/category/Solenox' },
+            { name: 'Aerozest', href: '/category/Aerozest' },
           ],
         },
         {
-          id: 'accessories',
-          name: 'Accessories',
+          id: 'New Arrival',
+          name: 'New Arrival',
           items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
+            { name: 'Aerozest', href: '/category/Chelsea Boots' },
+            { name: 'Ray', href: '/category/Whole Cut Shoes' },
+            { name: 'Krete', href: '/category/Derbies' },
           ],
         },
         {
-          id: 'brands',
-          name: 'Brands',
+          id: 'Popular Products',
+          name: 'Popular',
           items: [
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Significant Other', href: '#' },
+
+            { name: 'Luna', href: '/category-product/Single Monk' },
+            { name: 'Daper', href: '/category-product/Double Monk' },
           ],
         },
       ],
     },
-    {
-      id: 'Sports Shoes',
-      name: 'Sports Shoes',
-      featured: [
-        {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: 'https://res.cloudinary.com/elpixala/image/upload/v1699046645/koburg/Products/Sneakers/KC0401-SunBe/White%20Blue/MarketPlace%20Photos/nvw35hnxstgnapszptob.jpg',
-          imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
-        },
-        {
-          name: 'Trendig',
-          href: '#',
-          imageSrc: 'https://res.cloudinary.com/elpixala/image/upload/v1699046645/koburg/Products/Sneakers/KC0401-SunBe/White%20Blue/MarketPlace%20Photos/nvw35hnxstgnapszptob.jpg',
-          imageAlt:
-            'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
-        },
-      ],
-      sections: [
-        {
-          id: 'clothing',
-          name: 'Clothing',
-          items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
-          ],
-        },
-        {
-          id: 'accessories',
-          name: 'Accessories',
-          items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
-          ],
-        },
-        {
-          id: 'brands',
-          name: 'Brands',
-          items: [
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-          ],
-        },
-      ],
-    },
+
   ],
   pages: [
     { name: 'Flip Flops', href: '/shop' },
+    { name: 'Sports Shoes', href: '/shop' },
     { name: 'All Products', href: '/shop' }
   ],
 }
@@ -138,6 +86,20 @@ function classNames(...classes) {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
+  // State to track hover status of each category
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+
+  // Handle mouse entering a category
+  const handleMouseEnter = (categoryName) => {
+    setHoveredCategory(categoryName);
+  };
+
+  // Handle mouse leaving a category
+  const handleMouseLeave = () => {
+    setHoveredCategory(null);
+  };
+
+
   return (
 
     <div className='bg-white sticky top-0 z-50 mx-auto h-full'
@@ -213,7 +175,7 @@ const Navbar = () => {
                                 <span className="absolute inset-0 z-10" aria-hidden="true" />
                                 {item.name}
                               </Link>
-                              
+
                             </div>
                           ))}
                         </div>
@@ -305,7 +267,7 @@ const Navbar = () => {
                   }}
                 >
                   {navigation.categories.map((category) => (
-                    <Popover key={category.name} className="flex">
+                    <Popover key={category.name} className="flex" onMouseLeave={handleMouseLeave}>
                       {({ open }) => (
                         <>
                           <div className="relative flex"
@@ -314,8 +276,9 @@ const Navbar = () => {
                             }}
                           >
                             <Popover.Button
+                              onMouseEnter={() => handleMouseEnter(category.name)}
                               className={classNames(
-                                open
+                                hoveredCategory === category.name
                                   ? 'border-indigo-600 text-indigo-600'
                                   : 'border-transparent text-gray-700 hover:text-gray-800',
                                 'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out'
@@ -335,34 +298,54 @@ const Navbar = () => {
                             leaveTo="opacity-0"
                           >
                             <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
-                              {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
 
                               <div className="relative bg-white">
                                 <div className="mx-auto max-w-7xl px-8">
-                                  <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
-                                    <div className="col-start-2 grid grid-cols-2 gap-x-8">
+                                  <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-6">
+                                    <div className="col-start-2 grid grid-cols-3 gap-x-8">
                                       {category.featured.map((item) => (
-                                        <div key={item.name} className="group relative text-base sm:text-sm">
-                                          <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                                        <Link href='/shop' key={item.name} className="group relative text-base border rounded p-4">
+                                          {/* <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75 border">
                                             <img
                                               src={item.imageSrc}
                                               alt={item.imageAlt}
-                                              className="object-cover object-center"
+                                              className="object-cover object-center w-full"
                                             />
+                                          </div> */}
+                                          <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75 border">
+                                            <div className='h-full duration-300 w-full overflow-hidden relative h-menu border'>
+                                              <img
+                                                src={item.imageSrc}
+                                                alt=""
+                                                className="hover-img h-full w-full duration-200"
+                                              />
+                                              <img
+                                                src={item.imageSrcHover}
+                                                alt=""
+                                                className="absolute translate-y-[-100%] top-0 left-0 right-0 bottom-0 h-hover h-full w-full duration-300"
+                                              />
+                                            </div>
                                           </div>
-                                          <Link href={item.href} className="mt-6 block font-medium text-gray-900">
+
+
+
+                                          <Link href="/shop" className="my-2 block font-medium text-gray-900">
                                             <span className="absolute inset-0 z-10" aria-hidden="true" />
                                             {item.name}
                                           </Link>
-                                          
-                                        </div>
+                                          <p className=" block text-gray-900">
+                                            <span className="absolute inset-0 z-10" aria-hidden="true" />
+                                            Rs. {item.price}
+                                          </p>
+
+                                        </Link>
                                       ))}
                                     </div>
                                     <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
                                       {category.sections.map((section) => (
                                         <div key={section.name}>
-                                          <p id={`${section.name}-heading`} className="font-medium text-gray-900">
+                                          <p id={`${section.name}-heading`} className="font-bold text-[1.4rem] text-gray-900">
                                             {section.name}
                                           </p>
                                           <ul
@@ -373,7 +356,12 @@ const Navbar = () => {
                                             {section.items.map((item) => (
                                               <li key={item.name} className="flex">
                                                 <Link href={item.href} className="hover:text-gray-800">
-                                                  {item.name}
+                                                  <p class="font-bold  relative w-max one">
+                                                    <span>
+                                                      {item.name}
+                                                    </span>
+                                                    <span class="absolute -bottom-1 left-0 w-0 transition-all h-[2px] bg-black"></span>
+                                                  </p>
                                                 </Link>
                                               </li>
                                             ))}
@@ -405,10 +393,10 @@ const Navbar = () => {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <Link href="/" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  <Link href="https://m.facebook.com/marketing.virajent/" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     <FaFacebook className="text-[1.4rem]" />
                   </Link>
-                  <Link href="/" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  <Link href="https://www.instagram.com/thekoburg/" className="text-sm font-medium text-gray-700 hover:text-gray-800">
                     <FaInstagram className="text-[1.4rem]" />
                   </Link>
                 </div>

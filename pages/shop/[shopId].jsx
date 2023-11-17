@@ -2,18 +2,22 @@ import RootLayout from '@/src/Layouts/RootLayout';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { BsCart } from 'react-icons/bs'
 import {
     DelivaryIcons,
     MapIcons,
     PolicyIcons,
 } from "@/src/Assets";
+import { TbArrowBigLeft, TbArrowBigRight } from "react-icons/tb";
 import { getSingelProductUrl } from '@/src/Utils/Urls/ProductUrl';
+import RecomendedPorduct from '@/src/Components/Home/RecomendedPorduct/RecomendedPorduct';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Preloader from "@/src/Shared/Preloader/Preloader";
+
 
 
 const ProductDetails = () => {
@@ -28,8 +32,6 @@ const ProductDetails = () => {
         }
         getSingelProduct();
     }, [])
-
-    
     const { name, colors, features, description, additionalInfo, discount, price, myntralink, flipkartlink, amazonlink } = singelProductData || {};
 
     const [selectedSize, setSelectedSize] = useState(null);
@@ -42,52 +44,56 @@ const ProductDetails = () => {
 
     const [selectedImage, setSelectedImage] = useState(colors?.length > 0 && colors[0]?.images.length > 0 ? colors[0]?.images[0] : null);
 
+
     const handleColorClick = (index) => {
         const clickedColor = colors[index];
         setSelectedColorIndex(index);
         setSelectedColorData(clickedColor);
 
         if (clickedColor?.images) {
+            // Set the initially selected image to the first image of the clicked color
+            setSelectedImage(clickedColor.images[0]);
             setSelectedColorImages(clickedColor.images);
         }
     };
 
-
     useEffect(() => {
         if (colors && colors?.length > 0) {
-            setSelectedColorIndex(colors[0] || 0);
+            setSelectedColorIndex(0);
             setSelectedColorData(colors[0] || {});
             setSelectedColorImages(colors[0]?.images || []);
+
+            // Set the initially selected image here
+            setSelectedImage(colors[0]?.images && colors[0]?.images.length > 0 ? colors[0]?.images[0] : null);
         }
     }, [colors]);
 
-
     const sliderRef = useRef(null);
 
+
     if (!singelProductData) {
-        return null; // or loading indicator
+        return <Preloader />
     }
+
 
     return (
         <RootLayout>
-            <section className='container mt-10'>
-                <section className="py-8">
+            <section className='container'>
+                <section className="py-2">
                     <div className="mx-auto px-4">
                         <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
-
-
-
                             <div className="lg:col-span-3 lg:row-end-1">
                                 <div className="lg:flex gap-4 lg:items-start">
                                     <div className="lg:order-2 lg:ml-5">
                                         <div className="max-w-xl overflow-hidden rounded-lg">
                                             <Carousel
-                                                // selectedItem={selectedColorImages.indexOf(selectedImage)}
+                                                selectedItem={selectedImage ? selectedColorImages.indexOf(selectedImage) : 0}
                                                 axis="vertical"
-                                                selectedItem={0}
+                                                // selectedItem={0}
                                                 verticalThumbs={true}
                                                 showStatus={false}
-                                            // remove dots
+                                                showThumbs={true}
+
                                             >
                                                 {selectedColorImages &&
                                                     selectedColorImages?.map((image, index) => (
@@ -95,9 +101,9 @@ const ProductDetails = () => {
                                                             <img
                                                                 src={image}
                                                                 alt={colors[selectedColorData]?.color}
-                                                                width={100}
-                                                                height={100}
-                                                                className="cursor-pointer border p-4 rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
+                                                                width={500}
+                                                                height={500}
+                                                                className="cursor-pointer w-full h-full border p-4 rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
                                                                 onClick={() => setSelectedImage(image)}
                                                             />
                                                         </div>
@@ -107,6 +113,8 @@ const ProductDetails = () => {
                                     </div>
                                 </div>
                             </div>
+
+
 
                             <div className="lg:col-span-4 lg:row-span-2 lg:row-end-2">
                                 <h1 className="text-2xl font-semibold">
@@ -133,7 +141,7 @@ const ProductDetails = () => {
                                 <div className='border p-2 rounded bg-[#E7F3EC]'>
                                     <h1 className='font-bold text-[1.2rem]'>Get this for as low as  <span className='text-[#29679e]'>Rs. {Math.round(price)}</span> </h1>
                                     <p>
-                                        with these offers.
+                                        from these marketplace
                                     </p>
                                 </div>
 
@@ -164,7 +172,6 @@ const ProductDetails = () => {
                                         </button>
                                     </Link>
                                 </div>
-
 
                                 <div className="mt-5">
                                     <h4 className="text-lg font-semibold capitalize">Available Colors</h4>
@@ -228,43 +235,44 @@ const ProductDetails = () => {
                                     </div>
                                 </div>
 
-
-                                <div className='border text-center p-2 mt-4 hidden md:flex flex-col md:flex-row items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
-                                    <div className='flex flex-col items-center justify-center gap-2'>
-                                        <Image
-                                            src={PolicyIcons}
-                                            alt="policy"
-                                            width={50}
-                                            height={50}
-                                            className='w-12 h-12 object-cover'
-                                        />
-                                        <h1 className='text-center font-semibold'>
-                                            7 Days free exchange policy
-                                        </h1>
-                                    </div>
-                                    <div className='flex flex-col items-center justify-center gap-2'>
-                                        <Image
-                                            src={MapIcons}
-                                            alt="policy"
-                                            width={50}
-                                            height={50}
-                                            className='w-12 h-12 object-cover'
-                                        />
-                                        <h1 className='text-center font-semibold'>
-                                            Made in India with love
-                                        </h1>
-                                    </div>
-                                    <div className='flex flex-col items-center justify-center gap-2'>
-                                        <Image
-                                            src={DelivaryIcons}
-                                            alt="DelivaryIcons"
-                                            width={50}
-                                            height={50}
-                                            className='w-12 h-12 object-cover'
-                                        />
-                                        <h1 className='text-center font-semibold'>
-                                            Free delivery* within 4-5 days
-                                        </h1>
+                                <div className='md:block hidden'>
+                                    <div className='border text-center p-2 mt-4 flex-col md:flex-row items-center justify-center gap-4 rounded bg-[#E7F3EC]'>
+                                        <div className='flex flex-col items-center justify-center gap-2'>
+                                            <Image
+                                                src={PolicyIcons}
+                                                alt="policy"
+                                                width={50}
+                                                height={50}
+                                                className='w-12 h-12 object-cover'
+                                            />
+                                            <h1 className='text-center font-semibold'>
+                                                7 Days free exchange policy
+                                            </h1>
+                                        </div>
+                                        <div className='flex flex-col items-center justify-center gap-2'>
+                                            <Image
+                                                src={MapIcons}
+                                                alt="policy"
+                                                width={50}
+                                                height={50}
+                                                className='w-12 h-12 object-cover'
+                                            />
+                                            <h1 className='text-center font-semibold'>
+                                                Made in India with love
+                                            </h1>
+                                        </div>
+                                        <div className='flex flex-col items-center justify-center gap-2'>
+                                            <Image
+                                                src={DelivaryIcons}
+                                                alt="DelivaryIcons"
+                                                width={50}
+                                                height={50}
+                                                className='w-12 h-12 object-cover'
+                                            />
+                                            <h1 className='text-center font-semibold'>
+                                                Free delivery* within 4-5 days
+                                            </h1>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -303,7 +311,7 @@ const ProductDetails = () => {
                                                         alt="policy"
                                                         width={50}
                                                         height={50}
-                                                        className='w-12 h-12 object-cover'
+                                                        className='w-12 h-12 object-cover productDetilPolicy'
                                                     />
                                                     <h1 className='text-center font-semibold'>
                                                         7 Days free exchange policy
@@ -317,7 +325,7 @@ const ProductDetails = () => {
                                                         alt="policy"
                                                         width={50}
                                                         height={50}
-                                                        className='w-12 h-12 object-cover'
+                                                        className='w-12 h-12 object-cover productDetilPolicy'
                                                     />
                                                     <h1 className='text-center font-semibold'>
                                                         Made in India with love
@@ -331,7 +339,7 @@ const ProductDetails = () => {
                                                         alt="DelivaryIcons"
                                                         width={50}
                                                         height={50}
-                                                        className='w-12 h-12 object-cover'
+                                                        className='w-12 h-12 object-cover productDetilPolicy'
                                                     />
                                                     <h1 className='text-center font-semibold'>
                                                         Free delivery* within 4-5 days
@@ -385,7 +393,7 @@ const ProductDetails = () => {
                                                 className=""
                                             />
                                         </svg>
-                                        Free shipping worldwide
+                                        Proudly made in india
                                     </li>
                                     <li className="flex items-center text-left text-sm font-medium text-gray-600">
                                         <svg
@@ -403,11 +411,12 @@ const ProductDetails = () => {
                                                 className=""
                                             />
                                         </svg>
-                                        Cancel Anytime
+                                        Cruelty free materials
                                     </li>
                                 </ul>
 
                             </div>
+
                             <div className="lg:col-span-3">
                                 <div className="border-b border-gray-300">
                                     <nav className="flex gap-4">
@@ -460,8 +469,11 @@ const ProductDetails = () => {
                         </div>
                     </div>
                 </section>
-            </section>
 
+                <section className='my-6'>
+                    <RecomendedPorduct />
+                </section>
+            </section>
 
         </RootLayout>
     )

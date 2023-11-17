@@ -1,5 +1,5 @@
 
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useMemo } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
@@ -11,14 +11,14 @@ import RootLayout from '@/src/Layouts/RootLayout';
 import { AiFillAmazonSquare } from 'react-icons/ai';
 import { SiFlipkart } from 'react-icons/si'
 import Image from 'next/image';
+import { MdExpandMore, MdExpandLess } from 'react-icons/md';
 import { HomeOfferBannerTow } from '@/src/Assets';
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
 
 
 
 const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
   { name: 'Price: Low to High', href: '#', current: false },
   { name: 'Price: High to Low', href: '#', current: false },
 ]
@@ -28,45 +28,49 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+const getPaddingStyle = (level) => {
+  return { paddingLeft: `${level * 20}px` };
+};
+
 
 const ProductPage = () => {
   const { productData, categoryData } = useProducts();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const [selectedCategories, setSelectedCategories] = useState(['All']);
-  const itemsPerPage = 9;
-  const [page, setPage] = useState(1);
+  // const [selectedCategories, setSelectedCategories] = useState(['All']);
+  // const itemsPerPage = 9;
+  // const [page, setPage] = useState(1);
 
-  const start = (page - 1) * itemsPerPage;
-  const end = page * itemsPerPage;
-  const currentPageData = productData?.slice(start, end);
+  // const start = (page - 1) * itemsPerPage;
+  // const end = page * itemsPerPage;
+  // const currentPageData = productData?.slice(start, end);
 
-  const totalPages = Math.ceil((productData?.length || 0) / itemsPerPage);
+  // const totalPages = Math.ceil((productData?.length || 0) / itemsPerPage);
 
-  useEffect(() => {
-    if (page > totalPages) {
-      setPage(1);
-    }
-  }, [page, totalPages]);
+  // useEffect(() => {
+  //   if (page > totalPages) {
+  //     setPage(1);
+  //   }
+  // }, [page, totalPages]);
 
-  const handleNextPage = () => {
-    if (page < totalPages) {
-      setPage(page + 1);
-    }
-  };
+  // const handleNextPage = () => {
+  //   if (page < totalPages) {
+  //     setPage(page + 1);
+  //   }
+  // };
 
-  const handlePrevPage = () => {
-    if (page > 1) {
-      setPage(page - 1);
-    }
-  };
+  // const handlePrevPage = () => {
+  //   if (page > 1) {
+  //     setPage(page - 1);
+  //   }
+  // };
 
-  const toggleCategory = (category) => {
-    if (selectedCategories?.includes(category)) {
-      setSelectedCategories(selectedCategories?.filter((c) => c !== category));
-    } else {
-      setSelectedCategories([...selectedCategories, category]);
-    }
-  };
+  // const toggleCategory = (category) => {
+  //   if (selectedCategories?.includes(category)) {
+  //     setSelectedCategories(selectedCategories?.filter((c) => c !== category));
+  //   } else {
+  //     setSelectedCategories([...selectedCategories, category]);
+  //   }
+  // };
 
   const filters = {
     category: false,
@@ -76,49 +80,135 @@ const ProductPage = () => {
   };
 
 
-  // const [categoryfilterToggle, setCategoryFilterToggle] = useState(false);
-  // const [sizeFilterToggle, setSizeFilterToggle] = useState(false)
-  // const [colorFilterToggle, setColorFilterToggle] = useState(false)
-  // const [priceFilterToggle, setPriceFilterToggle] = useState(false)
-
-  // const handelCategoryFilter = ()=>{
-  //   setCategoryFilterToggle(!categoryfilterToggle)
-  //   setSizeFilterToggle(false)
-  //     setColorFilterToggle(false)
-  //     setPriceFilterToggle(false)
-  // }
-
-  // const handelSizeFilterToggle= ()=>{
-  //   setSizeFilterToggle(!sizeFilterToggle)
-  //   setCategoryFilterToggle(false)
-  //   setColorFilterToggle(false)
-  //   setPriceFilterToggle(false)
-  // }
-
-  // const handelColorFilterToggle = ()=>{
-  //   setColorFilterToggle(!colorFilterToggle)
-  //   setCategoryFilterToggle(false)
-  //   sizeFilterToggle(false)
-  //   setPriceFilterToggle(false)
-  // }
-
-  // const handelPriceFilterToggle = () =>{
-  //   setPriceFilterToggle(!priceFilterToggle)
-  //   setCategoryFilterToggle(false)
-  //     sizeFilterToggle(false)
-  //     setColorFilterToggle(false)
-  // }
-
-
   const [activeFilter, setActiveFilter] = useState(null);
 
   const handleToggleFilter = (filter) => {
     if (activeFilter === filter) {
-      setActiveFilter(null); // Close the currently active filter
+      setActiveFilter(null);
     } else {
-      setActiveFilter(filter); // Open the selected filter and close any previously active filter
+      setActiveFilter(filter);
     }
   };
+
+  function valuetext(value) {
+    return `${value} Rs.`;
+  }
+
+  const [value, setValue] = React.useState([0, 3000]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const [selectedCategories, setSelectedCategories] = useState(['All']);
+  const [selectedSizes, setSelectedSizes] = useState(new Set());
+  const [selectedPriceRange, setSelectedPriceRange] = useState([0, 3000]);
+  const [selectedSortOption, setSelectedSortOption] = useState('Price: Low to High');
+  const [searchInput, setSearchInput] = useState('');
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 9;
+
+  const totalPages = Math?.ceil(productData?.length / itemsPerPage);
+
+  useEffect(() => {
+    if (page > totalPages) {
+      setPage(1);
+    }
+  }, [page, totalPages]);
+
+  const handleNextPage = () => {
+    if (page < totalPages) setPage(page + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (page > 1) setPage(page - 1);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchInput(event.target.value);
+  };
+
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategories((prev) =>
+      prev.includes(category)
+        ? prev.filter((c) => c !== category)
+        : [...prev, category]
+    );
+  };
+
+
+  const handleSizeChange = (size) => {
+    setSelectedSizes((prevSizes) => {
+      const newSizes = new Set(prevSizes);
+      if (newSizes.has(size)) {
+        newSizes.delete(size);
+      } else {
+        newSizes.add(size);
+      }
+      return newSizes;
+    });
+  };
+
+
+  const handlePriceChange = (event, newValue) => {
+    setSelectedPriceRange(newValue);
+  };
+
+  const filteredAndSortedProducts = useMemo(() => {
+    let result = productData;
+
+    // Search Filter
+    if (searchInput) {
+      result = result?.filter(product =>
+        product?.name?.toLowerCase().includes(searchInput.toLowerCase()) ||
+        product?.brand?.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    }
+
+    // Category Filter
+    if (!selectedCategories?.includes('All')) {
+      result = result?.filter(product =>
+        product?.categories?.some(category => selectedCategories.includes(category))
+      );
+    }
+
+    // Size Filter
+    if (selectedSizes?.size > 0) {
+      result = result?.filter(product =>
+        product?.colors?.some(color =>
+          color?.sizes?.some(sizeObj => selectedSizes?.has(sizeObj.size))
+        )
+      );
+    }
+
+    // Price Range Filter
+    result = result?.filter(product =>
+      product?.price >= selectedPriceRange[0] && product?.price <= selectedPriceRange[1]
+    );
+
+    // Sort by Price
+    if (selectedSortOption === 'Price: Low to High') {
+      result?.sort((a, b) => a?.price - b?.price);
+    } else if (selectedSortOption === 'Price: High to Low') {
+      result?.sort((a, b) => b?.price - a?.price);
+    }
+
+    return result;
+  }, [productData, searchInput, selectedCategories, selectedSizes, selectedPriceRange, selectedSortOption]);
+
+
+  const currentPageData = filteredAndSortedProducts?.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
+  const resetFilters = () => {
+    setSelectedCategories(['All']);
+    setSelectedSizes(new Set());
+    setSelectedPriceRange([0, 3000]);
+    setSearchInput('');
+    setPage(1);
+    setActiveFilter(null);
+  };
+
 
 
   return (
@@ -172,31 +262,24 @@ const ProductPage = () => {
                   </div>
 
                   {/* Filters */}
-                  <form className="mt-4 border-t border-gray-200">
-                    <Disclosure as="div" className="border-b border-gray-200 py-6">
+                  <div className="mt-4 border-t border-gray-200">
+                    <Disclosure as="div" className="border-b border-gray-200 py-6 px-4">
                       {({ open }) => (
                         <>
-                          <h3 className="-my-3 flow-root">
-                            <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                              <span className="font-medium text-gray-900">Category</span>
-                              <span className="ml-6 flex items-center">
-                                {open ? (
-                                  <MinusIcon className="h-5 w-5" aria-hidden="true" />
-                                ) : (
-                                  <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                                )}
-                              </span>
-                            </Disclosure.Button>
-                          </h3>
-                          <Disclosure.Panel className="pt-6">
-                            <div className="space-y-4">
-                              {categoryData && categoryData.length > 0 ? (
-                                categoryData.map((category) => {
-                                  return (
+                          <div className="border-b border-gray-200 py-6">
+                            <button onClick={() => handleToggleFilter('category')} className="font-semibold w-full flex gap-4 justify-between items-center">
+                              Category
+                              {activeFilter === 'category' ? <MdExpandLess className='text-2xl' /> : <MdExpandMore className='text-2xl' />}
+                            </button>
+
+                            {activeFilter === 'category' && (
+                              <div className="space-y-4">
+                                {categoryData && categoryData.length > 0 ? (
+                                  categoryData.map((category) => (
                                     <li
-                                      key={category._id} // or key={category.slug} depending on your unique identifier
-                                      className={`cursor-pointer ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
-                                      onClick={() => toggleCategory(category.name)}
+                                      key={category._id}
+                                      className={`cursor-pointer mt-2`}
+                                      onClick={() => handleCategoryChange(category.name)}
                                     >
                                       <input
                                         type="checkbox"
@@ -206,17 +289,83 @@ const ProductPage = () => {
                                       />
                                       {category.name}
                                     </li>
-                                  )
-                                })
-                              ) : (
-                                <div>Loading categories...</div>
-                              )}
-                            </div>
-                          </Disclosure.Panel>
+                                  ))
+                                ) : (
+                                  <div>Loading categories...</div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="border-b border-gray-200 py-6">
+                            <button onClick={() => handleToggleFilter('size')} className="font-semibold w-full flex gap-4 justify-between items-center">
+                              Size
+                              {activeFilter === 'size' ? <MdExpandLess className='text-2xl' /> : <MdExpandMore className='text-2xl' />}
+                            </button>
+                            {activeFilter === 'size' && (
+                              <div className="space-y-4">
+                                {sizeData && sizeData.length > 0 ? (
+                                  sizeData.map((size) => (
+                                    <li
+                                      key={size.id}
+                                      className="cursor-pointer mt-2"
+                                      onClick={() => handleSizeChange(size.size)}
+                                    >
+                                      <input
+                                        type="checkbox"
+                                        checked={selectedSizes.has(size.size)}
+                                        onChange={() => handleSizeChange(size.size)}
+                                        className="mr-2"
+                                      />
+                                      {size.size}
+                                    </li>
+                                  ))
+                                ) : (
+                                  <div>Loading Size...</div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+
+
+                          <div className="border-b border-gray-200 py-6">
+                            <button onClick={() => handleToggleFilter('price')} className=" font-semibold w-full flex gap-4 justify-between items-center">Price
+                              {activeFilter === 'price' ? <MdExpandLess className='text-2xl' /> : <MdExpandMore className='text-2xl' />}
+                            </button>
+                            {activeFilter === 'price' && (
+                              <div className="space-y-4">
+                                <Box sx={{ width: 250 }}>
+                                  <Slider
+                                    getAriaLabel={() => 'Price'}
+                                    value={selectedPriceRange}
+                                    onChange={handlePriceChange}
+                                    valueLabelDisplay="auto"
+                                    getAriaValueText={valuetext}
+                                    min={0}
+                                    max={3000}
+                                  />
+                                </Box>
+                                <div className='flex justify-between items-center gap-2'>
+                                  <div className='border p-2'>{`Rs. ${selectedPriceRange[0]}`}</div>
+                                  <div className='border p-2'>{`Rs. ${selectedPriceRange[1]}`}</div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="border-b border-gray-200 py-6">
+                            <button
+                              className=" font-semibold w-full flex gap-4 border p-2 rounded justify-between items-center"
+                              onClick={() => resetFilters()}
+                            >
+                              Reset Filters
+                            </button>
+                          </div>
+
                         </>
                       )}
                     </Disclosure>
-                  </form>
+                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -260,6 +409,8 @@ const ProductPage = () => {
                                 active ? 'bg-gray-100' : '',
                                 'block px-4 py-2 text-sm'
                               )}
+                              onClick={() => setSelectedSortOption(option.name)}
+
                             >
                               {option.name}
                             </a>
@@ -270,7 +421,7 @@ const ProductPage = () => {
                   </Menu.Items>
                 </Transition>
               </Menu>
- 
+
               <button
                 type="button"
                 className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
@@ -291,133 +442,114 @@ const ProductPage = () => {
               <div className="hidden lg:block">
 
                 <div className="border-b border-gray-200 py-6">
-                  <button onClick={() => handleToggleFilter('category')} className=" font-semibold">Category</button>
+                  <button onClick={() => handleToggleFilter('category')} className="font-semibold w-full flex gap-4 justify-between items-center">
+                    Category
+                    {activeFilter === 'category' ? <MdExpandLess className='text-2xl' /> : <MdExpandMore className='text-2xl' />}
+                  </button>
 
-                  {activeFilter === 'category' && <>
+                  {activeFilter === 'category' && (
                     <div className="space-y-4">
                       {categoryData && categoryData.length > 0 ? (
-                        categoryData.map((category) => {
-                          return (
-                            <li
-                              key={category._id}
-                              className={`cursor-pointer mt-2 ${selectedCategories.includes(category.name) ? 'text-[#18568C]' : ''}`}
-                              onClick={() => toggleCategory(category.name)}
-                            >
-                              <input
-                                type="checkbox"
-                                checked={selectedCategories.includes(category.name)}
-                                readOnly
-                                className="mr-2"
-                              />
-                              {category.name}
-                            </li>
-                          )
-                        })
+                        categoryData.map((category) => (
+                          <li
+                            key={category._id}
+                            className={`cursor-pointer mt-2`}
+                            onClick={() => handleCategoryChange(category.name)}
+                          >
+                            <input
+                              type="checkbox"
+                              checked={selectedCategories.includes(category.name)}
+                              readOnly
+                              className="mr-2"
+                            />
+                            {category.name}
+                          </li>
+                        ))
                       ) : (
                         <div>Loading categories...</div>
                       )}
                     </div>
-                  </>}
-
+                  )}
                 </div>
 
                 <div className="border-b border-gray-200 py-6">
-                  <button onClick={() => handleToggleFilter('size')} className="  font-semibold">Size  </button>
-                  {activeFilter === 'size' && <>
+                  <button onClick={() => handleToggleFilter('size')} className="font-semibold w-full flex gap-4 justify-between items-center">
+                    Size
+                    {activeFilter === 'size' ? <MdExpandLess className='text-2xl' /> : <MdExpandMore className='text-2xl' />}
+                  </button>
+                  {activeFilter === 'size' && (
                     <div className="space-y-4">
                       {sizeData && sizeData.length > 0 ? (
-                        sizeData.map((size) => {
-                          return (
-                            <li
-                              key={size.id}
-                              className={`cursor-pointer mt-2 ${selectedCategories.includes(size.size) ? 'text-[#18568C]' : ''}`}
-                              onClick={() => toggleCategory(size.size)}
-                            >
-                              <input
-                                type="checkbox"
-                                checked={selectedCategories.includes(size.size)}
-                                readOnly
-                                className="mr-2"
-                              />
-                              {size.size}
-                            </li>
-                          )
-                        })
+                        sizeData.map((size) => (
+                          <li
+                            key={size.id}
+                            className="cursor-pointer mt-2"
+                            onClick={() => handleSizeChange(size.size)}
+                          >
+                            <input
+                              type="checkbox"
+                              checked={selectedSizes.has(size.size)}
+                              onChange={() => handleSizeChange(size.size)}
+                              className="mr-2"
+                            />
+                            {size.size}
+                          </li>
+                        ))
                       ) : (
                         <div>Loading Size...</div>
                       )}
                     </div>
-                  </>}
+                  )}
+                </div>
+
+
+                <div className="border-b border-gray-200 py-6">
+                  <button onClick={() => handleToggleFilter('price')} className=" font-semibold w-full flex gap-4 justify-between items-center">Price
+                    {activeFilter === 'price' ? <MdExpandLess className='text-2xl' /> : <MdExpandMore className='text-2xl' />}
+                  </button>
+                  {activeFilter === 'price' && (
+                    <div className="space-y-4">
+                      <Box sx={{ width: 250 }}>
+                        <Slider
+                          getAriaLabel={() => 'Price'}
+                          value={selectedPriceRange}
+                          onChange={handlePriceChange}
+                          valueLabelDisplay="auto"
+                          getAriaValueText={valuetext}
+                          min={0}
+                          max={3000}
+                        />
+                      </Box>
+                      <div className='flex justify-between items-center gap-2'>
+                        <div className='border p-2'>{`Rs. ${selectedPriceRange[0]}`}</div>
+                        <div className='border p-2'>{`Rs. ${selectedPriceRange[1]}`}</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="border-b border-gray-200 py-6">
-                  <button onClick={() => handleToggleFilter('color')} className=" font-semibold">Color</button>
-                  {activeFilter === 'color' && <>
-                    <div className="space-y-4">
-                      {colorData && colorData.length > 0 ? (
-                        colorData.map((color) => {
-                          return (
-                            <li
-                              key={color.id}
-                              className={`cursor-pointer mt-2 ${selectedCategories.includes(color.name) ? 'text-[#18568C]' : ''}`}
-                              onClick={() => toggleCategory(color.name)}
-                            >
-                              <input
-                                type="checkbox"
-                                checked={selectedCategories.includes(color.name)}
-                                readOnly
-                                className="mr-2 checkbox-container"
-                              />
-                              {color.name}
-                            </li>
-                          )
-                        })
-                      ) : (
-                        <div>Loading Color...</div>
-                      )}
-                    </div>
-
-                  </>}
-
+                  <button
+                    className=" font-semibold w-full flex gap-4 border p-2 rounded justify-between items-center"
+                    onClick={() => resetFilters()}
+                  >
+                    Reset Filters
+                  </button>
                 </div>
 
-                <div className="border-b border-gray-200 py-6">
-                  <button onClick={() => handleToggleFilter('price')} className=" font-semibold">Price  </button>
-
-                  {activeFilter === 'price' && <>
-                    <div className="space-y-4">
-                      {priceData && priceData.length > 0 ? (
-                        priceData.map((price) => {
-                          return (
-                            <li
-                              key={price.id}
-                              className={`cursor-pointer mt-2 ${selectedCategories.includes(price.name) ? 'text-[#18568C]' : ''}`}
-                              onClick={() => toggleCategory(price.name)}
-                            >
-                              <input
-                                type="checkbox"
-                                checked={selectedCategories.includes(price.name)}
-                                readOnly
-                                className="mr-2"
-                              />
-                              {price.name}
-                            </li>
-                          )
-                        })
-                      ) : (
-                        <div>Loading Price...</div>
-                      )}
-                    </div>
-
-                  </>}
-                </div>
               </div>
 
               {/* Product grid */}
               <div className="lg:col-span-3">
                 <li className="flex items-center my-4 rounded-xl border border-[#999] relative  gap-2 w-full">
-                  <input type="text" className='w-full p-2 rounded-xl text-black  border border-[#999]' placeholder='Search ...' />
-                  <AiOutlineSearch className='text-black absolute right-5 text-[1.5rem]' />
+                  <input
+                    type="text"
+                    value={searchInput}
+                    onChange={handleSearchChange}
+                    className='w-full px-6 p-2 rounded-xl text-black  border border-[#999]'
+                    placeholder='Search ...'
+                  />
+                  <AiOutlineSearch className='text-black text-[1.5rem]' />
                 </li>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                   <div className="lg:col-span-4">
@@ -427,14 +559,24 @@ const ProductPage = () => {
                         return (
                           <div
                             key={_id}
-                            className="flex flex-col  w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem]"
+                            className="flex flex-col  md:w-full  border border-gray-100 bg-white shadow-md rounded-[1.4rem]"
                           >
                             <Link
-                              className="relative  bg-[#e4eff0] p-2 border mx-3 mt-3 flex h-64 overflow-hidden rounded-[1rem]"
+                              className=" mx-3 mt-3 flex  "
                               href={`/shop/${_id}`}
                             >
-                              <img class="peer opacity-75 absolute top-0 right-0 h-full w-full object-cover" src={colors[0]?.images[0]} alt="product image" />
-                              <img class="peer absolute top-0 -right-96 h-full w-full object-cover transition-all delay-100 duration-1000 hover:right-0 peer-hover:right-0" src={colors[0]?.images[1]} alt="product image" />
+                              <div className="h-auto duration-300 w-full overflow-hidden relative h-menu border rounded-[1rem]">
+                                <img
+                                  src={colors[0]?.images[0]}
+                                  alt=""
+                                  className="hover-img h-full w-full duration-200"
+                                />
+                                <img
+                                  src={colors[0]?.images[1]}
+                                  alt=""
+                                  className="absolute translate-y-[-100%] top-0 left-0 right-0 bottom-0 h-hover h-full w-full duration-300"
+                                />
+                              </div>
                             </Link>
                             <div className="mx-3 py-2">
                               <p className='text-gray-300'>{brand}</p>
