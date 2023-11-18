@@ -130,24 +130,22 @@ const ProductPage = () => {
 
 
   const handleCategoryChange = (category) => {
-    setSelectedCategories((prev) =>
-      prev.includes(category)
-        ? prev.filter((c) => c !== category)
-        : [...prev, category]
-    );
+    const newCategories = selectedCategories.includes(category)
+      ? selectedCategories.filter(c => c !== category)
+      : [...selectedCategories, category];
+
+    setSelectedCategories(newCategories);
   };
 
 
   const handleSizeChange = (size) => {
-    setSelectedSizes((prevSizes) => {
-      const newSizes = new Set(prevSizes);
-      if (newSizes.has(size)) {
-        newSizes.delete(size);
-      } else {
-        newSizes.add(size);
-      }
-      return newSizes;
-    });
+    const newSizes = new Set(selectedSizes);
+    if (newSizes.has(size)) {
+      newSizes.delete(size);
+    } else {
+      newSizes.add(size);
+    }
+    setSelectedSizes(newSizes);
   };
 
 
@@ -181,18 +179,33 @@ const ProductPage = () => {
         )
       );
     }
+    // Filter by Category
+    if (!selectedCategories.includes('All')) {
+      result = result?.filter(product =>
+        product?.categories.some(category => selectedCategories.includes(category))
+      );
+    }
+
+    // Filter by Size
+    if (selectedSizes.size > 0) {
+      result = result.filter(product =>
+        product?.colors.some(color =>
+          color?.sizes.some(sizeObj => selectedSizes.has(sizeObj.size))
+        )
+      );
+    }
+
+    // Sort by Price
+    if (selectedSortOption === 'Price: Low to High') {
+      result?.sort((a, b) => a.price - b.price);
+    } else if (selectedSortOption === 'Price: High to Low') {
+      result?.sort((a, b) => b.price - a.price);
+    }
 
     // Price Range Filter
     result = result?.filter(product =>
       product?.price >= selectedPriceRange[0] && product?.price <= selectedPriceRange[1]
     );
-
-    // Sort by Price
-    if (selectedSortOption === 'Price: Low to High') {
-      result?.sort((a, b) => a?.price - b?.price);
-    } else if (selectedSortOption === 'Price: High to Low') {
-      result?.sort((a, b) => b?.price - a?.price);
-    }
 
     return result;
   }, [productData, searchInput, selectedCategories, selectedSizes, selectedPriceRange, selectedSortOption]);
@@ -284,7 +297,7 @@ const ProductPage = () => {
                                       <input
                                         type="checkbox"
                                         checked={selectedCategories.includes(category.name)}
-                                        readOnly
+                                        onChange={() => handleCategoryChange(category.name)}
                                         className="mr-2"
                                       />
                                       {category.name}
@@ -313,7 +326,6 @@ const ProductPage = () => {
                                     >
                                       <input
                                         type="checkbox"
-                                        checked={selectedSizes.has(size.size)}
                                         onChange={() => handleSizeChange(size.size)}
                                         className="mr-2"
                                       />
@@ -380,7 +392,9 @@ const ProductPage = () => {
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                    Sort
+                    Sort {
+                      selectedSortOption === 'Price: Low to High' ? 'Low to High' : 'High to Low'
+                    }
                     <ChevronDownIcon
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
@@ -402,7 +416,7 @@ const ProductPage = () => {
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>
                           {({ active }) => (
-                            <a
+                            <Link
                               href={option.href}
                               className={classNames(
                                 option.current ? 'font-medium text-gray-900' : 'text-gray-500',
@@ -411,9 +425,10 @@ const ProductPage = () => {
                               )}
                               onClick={() => setSelectedSortOption(option.name)}
 
+
                             >
                               {option.name}
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                       ))}
@@ -488,7 +503,6 @@ const ProductPage = () => {
                           >
                             <input
                               type="checkbox"
-                              checked={selectedSizes.has(size.size)}
                               onChange={() => handleSizeChange(size.size)}
                               className="mr-2"
                             />
@@ -546,10 +560,10 @@ const ProductPage = () => {
                     type="text"
                     value={searchInput}
                     onChange={handleSearchChange}
-                    className='w-full px-6 p-2 rounded-xl text-black  border border-[#999]'
+                    className="w-full px-6 p-2 no-outline focus:outline-none rounded-xl text-black border border-[#999]"
                     placeholder='Search ...'
                   />
-                  <AiOutlineSearch className='text-black text-[1.5rem]' />
+                  <AiOutlineSearch className='text-black text-[1.5rem] mx-6' />
                 </li>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                   <div className="lg:col-span-4">

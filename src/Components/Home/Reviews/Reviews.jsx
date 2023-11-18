@@ -214,12 +214,12 @@ const Reviews = () => {
         // </div>
 
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className={`rounded-lg overflow-hidden ${modalContainer} w-[70%] h-[80vh]`}>
+          <div className={`rounded-lg overflow-hidden ${modalContainer} w-[60%]`}>
             <div className="relative bg-white">
               {/* Close button */}
               <button
                 type="button"
-                className="absolute top-0 left-0 p-2 text-gray-400 hover:text-gray-900 bg-white rounded-full"
+                className="absolute top-0  right-0 p-2 text-gray-400 "
                 onClick={handleCloseModal}
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -227,7 +227,7 @@ const Reviews = () => {
                 </svg>
               </button>
               {/* YouTube player */}
-              <div className="">
+              <div className="h-full">
                 <YouTube
                   videoId={videoId}
                   opts={{

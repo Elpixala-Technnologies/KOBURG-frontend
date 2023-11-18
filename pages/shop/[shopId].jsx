@@ -14,11 +14,11 @@ import { getSingelProductUrl } from '@/src/Utils/Urls/ProductUrl';
 import RecomendedPorduct from '@/src/Components/Home/RecomendedPorduct/RecomendedPorduct';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Preloader from "@/src/Shared/Preloader/Preloader";
-
-
+import Preloader from '@/src/Shared/Preloader/Preloader';
 
 const ProductDetails = () => {
     const router = useRouter();
@@ -81,36 +81,56 @@ const ProductDetails = () => {
             <section className='container'>
                 <section className="py-2">
                     <div className="mx-auto px-4">
-                        <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
+                        <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 ">
                             <div className="lg:col-span-3 lg:row-end-1">
-                                <div className="lg:flex gap-4 lg:items-start">
-                                    <div className="lg:order-2 lg:ml-5">
-                                        <div className="max-w-xl overflow-hidden rounded-lg">
-                                            <Carousel
-                                                selectedItem={selectedImage ? selectedColorImages.indexOf(selectedImage) : 0}
-                                                axis="vertical"
-                                                // selectedItem={0}
-                                                verticalThumbs={true}
-                                                showStatus={false}
-                                                showThumbs={true}
+                                <div className="img-box shadow w-full items-center rounded bg-[#f1e8e8] p-2 flex justify-center">
+                                    {selectedImage ? (
+                                        <Image
+                                            src={selectedImage}
+                                            alt={name}
+                                            width={500}
+                                            height={300}
+                                            className='w-full h-full cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130'
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={colors[0]?.images[0]}
+                                            alt={colors[0]?.color}
+                                            width={500}
+                                            height={300}
+                                            className='w-full h-full cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130'
+                                        />
+                                    )}
+                                </div>
 
-                                            >
-                                                {selectedColorImages &&
-                                                    selectedColorImages?.map((image, index) => (
-                                                        <div key={index}>
-                                                            <img
-                                                                src={image}
-                                                                alt={colors[selectedColorData]?.color}
-                                                                width={500}
-                                                                height={500}
-                                                                className="cursor-pointer w-full h-full border p-4 rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130"
-                                                                onClick={() => setSelectedImage(image)}
-                                                            />
-                                                        </div>
-                                                    ))}
-                                            </Carousel>
-                                        </div>
-                                    </div>
+                                <br />
+                                <div className="md:h-full h-full">
+                                    <Swiper
+                                        slidesPerView={4}
+                                        spaceBetween={10}
+                                        navigation={true}
+                                        modules={[Navigation]}
+                                        className="mySwiper flex "
+                                    >
+                                        {
+                                            selectedColorImages && selectedColorImages?.map((image, index) => {
+                                                return (
+                                                    <SwiperSlide key={index}
+                                                        onClick={() => setSelectedImage(image)}
+                                                        className='cursor-pointer flex justify-center items-center'
+                                                    >
+                                                        <Image
+                                                            src={image}
+                                                            alt={colors[selectedColorData]?.color}
+                                                            width={150}
+                                                            height={150}
+                                                            className='cursor-pointer w-full h-full rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130 m-2'
+                                                        />
+                                                    </SwiperSlide>
+                                                )
+                                            })
+                                        }
+                                    </Swiper>
                                 </div>
                             </div>
 
@@ -279,7 +299,7 @@ const ProductDetails = () => {
                                 <div className='block md:hidden'>
                                     <Swiper
                                         ref={sliderRef}
-                                        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                                        modules={[]}
                                         breakpoints={{
                                             320: {
                                                 slidesPerView: 1,
@@ -303,7 +323,7 @@ const ProductDetails = () => {
                                         onSlideChange={() => { }}
                                         onSwiper={(swiper) => { }}
                                     >
-                                        <div className="grid grid-cols-1 mb-4 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                        <div className="grid grid-cols-1 mb-4 justify-center items-center mx-auto md:grid-cols-2 lg:grid-cols-3 gap-4 bg-[#E7F3EC]">
                                             <SwiperSlide className="cursor-grab rounded " >
                                                 <div className='flex flex-col items-center justify-center gap-2'>
                                                     <Image

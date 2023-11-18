@@ -1,13 +1,24 @@
+import { AuthContext } from '@/src/Context/UserContext';
+import useAdmin from '@/src/Hooks/useAdmin';
+import useCommonApiData from '@/src/Hooks/useCommonApiData';
 import useProducts from '@/src/Hooks/useProducts';
 import DashboardLayout from '@/src/Layouts/DashboardLayout';
+import Preloader from '@/src/Shared/Preloader/Preloader';
 import { Button } from 'antd';
-import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const DashboardPage = () => {
     const { productData, handelProductDelete } = useProducts();
-    const itemsPerPage = 10; 
+    const itemsPerPage = 10;
     const [currentPage, setCurrentPage] = useState(1);
+    const router = useRouter();
+
+    const { user } = useContext(AuthContext);
+    const { handleLogout } = useCommonApiData();
+    const userEmail = user?.email;
+    const [isAdmin] = useAdmin();
 
     // Calculate the index range for the current page
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -38,6 +49,24 @@ const DashboardPage = () => {
         setSelectedProduct(UpdateInventory);
         setIsUpdateInventoryModalOpen(true);
     }
+
+
+    // if (!isAdmin) {
+    //     return router.push('/auth/login')
+    // }
+
+    // useEffect(() => {
+      
+    //     if (!isAdmin) {
+    //       // Check if running on the client side before using router
+    //       if (typeof window !== 'undefined') {
+    //         router.push('/auth/login');
+    //       }
+    //     }
+    //   }, []);
+
+
+
 
     return (
         <DashboardLayout>
@@ -124,7 +153,7 @@ const DashboardPage = () => {
                                                         </td>
                                                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                                                             {
-                                                                product?.colors?.length  > 0 ? <span className="text-green-500">{product?.colors?.length}</span> : <span className="text-red-500">No Color Available</span>
+                                                                product?.colors?.length > 0 ? <span className="text-green-500">{product?.colors?.length}</span> : <span className="text-red-500">No Color Available</span>
                                                             }
                                                         </td>
                                                         <td className="px-4 py-4 text-sm whitespace-nowrap">

@@ -415,7 +415,7 @@ export const blogData = [
 export const testimonialData = [
   {
 
-    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1700275303/koburg/Vedio/new/hkeq9qqjidimgu3fvtah.mp4",
     user: [
       {
         name: 'John Doe',
@@ -426,7 +426,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1700275303/koburg/Vedio/new/ox2whcwycrsa6vpksxav.mp4",
     user: [
       {
         name: 'John Doe',
@@ -437,7 +437,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1700275302/koburg/Vedio/new/i4eahgli3i8no4smdb8x.mp4",
     user: [
       {
         name: 'John Doe',
@@ -448,7 +448,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1700275301/koburg/Vedio/new/zvgxq94q8sx9sco3ke9o.mp4",
     user: [
       {
         name: 'John Doe',
@@ -459,7 +459,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1700275301/koburg/Vedio/new/zvgxq94q8sx9sco3ke9o.mp4",
     user: [
       {
         name: 'John Doe',
@@ -470,7 +470,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1700275307/koburg/Vedio/new/bifdpfvm0mqqi23amsho.mp4",
     user: [
       {
         name: 'John Doe',
@@ -481,7 +481,7 @@ export const testimonialData = [
   },
   {
 
-    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
+    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1700275304/koburg/Vedio/new/frj1ptgh8f3qgt7cpctp.mp4udinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
     user: [
       {
         name: 'John Doe',
@@ -490,17 +490,7 @@ export const testimonialData = [
       }
     ]
   },
-  {
-
-    vedio: "https://res.cloudinary.com/elpixala/video/upload/v1698962953/koburg/Vedio/ulapswddllwj8r3nktbv.mp4",
-    user: [
-      {
-        name: 'John Doe',
-        designation: 'CEO',
-        image: 'https://res.cloudinary.com/elpixala/image/upload/v1698948143/koburg/blog/l1la2kr8rknt2ggvu853.webp',
-      }
-    ]
-  },
+ 
 ]
 
 

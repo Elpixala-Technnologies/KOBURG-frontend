@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -16,6 +16,9 @@ import {
 } from "react-icons/fa";
 import { AiOutlineIdcard } from "react-icons/ai";
 import { useRouter } from "next/router";
+import Preloader from "../Shared/Preloader/Preloader";
+import useAdmin from "../Hooks/useAdmin";
+import { AuthContext } from "../Context/UserContext";
 const { Header, Sider, Content } = Layout;
 
 const DashboardLayout = ({ children }) => {
@@ -51,7 +54,17 @@ const DashboardLayout = ({ children }) => {
     setSideNavVisible(!sideNavVisible);
   };
 
+  const { user } = useContext(AuthContext);
+  const userEmail = user?.email;
+  const [isAdmin] = useAdmin();
 
+  // useEffect(() => {
+  //   if (!isAdmin) {
+  //     if (typeof window !== 'undefined') {
+  //       router.push('/auth/login');
+  //     }
+  //   }
+  // }, []);
 
   return (
     <Layout className="bg-transparent">

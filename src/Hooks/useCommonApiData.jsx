@@ -11,7 +11,7 @@ const useCommonApiData = () => {
         logOut()
           .then(() => {
             Swal.fire({
-              position: "top-end",
+              position: "top-center",
               timerProgressBar: true,
               title: "Successfully Logout Done !",
               iconColor: "#ED1C24",

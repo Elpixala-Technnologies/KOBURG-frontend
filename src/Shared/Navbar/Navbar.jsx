@@ -16,7 +16,7 @@ const navigation = {
       featured: [
         {
           name: 'SunBe',
-          href: '/shop',
+          href: '/shop/654e55a34508d30dfb6fb943',
           imageSrc: 'https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699252407/BookShop/n5lpvdcgce2iodgj8pai.jpg',
           imageSrcHover: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699252406/BookShop/y0iyxlkctvrjpvnonraf.jpg",
           imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
@@ -24,7 +24,7 @@ const navigation = {
         },
         {
           name: 'Lappy',
-          href: '/shop',
+          href: '/shop/654e55a34508d30dfb6fb944',
           imageSrc: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699253928/qqjpi10qaxclvpmgizw2.jpg",
           imageSrcHover: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699253930/qqfgpauifmz2havynain.jpg",
           imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
@@ -32,7 +32,7 @@ const navigation = {
         },
         {
           name: 'Velo',
-          href: '/shop',
+          href: '/shop/654e55a34508d30dfb6fb945',
           imageSrc: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699255324/ehxzpppe3eiripz4g7kx.jpg",
           imageSrcHover: "https://res.cloudinary.com/elpixala/image/upload/w_500/q_auto/f_auto/v1699255323/xxcvuqblwn0o4ojvorxo.jpg",
           imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
@@ -45,18 +45,17 @@ const navigation = {
           name: 'Trending',
           items: [
 
-            { name: 'Agilite', href: '/category/Agilite' },
-            { name: 'Solenox', href: '/category/Solenox' },
-            { name: 'Aerozest', href: '/category/Aerozest' },
+            { name: 'Agilite', href: '/shop/654e55a34508d30dfb6fb946' },
+            { name: 'Solenox', href: '/shop/654e55a34508d30dfb6fb947' },
+            { name: 'Aerozest', href: '/shop/654e55a34508d30dfb6fb948' },
           ],
         },
         {
           id: 'New Arrival',
           name: 'New Arrival',
           items: [
-            { name: 'Aerozest', href: '/category/Chelsea Boots' },
-            { name: 'Ray', href: '/category/Whole Cut Shoes' },
-            { name: 'Krete', href: '/category/Derbies' },
+            { name: 'Ray', href: '/shop/654e55a34508d30dfb6fb94c' },
+            { name: 'Krete', href: '/shop/654e55a34508d30dfb6fb94d' },
           ],
         },
         {
@@ -64,8 +63,8 @@ const navigation = {
           name: 'Popular',
           items: [
 
-            { name: 'Luna', href: '/category-product/Single Monk' },
-            { name: 'Daper', href: '/category-product/Double Monk' },
+            { name: 'Luna', href: '/shop/654e55a34508d30dfb6fb949' },
+            { name: 'Daper', href: '/shop/654e55a34508d30dfb6fb94a' },
           ],
         },
       ],
@@ -73,8 +72,8 @@ const navigation = {
 
   ],
   pages: [
-    { name: 'Flip Flops', href: '/shop' },
-    { name: 'Sports Shoes', href: '/shop' },
+    { name: 'Flip Flops', href: '/category/Flip Flops' },
+    { name: 'Sports Shoes', href: '/category/Sports Shoes' },
     { name: 'All Products', href: '/shop' }
   ],
 }
@@ -191,7 +190,7 @@ const Navbar = () => {
                             >
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
-                                  <Link href={item.href} className="-m-2 block p-2 text-gray-500">
+                                  <Link href={item?.href} className="-m-2 block p-2 text-gray-500">
                                     {item.name}
                                   </Link>
                                 </li>
@@ -305,7 +304,7 @@ const Navbar = () => {
                                   <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-6">
                                     <div className="col-start-2 grid grid-cols-3 gap-x-8">
                                       {category.featured.map((item) => (
-                                        <Link href='/shop' key={item.name} className="group relative text-base border rounded p-4">
+                                        <Link href={item?.href} key={item.name} className="group relative text-base border rounded p-4">
                                           {/* <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75 border">
                                             <img
                                               src={item.imageSrc}
