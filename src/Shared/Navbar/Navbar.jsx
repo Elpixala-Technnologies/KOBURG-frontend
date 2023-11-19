@@ -355,11 +355,11 @@ const Navbar = () => {
                                             {section.items.map((item) => (
                                               <li key={item.name} className="flex">
                                                 <Link href={item.href} className="hover:text-gray-800">
-                                                  <p class="font-bold  relative w-max one">
+                                                  <p className="font-bold  relative w-max one">
                                                     <span>
                                                       {item.name}
                                                     </span>
-                                                    <span class="absolute -bottom-1 left-0 w-0 transition-all h-[2px] bg-black"></span>
+                                                    <span className="absolute -bottom-1 left-0 w-0 transition-all h-[2px] bg-black"></span>
                                                   </p>
                                                 </Link>
                                               </li>

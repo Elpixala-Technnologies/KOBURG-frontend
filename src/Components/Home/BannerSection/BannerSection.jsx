@@ -13,7 +13,7 @@ import {
 const BannerSection = () => {
     return (
         <section className='container'>
-             <div className='text-center title'>
+            <div className='text-center title'>
                 <h1>Different  <span>Shoes</span></h1>
                 <p className='mb-4'>Unmatched Quality and Value for Your Everyday Needs</p>
             </div>
@@ -30,9 +30,9 @@ const BannerSection = () => {
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 transition duration-200 ease-in-out">
                         <div className="text-center">
                             <Link href="/shop" className="text-white py-2 px-4 rounded-md relative z-10 inline-block">
-                                <button class="btn2 mt-12 px-10 py-5 relative border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden hover:text-teal-600 transition duration-300" type="button">
-                                    <span class="absolute inset-0 bg-white transition-transform -translate-x-full"></span>
-                                    <span class="absolute inset-0 flex justify-center items-center font-bold transform transition-transform">
+                                <button className="btn2 mt-12 px-10 py-5 relative border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden hover:text-teal-600 transition duration-300" type="button">
+                                    <span className="absolute inset-0 bg-white transition-transform -translate-x-full"></span>
+                                    <span className="absolute inset-0 flex justify-center items-center font-bold transform transition-transform">
                                         Shop Now
                                     </span>
                                     Shop Now
@@ -54,9 +54,9 @@ const BannerSection = () => {
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 transition duration-200 ease-in-out">
                             <div className="text-center">
                                 <Link href="/shop" className="text-white py-2 px-4 rounded-md relative z-10 inline-block">
-                                    <button class="btn2 mt-12 px-10 py-5 relative border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden hover:text-teal-600 transition duration-300" type="button">
-                                        <span class="absolute inset-0 bg-white transition-transform -translate-x-full"></span>
-                                        <span class="absolute inset-0 flex justify-center items-center font-bold transform transition-transform">
+                                    <button className="btn2 mt-12 px-10 py-5 relative border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden hover:text-teal-600 transition duration-300" type="button">
+                                        <span className="absolute inset-0 bg-white transition-transform -translate-x-full"></span>
+                                        <span className="absolute inset-0 flex justify-center items-center font-bold transform transition-transform">
                                             Shop Now
                                         </span>
                                         Shop Now
@@ -85,9 +85,9 @@ const BannerSection = () => {
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 transition duration-200 ease-in-out">
                             <div className="text-center">
                                 <Link href="/shop" className="text-white py-2 px-4 rounded-md relative z-10 inline-block">
-                                    <button class="btn2 mt-12 px-10 py-5 relative border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden hover:text-teal-600 transition duration-300" type="button">
-                                        <span class="absolute inset-0 bg-white transition-transform -translate-x-full"></span>
-                                        <span class="absolute inset-0 flex justify-center items-center font-bold transform transition-transform">
+                                    <button className="btn2 mt-12 px-10 py-5 relative border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden hover:text-teal-600 transition duration-300" type="button">
+                                        <span className="absolute inset-0 bg-white transition-transform -translate-x-full"></span>
+                                        <span className="absolute inset-0 flex justify-center items-center font-bold transform transition-transform">
                                             Shop Now
                                         </span>
                                         Shop Now
@@ -110,9 +110,9 @@ const BannerSection = () => {
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 transition duration-200 ease-in-out">
                         <div className="text-center">
                             <Link href="/shop" className="text-white py-2 px-4 rounded-md relative z-10 inline-block">
-                                <button class="btn2 mt-12 px-10 py-5 relative border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden hover:text-teal-600 transition duration-300" type="button">
-                                    <span class="absolute inset-0 bg-white transition-transform -translate-x-full"></span>
-                                    <span class="absolute inset-0 flex justify-center items-center font-bold transform transition-transform">
+                                <button className="btn2 mt-12 px-10 py-5 relative border border-white uppercase font-semibold tracking-wider leading-none overflow-hidden hover:text-teal-600 transition duration-300" type="button">
+                                    <span className="absolute inset-0 bg-white transition-transform -translate-x-full"></span>
+                                    <span className="absolute inset-0 flex justify-center items-center font-bold transform transition-transform">
                                         Shop Now
                                     </span>
                                     Shop Now

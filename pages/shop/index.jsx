@@ -34,50 +34,16 @@ const getPaddingStyle = (level) => {
 
 
 const ProductPage = () => {
-  const { productData, categoryData } = useProducts();
+  const { productData, productLoaded, categoryData } = useProducts();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  // const [selectedCategories, setSelectedCategories] = useState(['All']);
-  // const itemsPerPage = 9;
-  // const [page, setPage] = useState(1);
-
-  // const start = (page - 1) * itemsPerPage;
-  // const end = page * itemsPerPage;
-  // const currentPageData = productData?.slice(start, end);
-
-  // const totalPages = Math.ceil((productData?.length || 0) / itemsPerPage);
-
-  // useEffect(() => {
-  //   if (page > totalPages) {
-  //     setPage(1);
-  //   }
-  // }, [page, totalPages]);
-
-  // const handleNextPage = () => {
-  //   if (page < totalPages) {
-  //     setPage(page + 1);
-  //   }
-  // };
-
-  // const handlePrevPage = () => {
-  //   if (page > 1) {
-  //     setPage(page - 1);
-  //   }
-  // };
-
-  // const toggleCategory = (category) => {
-  //   if (selectedCategories?.includes(category)) {
-  //     setSelectedCategories(selectedCategories?.filter((c) => c !== category));
-  //   } else {
-  //     setSelectedCategories([...selectedCategories, category]);
-  //   }
-  // };
-
   const filters = {
     category: false,
     size: false,
     color: false,
     price: false,
   };
+
+  console.log(productData)
 
 
   const [activeFilter, setActiveFilter] = useState(null);
@@ -153,64 +119,70 @@ const ProductPage = () => {
     setSelectedPriceRange(newValue);
   };
 
+  const isFilterActive = useMemo(() => {
+    return searchInput ||
+      !selectedCategories.includes('All') ||
+      selectedSizes.size > 0 ||
+      selectedPriceRange[0] > 0 ||
+      selectedPriceRange[1] < 3000;
+  }, [searchInput, selectedCategories, selectedSizes, selectedPriceRange]);
+
   const filteredAndSortedProducts = useMemo(() => {
-    let result = productData;
-    // Search Filter
-    if (searchInput) {
-      result = result?.filter(product =>
-        product?.name?.toLowerCase().includes(searchInput.toLowerCase()) ||
-        product?.brand?.toLowerCase().includes(searchInput.toLowerCase())
-      );
+    if (!productData || !Array.isArray(productData)) {
+      return [];
     }
 
-    // Category Filter
-    if (selectedCategories?.includes('All')) {
-      result = result?.filter(product =>
-        product?.categories?.some(category => selectedCategories.includes(category))
-      );
-    }
+    let result = [...productData];
 
-    // Size Filter
-    if (selectedSizes?.size > 0) {
-      result = result?.filter(product =>
-        product?.colors?.some(color =>
-          color?.sizes?.some(sizeObj => selectedSizes?.has(sizeObj.size))
-        )
-      );
-    }
-    // Filter by Category
-    if (selectedCategories.includes('All')) {
-      result = result?.filter(product =>
-        product?.categories.some(category => selectedCategories.includes(category))
-      );
-    }
+    if (isFilterActive) {
+      if (searchInput) {
+        result = result.filter(product =>
+          product.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+          product.brand.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      }
 
-    // Filter by Size
-    if (selectedSizes.size > 0) {
+      if (!selectedCategories.includes('All')) {
+        result = result.filter(product =>
+          selectedCategories.some(category => product.categories.includes(category))
+        );
+      }
+
+      if (selectedSizes.size > 0) {
+        result = result.filter(product =>
+          product.colors.some(color =>
+            color.sizes.some(sizeObj => selectedSizes.has(sizeObj.size))
+          )
+        );
+      }
+
       result = result.filter(product =>
-        product?.colors.some(color =>
-          color?.sizes.some(sizeObj => selectedSizes.has(sizeObj.size))
-        )
+        product.price >= selectedPriceRange[0] && product.price <= selectedPriceRange[1]
       );
-    }
 
-    // Sort by Price
-    if (selectedSortOption === 'Price: Low to High') {
-      result?.sort((a, b) => a.price - b.price);
-    } else if (selectedSortOption === 'Price: High to Low') {
-      result?.sort((a, b) => b.price - a.price);
+      if (selectedSortOption === 'Price: Low to High') {
+        result.sort((a, b) => a.price - b.price);
+      } else {
+        result.sort((a, b) => b.price - a.price);
+      }
     }
-
-    // Price Range Filter
-    result = result?.filter(product =>
-      product?.price >= selectedPriceRange[0] && product?.price <= selectedPriceRange[1]
-    );
 
     return result;
-  }, [productData, searchInput, selectedCategories, selectedSizes, selectedPriceRange, selectedSortOption]);
+  }, [productData, searchInput, selectedCategories, selectedSizes, selectedPriceRange, selectedSortOption, isFilterActive]);
+
+  const currentPageData = useMemo(() => {
+    const dataToDisplay = isFilterActive ? filteredAndSortedProducts : productData;
+    return dataToDisplay?.slice((page - 1) * itemsPerPage, page * itemsPerPage) || [];
+  }, [filteredAndSortedProducts, productData, page, itemsPerPage, isFilterActive]);
 
 
-  const currentPageData = filteredAndSortedProducts?.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
+  //   const currentPageData = useMemo(() =>
+  //  productData?.slice((page - 1) * itemsPerPage, page * itemsPerPage) ||  filteredAndSortedProducts?.slice((page - 1) * itemsPerPage, page * itemsPerPage),
+  //     [filteredAndSortedProducts, page] 
+  //   );
+
+  console.log(currentPageData)
 
   const resetFilters = () => {
     setSelectedCategories(['All']);
@@ -221,6 +193,13 @@ const ProductPage = () => {
     setActiveFilter(null);
   };
 
+
+
+  if (productLoaded) {
+    return <div
+      className='text-center flex justify-center items-enter h-screen w-screen'
+    >Loading...</div>
+  }
 
 
   return (
@@ -596,20 +575,20 @@ const ProductPage = () => {
                               <Link href={`/shop/${_id}`} className="text-[1.22rem] tracking-tight text-slate-900">
                                 {name}
                               </Link>
-                              <div class="flex items-center space-x-1">
-                                <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                              <div className="flex items-center space-x-1">
+                                <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                 </svg>
-                                <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                 </svg>
-                                <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                 </svg>
-                                <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                 </svg>
-                                <svg class="w-4 h-4 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                <svg className="w-4 h-4 text-gray-300 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                 </svg>
                               </div>
