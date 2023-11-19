@@ -21,7 +21,6 @@ const AddSubcategoryModal = ({
   };
 
   const onSubmit = async (data) => {
-    console.log(data)
     const res = await fetch(createSubCategoryUrl, {
       method: "POST",
       headers: {

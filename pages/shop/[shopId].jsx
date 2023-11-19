@@ -81,7 +81,7 @@ const ProductDetails = () => {
             <section className='container'>
                 <section className="py-2">
                     <div className="mx-auto px-4">
-                        <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 ">
+                        <div className="lg:col-gap-12 xl:col-gap-16  grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5">
                             <div className="lg:col-span-3 lg:row-end-1">
                                 <div className="img-box shadow w-full items-center rounded bg-[#f1e8e8] p-2 flex justify-center">
                                     {selectedImage ? (
@@ -104,7 +104,7 @@ const ProductDetails = () => {
                                 </div>
 
                                 <br />
-                                <div className="md:h-full h-full">
+                                <div className="h-[15%] w-full">
                                     <Swiper
                                         slidesPerView={4}
                                         spaceBetween={10}
@@ -119,13 +119,17 @@ const ProductDetails = () => {
                                                         onClick={() => setSelectedImage(image)}
                                                         className='cursor-pointer flex justify-center items-center'
                                                     >
-                                                        <Image
-                                                            src={image}
-                                                            alt={colors[selectedColorData]?.color}
-                                                            width={150}
-                                                            height={150}
-                                                            className='cursor-pointer w-full h-full rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130 m-2'
-                                                        />
+                                                        <div 
+                                                        className={`p-1 rounded-full w-full cursor-pointer hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100 ${selectedImage === image ? 'bg-opacity-100 ' : 'bg-opacity-50'}`}
+                                                        >
+                                                            <Image
+                                                                src={image}
+                                                                alt={colors[selectedColorData]?.color}
+                                                                width={150}
+                                                                height={150}
+                                                                className="cursor-pointer border p-4 rounded hover:animate-pulse transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-130 objectFit"
+                                                            />
+                                                        </div>
                                                     </SwiperSlide>
                                                 )
                                             })
@@ -380,8 +384,6 @@ const ProductDetails = () => {
 
                                         {
                                             features?.map((fct, index) => {
-
-                                                console.log(fct, 'features')
                                                 return (
                                                     <div className='flex gap-2 flex-col'>
                                                         <h1 className='font-bold'> {index + 1}. {fct?.heading} :</h1>

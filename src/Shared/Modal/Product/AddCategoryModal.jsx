@@ -19,7 +19,6 @@ const AddCategoryModal = ({ isCategoryModalOpen, setIsCategoryModalOpen }) => {
   };
 
   const onSubmit = async (data) => {
-    console.log(data);
     const res = await fetch(createCategoryUrl, {
       method: 'POST',
       headers: {
@@ -29,11 +28,7 @@ const AddCategoryModal = ({ isCategoryModalOpen, setIsCategoryModalOpen }) => {
         name: data.category,
       }),
     });
-
-    console.log(res);
-
     const dataRes = await res.json();
-    console.log(dataRes);
 
     if (!dataRes) {
       Swal.fire({

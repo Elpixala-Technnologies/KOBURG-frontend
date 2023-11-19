@@ -155,7 +155,6 @@ const ProductPage = () => {
 
   const filteredAndSortedProducts = useMemo(() => {
     let result = productData;
-
     // Search Filter
     if (searchInput) {
       result = result?.filter(product =>
@@ -165,7 +164,7 @@ const ProductPage = () => {
     }
 
     // Category Filter
-    if (!selectedCategories?.includes('All')) {
+    if (selectedCategories?.includes('All')) {
       result = result?.filter(product =>
         product?.categories?.some(category => selectedCategories.includes(category))
       );
@@ -180,7 +179,7 @@ const ProductPage = () => {
       );
     }
     // Filter by Category
-    if (!selectedCategories.includes('All')) {
+    if (selectedCategories.includes('All')) {
       result = result?.filter(product =>
         product?.categories.some(category => selectedCategories.includes(category))
       );

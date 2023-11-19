@@ -99,7 +99,6 @@ const UpdateInventoryModal = ({
 
     const onSubmit = async (inputValue) => {
         const { discount, price } = inputValue;
-        console.log(inputValue);
 
         try {
             setIsLoading(true);
@@ -179,7 +178,6 @@ const UpdateInventoryModal = ({
                 refetchProducts()
             }
         } catch (error) {
-            console.log(error);
         } finally {
             setIsLoading(false);
         }

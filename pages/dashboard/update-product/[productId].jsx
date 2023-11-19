@@ -141,7 +141,7 @@ const UpdatePorductPage = () => {
                     const file = files[i];
                     // Define onUploadProgress function
                     const onUploadProgress = (progress) => {
-                        console.log(`Upload progress for ${file.name}: ${progress}%`);
+                        // console.log(`Upload progress for ${file.name}: ${progress}%`);
                         // You can also update your progress state here, if needed
                     };
                     // Call uploadImageToCloudinary with the onUploadProgress function
@@ -151,7 +151,7 @@ const UpdatePorductPage = () => {
                         uploadedImages.push(imageUrl);
                     } else {
                         // Handle the case where the image URL is null
-                        console.error('Failed to upload image:', file.name);
+                        // console.error('Failed to upload image:', file.name);
                     }
                 }
 

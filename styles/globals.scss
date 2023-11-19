@@ -439,3 +439,60 @@ input:focus {
 .no-outline:focus {
   outline: none !important;
 }
+
+input:focus {
+  outline: none !important;
+  outline-color: transparent !important;
+}
+
+input:focus {
+  outline: none !important;
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  border: none !important;
+  border-color: transparent !important;
+}
+
+input:active {
+  outline: none !important;
+}
+
+input::after {
+  outline: none !important;
+}
+
+input::before {
+  outline: none !important;
+}
+
+input::first-letter {
+  outline: none !important;
+}
+
+input::first-line {
+  outline: none !important;
+}
+
+input::selection {
+  outline: none !important;
+}
+
+input::-moz-focus-inner {
+  outline: none !important;
+}
+
+input::-moz-focus-outer {
+  outline: none !important;
+}
+
+input::-webkit-focus-inner {
+  outline: none !important;
+}
+
+input::-webkit-focus-outer {
+  outline: none !important;
+}
+
+input::-webkit-input-placeholder {
+  outline: none !important;
+}

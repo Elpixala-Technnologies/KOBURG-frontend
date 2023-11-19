@@ -93,7 +93,6 @@ const AddPopularCategory = () => {
                 setLoading(false);
             }
         } catch (error) {
-            console.log(error);
         } finally {
             setLoading(false);
         }

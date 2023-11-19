@@ -31,7 +31,6 @@ const Index = () => {
   const saveUserDataToDatabase = async (userData) => {
     try {
       const response = await axios.post(signupUrl, userData);
-      console.log(response.data);
     } catch (error) {
       console.error("Error saving user data:", error);
       throw error;
@@ -93,7 +92,6 @@ const Index = () => {
                   role: role,
                 })
                 .then((response) => {
-                  console.log(response);
                   Swal.fire({
                     position: "top-end",
                     timerProgressBar: true,
@@ -114,10 +112,8 @@ const Index = () => {
 
                 })
                 .catch((error) => {
-                  console.log("error", error);
                 });
             } catch (error) {
-              console.log("error", error);
               Swal.fire({
                 icon: "error",
                 title: "Oops...",
@@ -127,13 +123,11 @@ const Index = () => {
             }
           })
           .catch((error) => {
-            console.log(error);
           });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
         Swal.fire({
           icon: "error",
           title: errorMessage,
