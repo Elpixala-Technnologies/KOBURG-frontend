@@ -16,7 +16,7 @@ const Footer = () => {
                             src={BlackBGLogo} alt="" />
                         </Link>
                         <h4 className="text-white  text-[15px] mt-[.8rem] mb-[36px]">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti facilis ratione aut minima fuga fugit nisi ea quos magni iure! Doloremque facere dolore tempora cupiditate. Sed cupiditate adipisci dignissimos dolores.
+                        Discover elegance and comfort with Koburg Shoes. Crafted for style, our range offers exceptional quality and design. Connect with us for exclusive updates and offers. Shop now and step into a world of refined footwear. Terms and conditions apply
                         </h4>
                         <div className="flex justify-center lg:justify-start items-center gap-4 ">
                             <Link target="_blank" href="https://m.facebook.com/marketing.virajent/" className="rounded-full border-red-600 border border-dashed p-0.5">
