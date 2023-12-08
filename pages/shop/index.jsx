@@ -175,15 +175,6 @@ const ProductPage = () => {
     return dataToDisplay?.slice((page - 1) * itemsPerPage, page * itemsPerPage) || [];
   }, [filteredAndSortedProducts, productData, page, itemsPerPage, isFilterActive]);
 
-
-
-  //   const currentPageData = useMemo(() =>
-  //  productData?.slice((page - 1) * itemsPerPage, page * itemsPerPage) ||  filteredAndSortedProducts?.slice((page - 1) * itemsPerPage, page * itemsPerPage),
-  //     [filteredAndSortedProducts, page] 
-  //   );
-
-  console.log(currentPageData)
-
   const resetFilters = () => {
     setSelectedCategories(['All']);
     setSelectedSizes(new Set());
@@ -192,8 +183,6 @@ const ProductPage = () => {
     setPage(1);
     setActiveFilter(null);
   };
-
-
 
   if (productLoaded) {
     return <div

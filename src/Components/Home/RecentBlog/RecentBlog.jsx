@@ -9,8 +9,7 @@ const RecentBlog = () => {
                 <h1>New <span>Blogs</span></h1>
                 </div>
                 <p className="mb-8 font-light text-center text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                    molestiae quas vel sint commodi
+                Exploring Uncharted Ideas and Insights Fresh Perspectives in Our Latest Blogs
                 </p>
             </div>
 

@@ -15,14 +15,14 @@ const ManegePhotoGelary = () => {
         {homeSliderData &&
           homeSliderData?.length &&
           homeSliderData?.map((slider) => {
-            const { _id, image } = slider;
+            const { _id, desktopImage } = slider;
             return (
               <Card sx={{ maxWidth: 400 }} key={_id}>
                 <CardMedia
                   component="img"
-                  image={image}
+                  image={desktopImage}
                   alt={"Brand Image  "}
-                  className="w-[100%] h-[200px] object-cover"
+                  className="w-auto h-auto object-cover"
                 />
 
                 <CardActions disableSpacing>

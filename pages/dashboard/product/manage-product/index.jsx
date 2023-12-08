@@ -6,7 +6,7 @@ const ManagePorductPage = () => {
     <DashboardLayout>
       <div className='manage-Porduct-section container'>
         <div className='manage-porduct-title my-2'>
-          <h2 className='font-bold text-2xl'>Update Porducts</h2>
+          <h2 className='font-bold text-2xl'>Update Product</h2>
         </div>
         <ManageProduct />
       </div>

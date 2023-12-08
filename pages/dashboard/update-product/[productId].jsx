@@ -291,7 +291,7 @@ const UpdatePorductPage = () => {
                             : singleProductData.colors[colorIndex]?.images || [],
                     };
                 }),
-                
+
             };
 
             // Log the update data
@@ -307,7 +307,7 @@ const UpdatePorductPage = () => {
 
             const dataRes = await res.json();
 
-           
+
 
             if (!res.ok) {
                 // Handle error message
@@ -355,19 +355,19 @@ const UpdatePorductPage = () => {
         }
     };
 
+    console.log(status)
+
     return (
         <DashboardLayout>
             <section>
-                <div>
-                    <h1>
-                        Update Porduct
-                    </h1>
-                </div>
                 <section className="my-4">
                     <div className="flex flex-col w-full gap-4 mx-auto add-Porduct-form">
                         <div
                             className="add-Porduct-form w-full md:w-full mx-auto flex flex-col gap-4 "
                         >
+                            <div>
+                                <h1 className='my-2 font-semibold'>Product Name :</h1>
+                            </div>
                             <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
                                 <input
                                     placeholder="Porduct Name"
@@ -379,140 +379,184 @@ const UpdatePorductPage = () => {
                                 />
                             </div>
 
-                            <FormControl fullWidth>
-                                <Select
-                                    multiple
-                                    value={selectedCategories}
-                                    onChange={handleCategoryChange}
-                                    renderValue={(selected) => selected.join(', ')}
+                            <div>
+                                <h1 className='my-2 font-semibold'>Category :</h1>
+                                <FormControl fullWidth>
+                                    <Select
+                                        multiple
+                                        value={selectedCategories}
+                                        onChange={handleCategoryChange}
+                                        renderValue={(selected) => selected.join(', ')}
+                                    >
+                                        {categoryOptions.map((category) => (
+                                            <MenuItem key={category.value} value={category.value}
+                                                style={{ marginLeft: `${category.level * 20}px` }}>
+                                                <Checkbox checked={selectedCategories.includes(category.value)} />
+                                                <ListItemText primary={category.label} />
+                                            </MenuItem>
+                                        ))}
+                                    </Select>
+                                </FormControl>
+                            </div>
+
+                            <div>
+                                <h1 className='my-2 font-semibold'>Brand :</h1>
+                                <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                    <input type="text"
+                                        placeholder="Brand"
+                                        className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                        defaultValue={brand}
+                                        {...register("productBrand")}
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <h1 className='my-2 font-semibold'>Amazon Link:</h1>
+
+                                <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                    <input type="text"
+                                        placeholder="Amazon Link"
+                                        className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                        defaultValue={amazonlink}
+                                        {...register("amazonlink")}
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <h1 className='my-2 font-semibold'>Flipcart Link:</h1>
+                                <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                    <input type="text"
+                                        placeholder="Flipcart Link"
+                                        className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                        defaultValue={flipcartlink}
+                                        {...register("flipcartlink")}
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <h1 className='my-2 font-semibold'>Myntra Link:</h1>
+                                <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                    <input type="text"
+                                        placeholder="Myntra Link"
+                                        className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                        defaultValue={myntralink}
+                                        {...register("myntralink")}
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <h1 className='my-2 font-semibold'>Product Type :</h1>
+                                <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                    <input type="text"
+                                        placeholder="Product Type"
+                                        className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                        defaultValue={type}
+                                        {...register("productType")}
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <h1 className='my-2 font-semibold'>Price :</h1>
+                                <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                    <input type="number"
+                                        placeholder="Price"
+                                        className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                        defaultValue={price}
+                                        {...register("productPrice")}
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <h1 className='my-2 font-semibold'>Discount Percentage :</h1>
+                                <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
+                                    <input type="number"
+                                        placeholder="Discount Percentage"
+                                        className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                        defaultValue={discount}
+                                        {...register("productDiscount")}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className='w-full'>
+                                <h1 className='my-2 font-semibold'>Status :</h1>
+
+                                <select
+                                    name="status"
+                                    id="status"
+                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
+                                    {...register("productStatus")}
+                                    defaultValue={status}
+                                    selected={status}
                                 >
-                                    {categoryOptions.map((category) => (
-                                        <MenuItem key={category.value} value={category.value}
-                                            style={{ marginLeft: `${category.level * 20}px` }}>
-                                            <Checkbox checked={selectedCategories.includes(category.value)} />
-                                            <ListItemText primary={category.label} />
-                                        </MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
+                                    <option value="Tranding"
+                                        className='border-2 border-gray-300 rounded-md p-4 my-2'
+                                    >Tranding</option>
+                                    <option value="New Arrival"
+                                        className='border-2 border-gray-300 rounded-md p-4 my-2'
+                                    >New Arrival</option>
+                                    <option value="Best Seller"
+                                        className='border-2 border-gray-300 rounded-md p-4 my-2'>Best Seller</option>
+                                    <option value="Featured"
+                                        className='border-2 border-gray-300 rounded-md p-4 my-2'>Featured</option>
 
-                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
-                                <input type="text"
-                                    placeholder="Brand"
-                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
-                                    defaultValue={brand}
-                                    {...register("productBrand")}
-                                />
+                                    <option value="Popular"
+                                        className='border-2 border-gray-300 rounded-md p-4 my-2'>Popular</option>
+                                </select>
                             </div>
-
-                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
-                                <input type="text"
-                                    placeholder="Amazon Link"
-                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
-                                    defaultValue={amazonlink}
-                                    {...register("amazonlink")}
-                                />
-                            </div>
-
-                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
-                                <input type="text"
-                                    placeholder="Flipcart Link"
-                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
-                                    defaultValue={flipcartlink}
-                                    {...register("flipcartlink")}
-                                />
-                            </div>
-
-                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
-                                <input type="text"
-                                    placeholder="Myntra Link"
-                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
-                                    defaultValue={myntralink}
-                                    {...register("myntralink")}
-                                />
-                            </div>
-                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
-                                <input type="text"
-                                    placeholder="Product Type"
-                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
-                                    defaultValue={type}
-                                    {...register("productType")}
-                                />
-                            </div>
-
-                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
-                                <input type="number"
-                                    placeholder="Price"
-                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
-                                    defaultValue={price}
-                                    {...register("productPrice")}
-                                />
-                            </div>
-
-                            <div className='border text-[15px] font-[500] text-gray-700 outline-none w-full rounded-lg '>
-                                <input type="number"
-                                    placeholder="Discount Percentage"
-                                    className='border-2 border-gray-300 rounded-md p-2 w-full'
-                                    defaultValue={discount}
-                                    {...register("productDiscount")}
-                                />
-                            </div>
-
-                            <select name="status" id="status"
-                                className='border-2 border-gray-300 rounded-md p-2'
-                                defaultValue={status}
-                                {...register("productStatus")}
-                            >
-                                <option value="status">
-                                    {status}
-                                </option>
-                                <option value="Tranding"
-                                    className='border-2 border-gray-300 rounded-md p-4 my-2'
-                                >Tranding</option>
-                                <option value="New Arrival"
-                                    className='border-2 border-gray-300 rounded-md p-4 my-2'
-                                >New Arrival</option>
-                                <option value="Best Seller"
-                                    className='border-2 border-gray-300 rounded-md p-4 my-2'>Best Seller</option>
-                                <option value="Featured"
-                                    className='border-2 border-gray-300 rounded-md p-4 my-2'>Featured</option>
-
-                                <option value="Popular"
-                                    className='border-2 border-gray-300 rounded-md p-4 my-2'>Popular</option>
-                            </select>
 
 
                             <div className='flex flex-col gap-4'>
-                                <h1 className='my-2'>description</h1>
+                                <h1 className='my-2 font-semibold'>Description</h1>
+                                <hr className='my-2' />
+
                                 {
-                                    singleProductData?.description?.map((description, index) => {
+                                    singleProductData?.description?.map((det, index) => {
                                         return (
                                             <section
                                                 key={index}
                                                 className=""
                                             >
-                                                <div className="form-control w-full">
-                                                    <div className='border p-2'>
-                                                        <input
-                                                            type="text"
-                                                            defultValue={description?.heading}
-                                                            {...register(`productDetails.${index}.heading`)}
-                                                            placeholder="heading"
-                                                            className="border-2 w-full border-gray-300 rounded-md p-2"
-                                                        />
+                                                <div>
+                                                    <h1
+                                                        className='my-2  font-semibold'
+                                                    >
+                                                        Heading :
+                                                    </h1>
+                                                    <div className="form-control w-full">
+                                                        <div className='border p-2'>
+                                                            <input
+                                                                type="text"
+                                                                defultValue={det?.heading}
+                                                                {...register(`productDetails.${index}.heading`)}
+                                                                placeholder="heading"
+                                                                className="border-2 w-full border-gray-300 rounded-md p-2"
+                                                            />
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="form-control w-full my-2">
-                                                    <div className='border p-2'>
-                                                        <input
-                                                            type="text"
-                                                            name="details"
-                                                            defultValue={description?.details}
-                                                            {...register(`productDetails.${index}.details`)}
-                                                            placeholder="details"
-                                                            className="border-2 w-full border-gray-300 rounded-md p-2"
-                                                        />
+                                                <div>
+                                                    <h1 className='my-2  font-semibold'>
+                                                        Details :
+                                                    </h1>
+                                                    <div className="form-control w-full my-2">
+                                                        <div className='border p-2'>
+                                                            <input
+                                                                type="text"
+                                                                name="details"
+                                                                defultValue={det?.details}
+                                                                {...register(`productDetails.${index}.details`)}
+                                                                placeholder="details"
+                                                                className="border-2 w-full border-gray-300 rounded-md p-2"
+                                                            />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </section>
@@ -522,7 +566,8 @@ const UpdatePorductPage = () => {
                             </div>
 
                             <div className='flex flex-col gap-4'>
-                                <h1 className='my-2'>features</h1>
+                                <h1 className='my-2 font-smibold'>Features</h1>
+                                <hr className='my-2' />
                                 {
                                     singleProductData?.features?.map((features, index) => {
                                         return (
@@ -530,32 +575,37 @@ const UpdatePorductPage = () => {
                                                 key={index}
                                                 className=""
                                             >
-                                                <div className="form-control w-full">
-                                                    <div className='border p-2'>
-                                                        <input
-                                                            type="text"
-                                                            name="heading"
-                                                            defultValue={features?.heading}
-                                                            {...register(`productFeatures.${index}.heading`)}
-                                                            placeholder="heading"
-                                                            className="border-2 w-full border-gray-300 rounded-md p-2 w-full" 
-                                                        />
+                                                <div>
+                                                    <h1 className='my-2  font-semibold'> Heading :</h1>
+                                                    <div className="form-control w-full">
+                                                        <div className='border p-2'>
+                                                            <input
+                                                                type="text"
+                                                                name="heading"
+                                                                defultValue={features?.heading}
+                                                                {...register(`productFeatures.${index}.heading`)}
+                                                                placeholder="heading"
+                                                                className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                                                            />
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="form-control w-full my-2">
-                                                    <div className='border p-2'>
-                                                        <input
-                                                            type="text"
-                                                            name="details"
-                                                            defultValue={features?.details}
-                                                            {...register(`productFeatures.${index}.details`)}
-                                                            placeholder="details"
-                                                            className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
-                                                        />
+                                                <div>
+                                                    <h1 className='my-2  font-semibold'>Details :</h1>
+                                                    <div className="form-control w-full my-2">
+                                                        <div className='border p-2'>
+                                                            <input
+                                                                type="text"
+                                                                name="details"
+                                                                defultValue={features?.details}
+                                                                {...register(`productFeatures.${index}.details`)}
+                                                                placeholder="details"
+                                                                className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                                                            />
+                                                        </div>
                                                     </div>
                                                 </div>
-
                                             </section>
                                         )
                                     })
@@ -564,7 +614,9 @@ const UpdatePorductPage = () => {
                             </div>
 
                             <div className='flex flex-col gap-4'>
-                                <h1 className='my-2'>Additional Info</h1>
+                                <h1 className='my-2 font-semibold'>Additional Info</h1>
+                                <hr className='my-2' />
+
                                 {
                                     singleProductData?.additionalInfo?.map((info, index) => {
                                         return (
@@ -572,31 +624,38 @@ const UpdatePorductPage = () => {
                                                 key={index}
                                                 className=""
                                             >
-                                                <div className="form-control w-full">
-                                                    <div className='border p-2'>
-                                                        <input
-                                                            type="text"
-                                                            name="heading"
-                                                            defultValue={info?.heading}
-                                                            {...register(`productAdditionalInfo.${index}.heading`)}
-                                                            placeholder="heading"
-                                                            className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
-                                                        />
+                                                <div>
+                                                    <h1 className='my-2  font-semibold'> Heading :</h1>
+                                                    <div className="form-control w-full">
+                                                        <div className='border p-2'>
+                                                            <input
+                                                                type="text"
+                                                                name="heading"
+                                                                defultValue={info?.heading}
+                                                                {...register(`productAdditionalInfo.${index}.heading`)}
+                                                                placeholder="heading"
+                                                                className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                                                            />
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="form-control w-full my-2">
-                                                    <div className='border p-2'>
-                                                        <input
-                                                            type="text"
-                                                            name="details"
-                                                            defultValue={info?.details}
-                                                            {...register(`productAdditionalInfo.${index}.details`)}
-                                                            placeholder="details"
-                                                            className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
-                                                        />
+                                                <div>
+                                                    <h1 className='my-2  font-semibold'>Details :</h1>
+                                                    <div className="form-control w-full my-2">
+                                                        <div className='border p-2'>
+                                                            <input
+                                                                type="text"
+                                                                name="details"
+                                                                defultValue={info?.details}
+                                                                {...register(`productAdditionalInfo.${index}.details`)}
+                                                                placeholder="details"
+                                                                className="border-2 w-full border-gray-300 rounded-md p-2 w-full"
+                                                            />
+                                                        </div>
                                                     </div>
                                                 </div>
+
 
                                             </section>
                                         )
@@ -609,6 +668,7 @@ const UpdatePorductPage = () => {
                                 {
                                     colors && colors?.map((item, colorIndex) => {
                                         const { isSizeApplicable, sizes, quantity, images, color } = item;
+                                        // console.log(item)
                                         return (
                                             <div key={colorIndex} className="border-2 border-gray-300 rounded-md p-4 my-2">
                                                 <div className="form-control my-2">
@@ -626,34 +686,37 @@ const UpdatePorductPage = () => {
                                                         />
                                                     </div>
                                                 </div>
+                                                <div className='flex flex-col gap-4'>
 
-                                                {
-                                                    sizes?.map((sizeItem, sizeIndex) => {
-                                                        const { size } = sizeItem;
-                                                        return (
-                                                            <div key={sizeIndex} className="flex justify-between items-center gap-4">
-                                                                <div className="form-control flex gap-4">
+                                                    {
+                                                        sizes?.map((sizeItem, sizeIndex) => {
+                                                            const { size } = sizeItem;
+                                                            console.log(sizeItem)
 
-                                                                    <div className='flex items-center gap-2'>
-                                                                        <label htmlFor="sizeof">
-                                                                            Size :
-                                                                        </label>
-                                                                        <div className='border-2 border-gray-300 rounded-md w-full'>
-                                                                            <input
-                                                                                type="text"
-                                                                                name="size"
-                                                                                defaultValue={size}
-                                                                                {...register(`productColors.${colorIndex}.sizes.${sizeIndex}.size`)}
-                                                                                placeholder="Size"
-                                                                                className="border-2  border-gray-300 rounded-md p-2 w-full"
-                                                                            />
+                                                            return (
+                                                                <div key={sizeIndex} className="flex justify-between items-center gap-4">
+                                                                    <div className="w-full">
+
+                                                                        <div className=''>
+                                                                            <h1>Size :</h1>
+                                                                            <div className='border-2 border-gray-300 rounded-md w-full'>
+                                                                                <input
+                                                                                    type="text"
+                                                                                    name="size"
+                                                                                    defaultValue={size}
+                                                                                    {...register(`productColors.${colorIndex}.sizes.${sizeIndex}.size`)}
+                                                                                    placeholder="Size"
+                                                                                    className="border-2  border-gray-300 rounded-md p-2 w-full"
+                                                                                />
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        )
-                                                    })
-                                                }
+                                                            )
+                                                        })
+                                                    }
+                                                </div>
+
 
                                                 {/* ==== Image ===== */}
                                                 <div className="form-control my-4">

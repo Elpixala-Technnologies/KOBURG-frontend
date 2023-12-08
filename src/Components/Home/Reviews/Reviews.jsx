@@ -45,11 +45,10 @@ const Reviews = () => {
       <div className="px-4 mx-auto text-center  lg:px-6">
         <div className="mx-auto max-w-screen-sm  md:mb-[-4rem]">
           <div className='title'>
-            <h1>What Say Our <span>Customer</span></h1>
+            <h1>What Our <span>Customer's</span> Says</h1>
           </div>
           <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-            molestiae quas vel sint commodi
+            Voices of Satisfaction Testimonials from Our Valued Customers
           </p>
         </div>
         <div className=" flex justify-end items-center my-5">

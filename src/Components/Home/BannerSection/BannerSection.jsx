@@ -74,7 +74,7 @@ const BannerSection = () => {
                             At Koburg, we craft products that seamlessly fit your everyday life and fashion choices. Our products are created responsibly to elevate your lifestyle, empowering you to conquer each day with comfort and ease
                         </p>
                     </div>
-                    <div className='banner-content w-full relative group'>
+                    <div className='banner-content w-full h-full relative group'>
                         <Image
                             src={BanneSectionFive}
                             alt={"HomeOfferBannerOne"}
